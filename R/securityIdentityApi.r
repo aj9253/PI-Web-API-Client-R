@@ -1,0 +1,220 @@
+securityIdentityApi <- R6Class("securityIdentityApi",
+	private = list(),
+	public = list(
+		serviceBase = NULL,
+		authType = NULL,
+		username = NULL,
+		password = NULL,
+		debug = NULL,
+		initialize = function(baseUrl, authType, username, password, debug) {
+			self$serviceBase <- baseUrl
+			self$username <- username
+			self$password <- password
+			self$authType <- authType
+			self$debug <- debug
+		},
+		getByPath = function(path, selectedFields) {
+			queryParameters <- list()
+			if (is.null(path) || path == "") {
+				return (paste0("Error: required parameter path was null or undefined"))
+			}
+			if (is.character(path) == FALSE) {
+				return (print(paste0("Error: path must be a string.")))
+			}
+			queryParameters$path <- path
+			localVarPath <- paste(c(self$serviceBase, '/securityidentities'), collapse = "")
+			if (missing(selectedFields) == FALSE && is.null(selectedFields) == FALSE && selectedFields != "") {
+				queryParameters$selectedFields <- selectedFields
+				if (is.character(selectedFields) == FALSE) {
+					return (print(paste0("Error: selectedFields must be a string.")))
+				}
+			}
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			contentResponse <- content(res)
+			if (res$status == 200) {
+				attr(contentResponse, "className") <- "piSecurityIdentity"
+			}
+			return (contentResponse)
+		},
+		get = function(webId, selectedFields) {
+			queryParameters <- list()
+			if (is.null(webId) || webId == "") {
+				return (paste0("Error: required parameter webId was null or undefined"))
+			}
+			if (is.character(webId) == FALSE) {
+				return (print(paste0("Error: webId must be a string.")))
+			}
+			localVarPath <- paste(c(self$serviceBase, '/securityidentities/', webId), collapse = "")
+			if (missing(selectedFields) == FALSE && is.null(selectedFields) == FALSE && selectedFields != "") {
+				queryParameters$selectedFields <- selectedFields
+				if (is.character(selectedFields) == FALSE) {
+					return (print(paste0("Error: selectedFields must be a string.")))
+				}
+			}
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			contentResponse <- content(res)
+			if (res$status == 200) {
+				attr(contentResponse, "className") <- "piSecurityIdentity"
+			}
+			return (contentResponse)
+		},
+		update = function(webId, securityIdentity) {
+			queryParameters <- list()
+			if (is.null(webId) || webId == "") {
+				return (paste0("Error: required parameter webId was null or undefined"))
+			}
+			if (is.character(webId) == FALSE) {
+				return (print(paste0("Error: webId must be a string.")))
+			}
+			if (is.null(securityIdentity) || securityIdentity == "") {
+				return (paste0("Error: required parameter securityIdentity was null or undefined"))
+			}
+			className <- attr(securityIdentity, "className")
+			if ((is.null(className)) || (className != "piSecurityIdentity")) {
+				return (print(paste0("Error: the class from the parameter securityIdentity should be piSecurityIdentity.")))
+			}
+			localVarPath <- paste(c(self$serviceBase, '/securityidentities/', webId), collapse = "")
+			res <- patchHttpRequest(localVarPath, securityIdentity, self$username, self$password, self$authType, self$debug)
+			return (res)
+		},
+		delete = function(webId) {
+			queryParameters <- list()
+			if (is.null(webId) || webId == "") {
+				return (paste0("Error: required parameter webId was null or undefined"))
+			}
+			if (is.character(webId) == FALSE) {
+				return (print(paste0("Error: webId must be a string.")))
+			}
+			localVarPath <- paste(c(self$serviceBase, '/securityidentities/', webId), collapse = "")
+			res <- deleteHttpRequest(localVarPath, self$username, self$password, self$authType, self$debug)
+			return (res)
+		},
+		getSecurity = function(webId, userIdentity, forceRefresh, selectedFields) {
+			queryParameters <- generateListForQueryString(userIdentity, "userIdentity")
+			if (is.null(webId) || webId == "") {
+				return (paste0("Error: required parameter webId was null or undefined"))
+			}
+			if (is.character(webId) == FALSE) {
+				return (print(paste0("Error: webId must be a string.")))
+			}
+			if (is.null(userIdentity) || userIdentity == "") {
+				return (paste0("Error: required parameter userIdentity was null or undefined"))
+			}
+			if (is.list(userIdentity) == FALSE) {
+				return (print(paste0("Error: userIdentity must be a list.")))
+			}
+			localVarPath <- paste(c(self$serviceBase, '/securityidentities/', webId, '/security'), collapse = "")
+			if (missing(forceRefresh) == FALSE && is.null(forceRefresh) == FALSE && forceRefresh != "") {
+				queryParameters$forceRefresh <- forceRefresh
+				if (is.logical(forceRefresh) == FALSE) {
+					return (print(paste0("Error: forceRefresh must be a boolean.")))
+				}
+			}
+			if (missing(selectedFields) == FALSE && is.null(selectedFields) == FALSE && selectedFields != "") {
+				queryParameters$selectedFields <- selectedFields
+				if (is.character(selectedFields) == FALSE) {
+					return (print(paste0("Error: selectedFields must be a string.")))
+				}
+			}
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			contentResponse <- content(res)
+			if (res$status == 200) {
+				attr(contentResponse, "className") <- "piItemsSecurityRights"
+			}
+			if (res$status == 400) {
+				attr(contentResponse, "className") <- "piErrors"
+			}
+			if (res$status == 401) {
+				attr(contentResponse, "className") <- "piErrors"
+			}
+			if (res$status == 409) {
+				attr(contentResponse, "className") <- "piErrors"
+			}
+			if (res$status == 502) {
+				attr(contentResponse, "className") <- "piErrors"
+			}
+			return (contentResponse)
+		},
+		getSecurityEntries = function(webId, nameFilter, selectedFields) {
+			queryParameters <- list()
+			if (is.null(webId) || webId == "") {
+				return (paste0("Error: required parameter webId was null or undefined"))
+			}
+			if (is.character(webId) == FALSE) {
+				return (print(paste0("Error: webId must be a string.")))
+			}
+			localVarPath <- paste(c(self$serviceBase, '/securityidentities/', webId, '/securityentries'), collapse = "")
+			if (missing(nameFilter) == FALSE && is.null(nameFilter) == FALSE && nameFilter != "") {
+				queryParameters$nameFilter <- nameFilter
+				if (is.character(nameFilter) == FALSE) {
+					return (print(paste0("Error: nameFilter must be a string.")))
+				}
+			}
+			if (missing(selectedFields) == FALSE && is.null(selectedFields) == FALSE && selectedFields != "") {
+				queryParameters$selectedFields <- selectedFields
+				if (is.character(selectedFields) == FALSE) {
+					return (print(paste0("Error: selectedFields must be a string.")))
+				}
+			}
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			contentResponse <- content(res)
+			if (res$status == 200) {
+				attr(contentResponse, "className") <- "piItemsSecurityEntry"
+			}
+			return (contentResponse)
+		},
+		getSecurityEntryByName = function(name, webId, selectedFields) {
+			queryParameters <- list()
+			if (is.null(name) || name == "") {
+				return (paste0("Error: required parameter name was null or undefined"))
+			}
+			if (is.character(name) == FALSE) {
+				return (print(paste0("Error: name must be a string.")))
+			}
+			if (is.null(webId) || webId == "") {
+				return (paste0("Error: required parameter webId was null or undefined"))
+			}
+			if (is.character(webId) == FALSE) {
+				return (print(paste0("Error: webId must be a string.")))
+			}
+			localVarPath <- paste(c(self$serviceBase, '/securityidentities/', webId, '/securityentries/', name), collapse = "")
+			if (missing(selectedFields) == FALSE && is.null(selectedFields) == FALSE && selectedFields != "") {
+				queryParameters$selectedFields <- selectedFields
+				if (is.character(selectedFields) == FALSE) {
+					return (print(paste0("Error: selectedFields must be a string.")))
+				}
+			}
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			contentResponse <- content(res)
+			if (res$status == 200) {
+				attr(contentResponse, "className") <- "piSecurityEntry"
+			}
+			if (res$status == 404) {
+				attr(contentResponse, "className") <- "piErrors"
+			}
+			return (contentResponse)
+		},
+		getSecurityMappings = function(webId, selectedFields) {
+			queryParameters <- list()
+			if (is.null(webId) || webId == "") {
+				return (paste0("Error: required parameter webId was null or undefined"))
+			}
+			if (is.character(webId) == FALSE) {
+				return (print(paste0("Error: webId must be a string.")))
+			}
+			localVarPath <- paste(c(self$serviceBase, '/securityidentities/', webId, '/securitymappings'), collapse = "")
+			if (missing(selectedFields) == FALSE && is.null(selectedFields) == FALSE && selectedFields != "") {
+				queryParameters$selectedFields <- selectedFields
+				if (is.character(selectedFields) == FALSE) {
+					return (print(paste0("Error: selectedFields must be a string.")))
+				}
+			}
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			contentResponse <- content(res)
+			if (res$status == 200) {
+				attr(contentResponse, "className") <- "piItemsSecurityMapping"
+			}
+			return (contentResponse)
+		}
+	)
+)
