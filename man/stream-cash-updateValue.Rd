@@ -6,13 +6,11 @@
 \arguments{
 \item{webId}{The ID of the stream.}
 
-\item{value}{The value to add or update.}
+\item{piTimedValue}{The value to add or update.}
 
 \item{bufferOption}{The desired AFBufferOption. The default is 'BufferIfPossible'.}
 
 \item{updateOption}{The desired AFUpdateOption. The default is 'Replace'. This parameter is ignored if the attribute is a configuration item.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 The value was accepted for a potential buffered update. The response's Location header is a link that can be used to examine the result.

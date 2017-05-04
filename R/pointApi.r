@@ -5,12 +5,14 @@ pointApi <- R6Class("pointApi",
 		authType = NULL,
 		username = NULL,
 		password = NULL,
+		validateSSL = NULL,
 		debug = NULL,
-		initialize = function(baseUrl, authType, username, password, debug) {
+		initialize = function(baseUrl, authType, username, password, validateSSL, debug) {
 			self$serviceBase <- baseUrl
 			self$username <- username
 			self$password <- password
 			self$authType <- authType
+			self$validateSSL <- validateSSL
 			self$debug <- debug
 		},
 		getByPath = function(path, selectedFields) {
@@ -29,7 +31,7 @@ pointApi <- R6Class("pointApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piPoint"
@@ -51,14 +53,14 @@ pointApi <- R6Class("pointApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piPoint"
 			}
 			return (contentResponse)
 		},
-		update = function(webId, pointDTO) {
+		update = function(webId, piPoint) {
 			queryParameters <- list()
 			if (is.null(webId) || webId == "") {
 				return (paste0("Error: required parameter webId was null or undefined"))
@@ -66,15 +68,15 @@ pointApi <- R6Class("pointApi",
 			if (is.character(webId) == FALSE) {
 				return (print(paste0("Error: webId must be a string.")))
 			}
-			if (is.null(pointDTO) || pointDTO == "") {
-				return (paste0("Error: required parameter pointDTO was null or undefined"))
+			if (is.null(piPoint) || piPoint == "") {
+				return (paste0("Error: required parameter piPoint was null or undefined"))
 			}
-			className <- attr(pointDTO, "className")
+			className <- attr(piPoint, "className")
 			if ((is.null(className)) || (className != "piPoint")) {
-				return (print(paste0("Error: the class from the parameter pointDTO should be piPoint.")))
+				return (print(paste0("Error: the class from the parameter piPoint should be piPoint.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/points/', webId), collapse = "")
-			res <- patchHttpRequest(localVarPath, pointDTO, self$username, self$password, self$authType, self$debug)
+			res <- patchHttpRequest(localVarPath, piPoint, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		delete = function(webId) {
@@ -86,7 +88,7 @@ pointApi <- R6Class("pointApi",
 				return (print(paste0("Error: webId must be a string.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/points/', webId), collapse = "")
-			res <- deleteHttpRequest(localVarPath, self$username, self$password, self$authType, self$debug)
+			res <- deleteHttpRequest(localVarPath, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		getAttributes = function(webId, name, nameFilter, selectedFields) {
@@ -116,7 +118,7 @@ pointApi <- R6Class("pointApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsPointAttribute"
@@ -147,7 +149,7 @@ pointApi <- R6Class("pointApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piPointAttribute"
@@ -187,7 +189,7 @@ pointApi <- R6Class("pointApi",
 					return (print(paste0("Error: webId must be a list.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsItemPoint"

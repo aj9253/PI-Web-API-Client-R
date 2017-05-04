@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the server.}
 
-\item{pointDTO}{The new point definition.}
-
-\item{column}{the value of the user label column}
+\item{piPoint}{The new point definition.}
 }
 \value{
 The point was created. The response's Location header is a link to the point.

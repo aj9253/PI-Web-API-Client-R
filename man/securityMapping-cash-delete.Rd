@@ -5,8 +5,6 @@
 \title{Delete a security mapping.}
 \arguments{
 \item{webId}{The ID of the security mapping.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 The security mapping was deleted.

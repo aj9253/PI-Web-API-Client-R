@@ -8,9 +8,7 @@
 
 \item{webId}{The ID of the owner event frame of the annotation to update.}
 
-\item{annotation}{A partial annotation containing the desired changes.}
-
-\item{column}{the value of the user label column}
+\item{piAnnotation}{A partial annotation containing the desired changes.}
 }
 \value{
 The annotation was updated.

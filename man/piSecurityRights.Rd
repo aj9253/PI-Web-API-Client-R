@@ -17,12 +17,12 @@ piSecurityRights(ownerWebId = NULL, securityItem = NULL,
 \item{links}{(object)}
 }
 \value{
-securityRights
+piSecurityRights
 }
 \description{
 Generate an instance of the piSecurityRights PI Web API class
 }
 \examples{
-securityRights(ownerWebId = "E0DqD5loBNH0erqeqJodtALAvGEqktDl4xG-twAFmjx6UAUkVTVFVOSVRUc1VHQVJNQU5V1TcHUkVFTg", securityItem = "Default", userIdentity = "domain\\\\user")
+securityRights <- piSecurityRights(ownerWebId = "E0DqD5loBNH0erqeqJodtALAvGEqktDl4xG-twAFmjx6UAUkVTVFVOSVRUc1VHQVJNQU5V1TcHUkVFTg", securityItem = "Default", userIdentity = "domain\\\\user")
 
 }

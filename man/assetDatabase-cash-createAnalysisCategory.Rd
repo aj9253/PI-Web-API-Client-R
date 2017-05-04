@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the database in which to create the analysis category.}
 
-\item{analysisCategory}{The new analysis category definition.}
-
-\item{column}{the value of the user label column}
+\item{piAnalysisCategory}{The new analysis category definition.}
 }
 \value{
 The analysis category was created. The response's Location header is a link to the analysis category.

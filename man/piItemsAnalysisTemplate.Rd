@@ -12,7 +12,7 @@ piItemsAnalysisTemplate(items = NULL, links = NULL)
 \item{links}{(object)}
 }
 \value{
-itemsAnalysisTemplate
+piItemsAnalysisTemplate
 }
 \description{
 Generate an instance of the piItemsAnalysisTemplate PI Web API class

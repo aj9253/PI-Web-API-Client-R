@@ -59,12 +59,12 @@ piEventFrame(webId = NULL, id = NULL, name = NULL, description = NULL,
 \item{links}{(object)}
 }
 \value{
-eventFrame
+piEventFrame
 }
 \description{
 Generate an instance of the piEventFrame PI Web API class
 }
 \examples{
-eventFrame(webId = "F0DqD5loBNH0ereJqqodtALADqD5loBNH0cAAAAAAAOJeQVKUTVFVOSVRcU1VHQVJNQU5ZVRcFTlRGUkFNRVNbRUYyMDE0MDcyMS0wMDFd", id = "6131900F-2FDD-4DD7-B082-8BB326E134F8", name = "EF20140725-001", description = "Event Frame of Past Week", path = "\\\\\\\\MyServer\\\\NuGreen\\\\EventFrames[EF20140725-001]", templateName = "Template", hasChildren = FALSE, startTime = "18/07/2014 14:45:29", endTime = "25/07/2014 14:45:29", severity = "None", acknowledgedBy = "MyDomain\\\\UserA", acknowledgedDate = "30/07/2014 11:04:23", canBeAcknowledged = FALSE, isAcknowledged = FALSE, isAnnotated = FALSE, isLocked = FALSE, areValuesCaptured = FALSE)
+eventFrame <- piEventFrame(webId = "F0DqD5loBNH0ereJqqodtALADqD5loBNH0cAAAAAAAOJeQVKUTVFVOSVRcU1VHQVJNQU5ZVRcFTlRGUkFNRVNbRUYyMDE0MDcyMS0wMDFd", id = "6131900F-2FDD-4DD7-B082-8BB326E134F8", name = "EF20140725-001", description = "Event Frame of Past Week", path = "\\\\\\\\MyServer\\\\NuGreen\\\\EventFrames[EF20140725-001]", templateName = "Template", hasChildren = FALSE, startTime = "18/07/2014 14:45:29", endTime = "25/07/2014 14:45:29", severity = "None", acknowledgedBy = "MyDomain\\\\UserA", acknowledgedDate = "30/07/2014 11:04:23", canBeAcknowledged = FALSE, isAcknowledged = FALSE, isAnnotated = FALSE, isLocked = FALSE, areValuesCaptured = FALSE)
 
 }

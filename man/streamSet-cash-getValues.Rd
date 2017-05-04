@@ -23,8 +23,6 @@
 \item{time}{An AF time string, which is used as the time context to get stream values if it is provided. By default, it is not specified, and the default time context of the AF object will be used.}
 
 \item{timeZone}{The time zone in which the time string will be interpreted. This parameter will be ignored if a time zone is specified in the time string. If no time zone is specified in either places, the PI Web API server time zone will be used.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 Summary values of the streams that meet the specified conditions.

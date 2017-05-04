@@ -15,12 +15,12 @@ piSystemStatus(upTimeInMinutes = NULL, state = NULL,
 \item{cacheInstances}{(integer)}
 }
 \value{
-systemStatus
+piSystemStatus
 }
 \description{
 Generate an instance of the piSystemStatus PI Web API class
 }
 \examples{
-systemStatus(state = "Running", cacheInstances = 0)
+systemStatus <- piSystemStatus(state = "Running", cacheInstances = 0)
 
 }

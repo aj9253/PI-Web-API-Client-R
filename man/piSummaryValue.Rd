@@ -12,12 +12,12 @@ piSummaryValue(type = NULL, value = NULL)
 \item{value}{()}
 }
 \value{
-summaryValue
+piSummaryValue
 }
 \description{
 Generate an instance of the piSummaryValue PI Web API class
 }
 \examples{
-summaryValue(type = "Total")
+summaryValue <- piSummaryValue(type = "Total")
 
 }

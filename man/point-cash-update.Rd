@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the point.}
 
-\item{pointDTO}{A partial point containing the desired changes.}
-
-\item{column}{the value of the user label column}
+\item{piPoint}{A partial point containing the desired changes.}
 }
 \value{
 The point was updated.

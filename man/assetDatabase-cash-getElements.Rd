@@ -27,8 +27,6 @@
 \item{startIndex}{The starting index (zero based) of the items to be returned. The default is 0.}
 
 \item{templateName}{Specify that returned elements must have this template or a template derived from this template. The default is no template filter.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 A list of elements matching the specified conditions.

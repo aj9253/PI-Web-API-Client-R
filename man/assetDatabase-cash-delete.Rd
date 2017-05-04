@@ -5,8 +5,6 @@
 \title{Delete an asset database.}
 \arguments{
 \item{webId}{The ID of the database.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 The database was deleted.

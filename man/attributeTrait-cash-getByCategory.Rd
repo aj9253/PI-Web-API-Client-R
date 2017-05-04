@@ -7,8 +7,6 @@
 \item{category}{The category of the attribute traits. Multiple categories may be specified with multiple instances of the parameter. If the parameter is not specified, or if its value is "all", then all attribute traits of all categories will be returned.}
 
 \item{selectedFields}{List of fields to be returned in the response, separated by semicolons (;). If this parameter is not specified, all available fields will be returned.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 A list of attribute traits.

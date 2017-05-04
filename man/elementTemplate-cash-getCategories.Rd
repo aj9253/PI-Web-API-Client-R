@@ -9,8 +9,6 @@
 \item{selectedFields}{List of fields to be returned in the response, separated by semicolons (;). If this parameter is not specified, all available fields will be returned.}
 
 \item{showInherited}{Specifies if the result should include categories inherited from base element templates. The default is 'false'.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 A list of categories.

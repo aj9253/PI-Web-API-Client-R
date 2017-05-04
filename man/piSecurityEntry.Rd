@@ -19,12 +19,12 @@ piSecurityEntry(name = NULL, securityIdentityName = NULL,
 \item{links}{(object)}
 }
 \value{
-securityEntry
+piSecurityEntry
 }
 \description{
 Generate an instance of the piSecurityEntry PI Web API class
 }
 \examples{
-securityEntry(name = "domain\\\\user1", securityIdentityName = "domain\\\\user1")
+securityEntry <- piSecurityEntry(name = "domain\\\\user1", securityIdentityName = "domain\\\\user1")
 
 }

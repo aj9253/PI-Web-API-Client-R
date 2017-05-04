@@ -12,7 +12,7 @@ piItemsPointAttribute(items = NULL, links = NULL)
 \item{links}{(object)}
 }
 \value{
-itemsPointAttribute
+piItemsPointAttribute
 }
 \description{
 Generate an instance of the piItemsPointAttribute PI Web API class

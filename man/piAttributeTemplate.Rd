@@ -52,12 +52,12 @@ piAttributeTemplate(webId = NULL, id = NULL, name = NULL,
 \item{links}{(object)}
 }
 \value{
-attributeTemplate
+piAttributeTemplate
 }
 \description{
 Generate an instance of the piAttributeTemplate PI Web API class
 }
 \examples{
-attributeTemplate(webId = "t0EDqD5loBNH0erqeqJodtALACd8tc2JnkUWeQ2KsKq30iA1W9lw3cYRkCQ5TRZsrkLQAUkVTVFVORVScU1VHQVJNQU5cRUxFTUVOVFRFTVBMQVRFUTQt1EFOVF18UExBTlRUUlVOQ0FURUROQU1F", id = "F82605BC-3A9C-4091-A57E-C0D9341BAD1A", name = "Water(2008)", description = "2008 Water Use", path = "\\\\\\\\MyServer\\\\NuGreen\\\\ElementTemplates[Boiler]|Water(2008)", type = "Int32", typeQualifier = "", defaultUnitsName = "liters", dataReferencePlugIn = "Table Lookup", configString = "SELECT [Water Use] FROM [Energy Use 2008] WHERE [Asset ID] = '\%Element\%'", isConfigurationItem = FALSE, isExcluded = FALSE, isHidden = FALSE, isManualDataEntry = FALSE, hasChildren = FALSE, traitName = "LimitLoLo")
+attributeTemplate <- piAttributeTemplate(webId = "t0EDqD5loBNH0erqeqJodtALACd8tc2JnkUWeQ2KsKq30iA1W9lw3cYRkCQ5TRZsrkLQAUkVTVFVORVScU1VHQVJNQU5cRUxFTUVOVFRFTVBMQVRFUTQt1EFOVF18UExBTlRUUlVOQ0FURUROQU1F", id = "F82605BC-3A9C-4091-A57E-C0D9341BAD1A", name = "Water(2008)", description = "2008 Water Use", path = "\\\\\\\\MyServer\\\\NuGreen\\\\ElementTemplates[Boiler]|Water(2008)", type = "Int32", typeQualifier = "", defaultUnitsName = "liters", dataReferencePlugIn = "Table Lookup", configString = "SELECT [Water Use] FROM [Energy Use 2008] WHERE [Asset ID] = '\%Element\%'", isConfigurationItem = FALSE, isExcluded = FALSE, isHidden = FALSE, isManualDataEntry = FALSE, hasChildren = FALSE, traitName = "LimitLoLo")
 
 }

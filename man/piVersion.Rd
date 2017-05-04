@@ -14,12 +14,12 @@ piVersion(fullVersion = NULL, majorMinorRevision = NULL, build = NULL)
 \item{build}{(string)}
 }
 \value{
-version
+piVersion
 }
 \description{
 Generate an instance of the piVersion PI Web API class
 }
 \examples{
-version(fullVersion = "1.8.0.201", majorMinorRevision = "1.8.0", build = "201")
+version <- piVersion(fullVersion = "1.8.0.201", majorMinorRevision = "1.8.0", build = "201")
 
 }

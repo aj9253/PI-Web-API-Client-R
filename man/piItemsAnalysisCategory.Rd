@@ -12,7 +12,7 @@ piItemsAnalysisCategory(items = NULL, links = NULL)
 \item{links}{(object)}
 }
 \value{
-itemsAnalysisCategory
+piItemsAnalysisCategory
 }
 \description{
 Generate an instance of the piItemsAnalysisCategory PI Web API class

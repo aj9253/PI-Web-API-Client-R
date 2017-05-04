@@ -7,8 +7,6 @@
 \item{webId}{The ID of a stream.  Multiple streams may be specified with multiple instances of the parameter.}
 
 \item{includeInitialValues}{Specified if the channel should send a message with the current values of all the streams after the connection is opened. The default is 'false'.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 Switches to the Web Socket protocol.

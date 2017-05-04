@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the analysis category to update.}
 
-\item{category}{A partial analysis category containing the desired changes.}
-
-\item{column}{the value of the user label column}
+\item{piAnalysisCategory}{A partial analysis category containing the desired changes.}
 }
 \value{
 The analysis category was updated.

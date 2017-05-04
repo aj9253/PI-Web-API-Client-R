@@ -51,12 +51,12 @@ piAttribute(webId = NULL, id = NULL, name = NULL, description = NULL,
 \item{links}{(object)}
 }
 \value{
-attribute
+piAttribute
 }
 \description{
 Generate an instance of the piAttribute PI Web API class
 }
 \examples{
-attribute(webId = "A0EDqD5loBNH0erqeqJodtALAUvtkqIDl4xG-twAFmjx6AA79jxF7HiqFwpsgMBxwgWmgUkVTVFVOSVRcU1VNJQVHQU5cTlVHUkVZTlxIT1VTVE9f0FBMQU5UQ0lUWQ", id = "512B6616-CE39-4F70-9048-8C6A025FB592", name = "Water", description = "2008 Water Use", path = "\\\\\\\\MyServer\\\\NuGreen\\\\NuGreen\\\\Houston\\\\Cracking Process\\\\Equipment\\\\B-210|Water(2008)", type = "Int32", typeQualifier = "", defaultUnitsName = "liters", dataReferencePlugIn = "Table Lookup", configString = "SELECT [Water Use] FROM [Energy Use 2008] WHERE [Asset ID] = '\%Element\%'", isConfigurationItem = FALSE, isExcluded = FALSE, isHidden = FALSE, isManualDataEntry = FALSE, hasChildren = FALSE, step = FALSE, traitName = "LimitLoLo")
+attribute <- piAttribute(webId = "A0EDqD5loBNH0erqeqJodtALAUvtkqIDl4xG-twAFmjx6AA79jxF7HiqFwpsgMBxwgWmgUkVTVFVOSVRcU1VNJQVHQU5cTlVHUkVZTlxIT1VTVE9f0FBMQU5UQ0lUWQ", id = "512B6616-CE39-4F70-9048-8C6A025FB592", name = "Water", description = "2008 Water Use", path = "\\\\\\\\MyServer\\\\NuGreen\\\\NuGreen\\\\Houston\\\\Cracking Process\\\\Equipment\\\\B-210|Water(2008)", type = "Int32", typeQualifier = "", defaultUnitsName = "liters", dataReferencePlugIn = "Table Lookup", configString = "SELECT [Water Use] FROM [Energy Use 2008] WHERE [Asset ID] = '\%Element\%'", isConfigurationItem = FALSE, isExcluded = FALSE, isHidden = FALSE, isManualDataEntry = FALSE, hasChildren = FALSE, step = FALSE, traitName = "LimitLoLo")
 
 }

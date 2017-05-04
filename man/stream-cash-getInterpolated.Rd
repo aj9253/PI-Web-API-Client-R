@@ -21,8 +21,6 @@
 \item{startTime}{An optional start time. The default is '*-1d' for element attributes and points. For event frame attributes, the default is the event frame's start time, or '*-1d' if that is not set.}
 
 \item{timeZone}{The time zone in which the time string will be interpreted. This parameter will be ignored if a time zone is specified in the time string. If no time zone is specified in either places, the PI Web API server time zone will be used.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 The values that meet the specified conditions.

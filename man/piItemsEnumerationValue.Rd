@@ -12,7 +12,7 @@ piItemsEnumerationValue(items = NULL, links = NULL)
 \item{links}{(object)}
 }
 \value{
-itemsEnumerationValue
+piItemsEnumerationValue
 }
 \description{
 Generate an instance of the piItemsEnumerationValue PI Web API class

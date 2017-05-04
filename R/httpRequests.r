@@ -1,55 +1,55 @@
-deleteHttpRequest <- function(url, username, password, authType, debug) {
+deleteHttpRequest <- function(url, username, password, authType, validateSSL, debug) {
     if (debug == TRUE) {
-        res <- DELETE(url, authenticate(user = username, password = password, type = authType), verbose())
+        res <- DELETE(url, authenticate(user = username, password = password, type = authType), config = httr::config(ssl_verifypeer = validateSSL), verbose())
         return(res)
     }
     else {
-        res <- DELETE(url, authenticate(user = username, password = password, type = authType))
+        res <- DELETE(url, authenticate(user = username, password = password, type = authType), config = httr::config(ssl_verifypeer = validateSSL))
         return(res)
     }
 }
 
 
-getHttpRequest <- function(url, queryParameters, username, password, authType, debug) {
+getHttpRequest <- function(url, queryParameters, username, password, authType, validateSSL, debug) {
     if (debug == TRUE) {
-        res <- GET(url, query = queryParameters, authenticate(user = username, password = password, type = authType), verbose())
+        res <- GET(url, query = queryParameters, authenticate(user = username, password = password, type = authType), config = httr::config(ssl_verifypeer = validateSSL), verbose())
         return(res)
     }
     else {
-        res <- GET(url, query = queryParameters, authenticate(user = username, password = password, type = authType))
+        res <- GET(url, query = queryParameters, authenticate(user = username, password = password, type = authType), config = httr::config(ssl_verifypeer = validateSSL))
         return(res)
     }
 }
 
-postHttpRequest <- function(url, bodyRequest, username, password, authType, debug) {
+postHttpRequest <- function(url, bodyRequest, username, password, authType, validateSSL, debug) {
     if (debug == TRUE) {
-        res <- POST(url, authenticate(user = username, password = password, type = authType), body = bodyRequest, encode = "json", verbose())
+        res <- POST(url, authenticate(user = username, password = password, type = authType), config = httr::config(ssl_verifypeer = validateSSL), body = bodyRequest, encode = "json", verbose())
         return(res)
     }
     else {
-        res <- POST(url, authenticate(user = username, password = password, type = authType), body = bodyRequest, encode = "json")
+        res <- POST(url, authenticate(user = username, password = password, type = authType), config = httr::config(ssl_verifypeer = validateSSL), body = bodyRequest, encode = "json")
         return(res)
     }
 }
 
-patchHttpRequest <- function(url, bodyRequest, username, password, authType, debug) {
+patchHttpRequest <- function(url, bodyRequest, username, password, authType, validateSSL, debug) {
     if (debug == TRUE) {
-        res <- PATCH(url, authenticate(user = username, password = password, type = authType), body = bodyRequest, encode = "json", verbose())
+        res <- PATCH(url, authenticate(user = username, password = password, type = authType), config = httr::config(ssl_verifypeer = validateSSL), body = bodyRequest, encode = "json", verbose())
         return(res)
     }
     else {
-        res <- PATCH(url, authenticate(user = username, password = password, type = authType), body = bodyRequest, encode = "json")
+        res <- PATCH(url, authenticate(user = username, password = password, type = authType), config = httr::config(ssl_verifypeer = validateSSL), body = bodyRequest, encode = "json")
         return(res)
     }
 }
 
-putHttpRequest <- function(url, queryParameters, bodyRequest, username, password, authType, debug) {
+putHttpRequest <- function(url, queryParameters, bodyRequest, username, password, authType, validateSSL, debug) {
     if (debug == TRUE) {
-        res <- PUT(url, query = queryParameters, authenticate(user = username, password = password, type = authType), body = bodyRequest, encode = "json")
+        res <- PUT(url, query = queryParameters, authenticate(user = username, password = password, type = authType), config = httr::config(ssl_verifypeer = validateSSL), body = bodyRequest, encode = "json", verbose())
         return(res)
     }
     else {
-        res <- PUT(url, query = queryParameters, authenticate(user = username, password = password, type = authType), body = bodyRequest, encode = "json", verbose())
+        res <- PUT(url, query = queryParameters, authenticate(user = username, password = password, type = authType), config = httr::config(ssl_verifypeer = validateSSL), body = bodyRequest, encode = "json")
         return(res)
     }
 }

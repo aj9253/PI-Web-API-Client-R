@@ -12,7 +12,7 @@ piValue(value = NULL, exception = NULL)
 \item{exception}{()}
 }
 \value{
-value
+piValue
 }
 \description{
 Generate an instance of the piValue PI Web API class

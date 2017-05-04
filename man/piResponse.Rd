@@ -14,12 +14,12 @@ piResponse(status = NULL, headers = NULL, content = NULL)
 \item{content}{(object)}
 }
 \value{
-response
+piResponse
 }
 \description{
 Generate an instance of the piResponse PI Web API class
 }
 \examples{
-response(status = 200)
+response <- piResponse(status = 200)
 
 }

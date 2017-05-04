@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the database in which to create the enumeration set.}
 
-\item{enumerationSet}{The new enumeration set definition.}
-
-\item{column}{the value of the user label column}
+\item{piEnumerationSet}{The new enumeration set definition.}
 }
 \value{
 The enumeration set was created. The response's Location header is a link to the created enumeration set.

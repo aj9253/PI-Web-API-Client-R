@@ -42,12 +42,12 @@ piAnalysisRule(webId = NULL, id = NULL, name = NULL, description = NULL,
 \item{links}{(object)}
 }
 \value{
-analysisRule
+piAnalysisRule
 }
 \description{
 Generate an instance of the piAnalysisRule PI Web API class
 }
 \examples{
-analysisRule(webId = "l0xDqD5loBNH0erqeqJodtALA_GQlORUv5hGA2AAVXYRDBA_GQlORUv5hGA2AAVXYRDBAUkVTVFVOSVRcNUIxQzg5REEtQTQ2Ri00NkVDLTlFMUYtRjI0NEI4OTQyRkVDXDkwQ0U0NURGLTYyODktNDgyMi04MTg2LTM3RTlBNEVENDA4RFxBTkFMWVNFU1s2QkZENjMzMS1FQTUwLTQ4OTctODcyMi0zRjc5RDFDMDNFMjNdXEFOQUxZU0lTUlVMRQ", id = "392564fc-2f15-11e6-80d8-00155d844304", name = "PerformanceEquation", description = "Runs a performance equation.", path = "\\\\\\\\MYSERVER\\\\MyDatabase\\\\MyElement\\\\Analyses[MyAnalysis]\\\\AnalysisRule", configString = "a := TagVal('sinusoid'); b := Pow(a, 2); c := a + b;", displayString = "a := TagVal('sinusoid'); b := Pow(a, 2); c := a + b;", editorType = "OSIsoft.AF.Analysis.AnalysisRule.PEAnalysisRuleEditor", hasChildren = FALSE, isConfigured = FALSE, isInitializing = FALSE, plugInName = "PerformanceEquation", variableMapping = "b||Attribute1;c||Attribute2")
+analysisRule <- piAnalysisRule(webId = "l0xDqD5loBNH0erqeqJodtALA_GQlORUv5hGA2AAVXYRDBA_GQlORUv5hGA2AAVXYRDBAUkVTVFVOSVRcNUIxQzg5REEtQTQ2Ri00NkVDLTlFMUYtRjI0NEI4OTQyRkVDXDkwQ0U0NURGLTYyODktNDgyMi04MTg2LTM3RTlBNEVENDA4RFxBTkFMWVNFU1s2QkZENjMzMS1FQTUwLTQ4OTctODcyMi0zRjc5RDFDMDNFMjNdXEFOQUxZU0lTUlVMRQ", id = "392564fc-2f15-11e6-80d8-00155d844304", name = "PerformanceEquation", description = "Runs a performance equation.", path = "\\\\\\\\MYSERVER\\\\MyDatabase\\\\MyElement\\\\Analyses[MyAnalysis]\\\\AnalysisRule", configString = "a := TagVal('sinusoid'); b := Pow(a, 2); c := a + b;", displayString = "a := TagVal('sinusoid'); b := Pow(a, 2); c := a + b;", editorType = "OSIsoft.AF.Analysis.AnalysisRule.PEAnalysisRuleEditor", hasChildren = FALSE, isConfigured = FALSE, isInitializing = FALSE, plugInName = "PerformanceEquation", variableMapping = "b||Attribute1;c||Attribute2")
 
 }

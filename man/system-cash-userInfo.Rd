@@ -3,9 +3,6 @@
 \name{system$userInfo}
 \alias{system$userInfo}
 \title{Get information about the Windows identity used to fulfill the request. This depends on the service's authentication method and the credentials passed by the client. The impersonation level of the Windows identity is included.}
-\arguments{
-\item{column}{the value of the user label column}
-}
 \value{
 Information about the current user.
 }

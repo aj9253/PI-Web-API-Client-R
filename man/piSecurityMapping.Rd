@@ -26,12 +26,12 @@ piSecurityMapping(webId = NULL, id = NULL, name = NULL,
 \item{links}{(object)}
 }
 \value{
-securityMapping
+piSecurityMapping
 }
 \description{
 Generate an instance of the piSecurityMapping PI Web API class
 }
 \examples{
-securityMapping(webId = "M07v5To0Ux7Eus2sjMsdqq_AUEhMQUZTMDU", id = "a353feee-3145-4bec-acda-c8ccb1daaafc", name = "MySecurityMapping", description = "", path = "\\\\\\\\RESTUNIT\\\\SecurityMappings[MySecurityMapping]", account = "domain\\\\user", securityIdentityWebId = "I07v5To0Ux7Eus2sjMsdqq_AUEhMQUZTMDU")
+securityMapping <- piSecurityMapping(webId = "M07v5To0Ux7Eus2sjMsdqq_AUEhMQUZTMDU", id = "a353feee-3145-4bec-acda-c8ccb1daaafc", name = "MySecurityMapping", description = "", path = "\\\\\\\\RESTUNIT\\\\SecurityMappings[MySecurityMapping]", account = "domain\\\\user", securityIdentityWebId = "I07v5To0Ux7Eus2sjMsdqq_AUEhMQUZTMDU")
 
 }

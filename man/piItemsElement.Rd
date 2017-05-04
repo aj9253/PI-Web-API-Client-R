@@ -12,7 +12,7 @@ piItemsElement(items = NULL, links = NULL)
 \item{links}{(object)}
 }
 \value{
-itemsElement
+piItemsElement
 }
 \description{
 Generate an instance of the piItemsElement PI Web API class

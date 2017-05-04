@@ -19,12 +19,12 @@ piUserInfo(identityType = NULL, name = NULL, isAuthenticated = NULL,
 \item{impersonationLevel}{(string)}
 }
 \value{
-userInfo
+piUserInfo
 }
 \description{
 Generate an instance of the piUserInfo PI Web API class
 }
 \examples{
-userInfo(identityType = "WindowsIdentity", name = "MyDomain\\\\Username", isAuthenticated = FALSE, sID = "S-1-5-21-2083424470-1893017325-1469799231-71366", impersonationLevel = "None")
+userInfo <- piUserInfo(identityType = "WindowsIdentity", name = "MyDomain\\\\Username", isAuthenticated = FALSE, sID = "S-1-5-21-2083424470-1893017325-1469799231-71366", impersonationLevel = "None")
 
 }

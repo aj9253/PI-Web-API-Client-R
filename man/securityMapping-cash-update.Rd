@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the security mapping.}
 
-\item{securityMapping}{A partial security mapping containing the desired changes.}
-
-\item{column}{the value of the user label column}
+\item{piSecurityMapping}{A partial security mapping containing the desired changes.}
 }
 \value{
 The security mapping was updated.

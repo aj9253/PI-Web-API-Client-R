@@ -12,7 +12,7 @@ piItemsSecurityMapping(items = NULL, links = NULL)
 \item{links}{(object)}
 }
 \value{
-itemsSecurityMapping
+piItemsSecurityMapping
 }
 \description{
 Generate an instance of the piItemsSecurityMapping PI Web API class

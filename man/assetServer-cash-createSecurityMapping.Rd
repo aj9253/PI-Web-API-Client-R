@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the asset server on which to create the security mapping.}
 
-\item{securityMapping}{The new security mapping definition.}
-
-\item{column}{the value of the user label column}
+\item{piSecurityMapping}{The new security mapping definition.}
 }
 \value{
 The security mapping was created. The response's Location header is a link to the security mapping.

@@ -5,12 +5,14 @@ analysisRuleApi <- R6Class("analysisRuleApi",
 		authType = NULL,
 		username = NULL,
 		password = NULL,
+		validateSSL = NULL,
 		debug = NULL,
-		initialize = function(baseUrl, authType, username, password, debug) {
+		initialize = function(baseUrl, authType, username, password, validateSSL, debug) {
 			self$serviceBase <- baseUrl
 			self$username <- username
 			self$password <- password
 			self$authType <- authType
+			self$validateSSL <- validateSSL
 			self$debug <- debug
 		},
 		getByPath = function(path, selectedFields) {
@@ -29,7 +31,7 @@ analysisRuleApi <- R6Class("analysisRuleApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piAnalysisRule"
@@ -51,14 +53,14 @@ analysisRuleApi <- R6Class("analysisRuleApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piAnalysisRule"
 			}
 			return (contentResponse)
 		},
-		update = function(webId, analysisRule) {
+		update = function(webId, piAnalysisRule) {
 			queryParameters <- list()
 			if (is.null(webId) || webId == "") {
 				return (paste0("Error: required parameter webId was null or undefined"))
@@ -66,15 +68,15 @@ analysisRuleApi <- R6Class("analysisRuleApi",
 			if (is.character(webId) == FALSE) {
 				return (print(paste0("Error: webId must be a string.")))
 			}
-			if (is.null(analysisRule) || analysisRule == "") {
-				return (paste0("Error: required parameter analysisRule was null or undefined"))
+			if (is.null(piAnalysisRule) || piAnalysisRule == "") {
+				return (paste0("Error: required parameter piAnalysisRule was null or undefined"))
 			}
-			className <- attr(analysisRule, "className")
+			className <- attr(piAnalysisRule, "className")
 			if ((is.null(className)) || (className != "piAnalysisRule")) {
-				return (print(paste0("Error: the class from the parameter analysisRule should be piAnalysisRule.")))
+				return (print(paste0("Error: the class from the parameter piAnalysisRule should be piAnalysisRule.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/analysisrules/', webId), collapse = "")
-			res <- patchHttpRequest(localVarPath, analysisRule, self$username, self$password, self$authType, self$debug)
+			res <- patchHttpRequest(localVarPath, piAnalysisRule, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		delete = function(webId) {
@@ -86,7 +88,7 @@ analysisRuleApi <- R6Class("analysisRuleApi",
 				return (print(paste0("Error: webId must be a string.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/analysisrules/', webId), collapse = "")
-			res <- deleteHttpRequest(localVarPath, self$username, self$password, self$authType, self$debug)
+			res <- deleteHttpRequest(localVarPath, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		getAnalysisRules = function(webId, maxCount, nameFilter, searchFullHierarchy, selectedFields, sortField, sortOrder, startIndex) {
@@ -140,14 +142,14 @@ analysisRuleApi <- R6Class("analysisRuleApi",
 					return (print(paste0("Error: startIndex must be an integer.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsAnalysisRule"
 			}
 			return (contentResponse)
 		},
-		createAnalysisRule = function(webId, analysisRule) {
+		createAnalysisRule = function(webId, piAnalysisRule) {
 			queryParameters <- list()
 			if (is.null(webId) || webId == "") {
 				return (paste0("Error: required parameter webId was null or undefined"))
@@ -155,15 +157,15 @@ analysisRuleApi <- R6Class("analysisRuleApi",
 			if (is.character(webId) == FALSE) {
 				return (print(paste0("Error: webId must be a string.")))
 			}
-			if (is.null(analysisRule) || analysisRule == "") {
-				return (paste0("Error: required parameter analysisRule was null or undefined"))
+			if (is.null(piAnalysisRule) || piAnalysisRule == "") {
+				return (paste0("Error: required parameter piAnalysisRule was null or undefined"))
 			}
-			className <- attr(analysisRule, "className")
+			className <- attr(piAnalysisRule, "className")
 			if ((is.null(className)) || (className != "piAnalysisRule")) {
-				return (print(paste0("Error: the class from the parameter analysisRule should be piAnalysisRule.")))
+				return (print(paste0("Error: the class from the parameter piAnalysisRule should be piAnalysisRule.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/analysisrules/', webId, '/analysisrules'), collapse = "")
-			res <- postHttpRequest(localVarPath, analysisRule, self$username, self$password, self$authType, self$debug)
+			res <- postHttpRequest(localVarPath, piAnalysisRule, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		}
 	)

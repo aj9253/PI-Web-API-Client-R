@@ -5,12 +5,14 @@ calculationApi <- R6Class("calculationApi",
 		authType = NULL,
 		username = NULL,
 		password = NULL,
+		validateSSL = NULL,
 		debug = NULL,
-		initialize = function(baseUrl, authType, username, password, debug) {
+		initialize = function(baseUrl, authType, username, password, validateSSL, debug) {
 			self$serviceBase <- baseUrl
 			self$username <- username
 			self$password <- password
 			self$authType <- authType
+			self$validateSSL <- validateSSL
 			self$debug <- debug
 		},
 		getAtIntervals = function(endTime, expression, sampleInterval, selectedFields, startTime, webId) {
@@ -52,7 +54,7 @@ calculationApi <- R6Class("calculationApi",
 					return (print(paste0("Error: webId must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piTimedValues"
@@ -95,7 +97,7 @@ calculationApi <- R6Class("calculationApi",
 					return (print(paste0("Error: webId must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piTimedValues"
@@ -174,7 +176,7 @@ calculationApi <- R6Class("calculationApi",
 					return (print(paste0("Error: webId must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsSummaryValue"
@@ -217,7 +219,7 @@ calculationApi <- R6Class("calculationApi",
 					return (print(paste0("Error: webId must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piTimedValues"

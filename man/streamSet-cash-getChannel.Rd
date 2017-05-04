@@ -19,8 +19,6 @@
 \item{showHidden}{Specified if the search should include attributes with the Hidden property set. The default is 'false'.}
 
 \item{templateName}{Specify that included attributes must be members of this template. The default is no template filter.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 Switches to the Web Socket protocol.

@@ -13,8 +13,6 @@
 \item{selectedFields}{List of fields to be returned in the response, separated by semicolons (;). If this parameter is not specified, all available fields will be returned.}
 
 \item{webId}{The ID of a point. Multiple points may be specified with multiple instances of the parameter.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 The requested points

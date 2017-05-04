@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the analysis template to update.}
 
-\item{template}{A partial analysis template containing the desired changes.}
-
-\item{column}{the value of the user label column}
+\item{piAnalysisTemplate}{A partial analysis template containing the desired changes.}
 }
 \value{
 The analysis template was updated.

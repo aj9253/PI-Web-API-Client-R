@@ -61,12 +61,12 @@ piAnalysis(webId = NULL, id = NULL, name = NULL, description = NULL,
 \item{links}{(object)}
 }
 \value{
-analysis
+piAnalysis
 }
 \description{
 Generate an instance of the piAnalysis PI Web API class
 }
 \examples{
-analysis(webId = "x0DqD5loBNH0erqeqJodtALAGgF3cBcv5hGA2AAVXYRDBAUkVTVFVOSVRcNkQwQjc2MDItOTYxMi00OTRBLUE4MEQtODQyRDMyOTZENTYxXDkyMjFGMDhGLUZCMTUtNDZFMy1BQzYzLURCNDkzRDhGNkJFQlxBTkFMWVNFU1swRUFFNDU3My0wMDY0LTQxMUUtODQwRC0wOEMwOTlEM0VGNTNd", id = "7077011a-2f17-11e6-80d8-00155d844304", name = "MyAnalysis", description = "", path = "\\\\\\\\MYSERVER\\\\MyDatabase\\\\MyElement\\\\Analyses[MyAnalysis]", analysisRulePlugInName = "PerformanceEquation", autoCreated = FALSE, groupId = 0, hasNotification = FALSE, hasTarget = FALSE, hasTemplate = FALSE, isConfigured = FALSE, isTimeRuleDefinedByTemplate = FALSE, maximumQueueSize = 0, outputTime = "", priority = "High", publishResults = FALSE, status = "Disabled", targetWebId = "E0DqD5loBNH0erqeqJodtALAFwF3cBcv5hGA2AAVXYRDBAUkVTVFVOSVRcNkQwQjc2MDItOTYxMi00OTRBLUE4MEQtODQyRDMyOTZENTYxXDkyMjFGMDhGLUZCMTUtNDZFMy1BQzYzLURCNDkzRDhGNkJFQg", templateName = "", timeRulePlugInName = "Periodic")
+analysis <- piAnalysis(webId = "x0DqD5loBNH0erqeqJodtALAGgF3cBcv5hGA2AAVXYRDBAUkVTVFVOSVRcNkQwQjc2MDItOTYxMi00OTRBLUE4MEQtODQyRDMyOTZENTYxXDkyMjFGMDhGLUZCMTUtNDZFMy1BQzYzLURCNDkzRDhGNkJFQlxBTkFMWVNFU1swRUFFNDU3My0wMDY0LTQxMUUtODQwRC0wOEMwOTlEM0VGNTNd", id = "7077011a-2f17-11e6-80d8-00155d844304", name = "MyAnalysis", description = "", path = "\\\\\\\\MYSERVER\\\\MyDatabase\\\\MyElement\\\\Analyses[MyAnalysis]", analysisRulePlugInName = "PerformanceEquation", autoCreated = FALSE, groupId = 0, hasNotification = FALSE, hasTarget = FALSE, hasTemplate = FALSE, isConfigured = FALSE, isTimeRuleDefinedByTemplate = FALSE, maximumQueueSize = 0, outputTime = "", priority = "High", publishResults = FALSE, status = "Disabled", targetWebId = "E0DqD5loBNH0erqeqJodtALAFwF3cBcv5hGA2AAVXYRDBAUkVTVFVOSVRcNkQwQjc2MDItOTYxMi00OTRBLUE4MEQtODQyRDMyOTZENTYxXDkyMjFGMDhGLUZCMTUtNDZFMy1BQzYzLURCNDkzRDhGNkJFQg", templateName = "", timeRulePlugInName = "Periodic")
 
 }

@@ -5,12 +5,14 @@ enumerationValueApi <- R6Class("enumerationValueApi",
 		authType = NULL,
 		username = NULL,
 		password = NULL,
+		validateSSL = NULL,
 		debug = NULL,
-		initialize = function(baseUrl, authType, username, password, debug) {
+		initialize = function(baseUrl, authType, username, password, validateSSL, debug) {
 			self$serviceBase <- baseUrl
 			self$username <- username
 			self$password <- password
 			self$authType <- authType
+			self$validateSSL <- validateSSL
 			self$debug <- debug
 		},
 		getByPath = function(path, selectedFields) {
@@ -29,7 +31,7 @@ enumerationValueApi <- R6Class("enumerationValueApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piEnumerationValue"
@@ -51,14 +53,14 @@ enumerationValueApi <- R6Class("enumerationValueApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piEnumerationValue"
 			}
 			return (contentResponse)
 		},
-		updateEnumerationValue = function(webId, enumerationValue) {
+		updateEnumerationValue = function(webId, piEnumerationValue) {
 			queryParameters <- list()
 			if (is.null(webId) || webId == "") {
 				return (paste0("Error: required parameter webId was null or undefined"))
@@ -66,15 +68,15 @@ enumerationValueApi <- R6Class("enumerationValueApi",
 			if (is.character(webId) == FALSE) {
 				return (print(paste0("Error: webId must be a string.")))
 			}
-			if (is.null(enumerationValue) || enumerationValue == "") {
-				return (paste0("Error: required parameter enumerationValue was null or undefined"))
+			if (is.null(piEnumerationValue) || piEnumerationValue == "") {
+				return (paste0("Error: required parameter piEnumerationValue was null or undefined"))
 			}
-			className <- attr(enumerationValue, "className")
+			className <- attr(piEnumerationValue, "className")
 			if ((is.null(className)) || (className != "piEnumerationValue")) {
-				return (print(paste0("Error: the class from the parameter enumerationValue should be piEnumerationValue.")))
+				return (print(paste0("Error: the class from the parameter piEnumerationValue should be piEnumerationValue.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/enumerationvalues/', webId), collapse = "")
-			res <- patchHttpRequest(localVarPath, enumerationValue, self$username, self$password, self$authType, self$debug)
+			res <- patchHttpRequest(localVarPath, piEnumerationValue, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		deleteEnumerationValue = function(webId) {
@@ -86,7 +88,7 @@ enumerationValueApi <- R6Class("enumerationValueApi",
 				return (print(paste0("Error: webId must be a string.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/enumerationvalues/', webId), collapse = "")
-			res <- deleteHttpRequest(localVarPath, self$username, self$password, self$authType, self$debug)
+			res <- deleteHttpRequest(localVarPath, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		}
 	)

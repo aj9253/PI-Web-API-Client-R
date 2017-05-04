@@ -11,8 +11,6 @@
 \item{securityItem}{The security item of the desired security entries information to be returned. If the parameter is not specified, security entries of the 'Default' security item will be returned.}
 
 \item{selectedFields}{List of fields to be returned in the response, separated by semicolons (;). If this parameter is not specified, all available fields will be returned.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 The security entry matching the specified condition.

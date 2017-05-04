@@ -5,8 +5,6 @@
 \title{Delete an attribute template.}
 \arguments{
 \item{webId}{The ID of the attribute template.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 The attribute template was deleted.

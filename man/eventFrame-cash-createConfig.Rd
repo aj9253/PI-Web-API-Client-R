@@ -7,8 +7,6 @@
 \item{webId}{The ID of the event frame.}
 
 \item{includeChildElements}{If true, includes the child event frames of the specified event frame.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 Process log of operations. Operations completed with no errors.

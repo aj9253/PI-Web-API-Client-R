@@ -12,7 +12,7 @@ piItemsTimeRulePlugIn(items = NULL, links = NULL)
 \item{links}{(object)}
 }
 \value{
-itemsTimeRulePlugIn
+piItemsTimeRulePlugIn
 }
 \description{
 Generate an instance of the piItemsTimeRulePlugIn PI Web API class

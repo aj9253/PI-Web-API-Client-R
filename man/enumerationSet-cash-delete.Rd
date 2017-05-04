@@ -5,8 +5,6 @@
 \title{Delete an enumeration set.}
 \arguments{
 \item{webId}{The ID of the enumeration set to delete.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 The enumeration set was deleted.

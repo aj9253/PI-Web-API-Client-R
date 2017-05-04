@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the element template to update.}
 
-\item{template}{A partial element template containing the desired changes.}
-
-\item{column}{the value of the user label column}
+\item{piElementTemplate}{A partial element template containing the desired changes.}
 }
 \value{
 The element template was updated.

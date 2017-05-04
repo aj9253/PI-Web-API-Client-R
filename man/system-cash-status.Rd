@@ -3,9 +3,6 @@
 \name{system$status}
 \alias{system$status}
 \title{Get the system uptime, the system state and the number of cache instances for this PI System Web API instance.}
-\arguments{
-\item{column}{the value of the user label column}
-}
 \value{
 System Status.
 }

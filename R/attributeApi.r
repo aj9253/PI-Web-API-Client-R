@@ -5,12 +5,14 @@ attributeApi <- R6Class("attributeApi",
 		authType = NULL,
 		username = NULL,
 		password = NULL,
+		validateSSL = NULL,
 		debug = NULL,
-		initialize = function(baseUrl, authType, username, password, debug) {
+		initialize = function(baseUrl, authType, username, password, validateSSL, debug) {
 			self$serviceBase <- baseUrl
 			self$username <- username
 			self$password <- password
 			self$authType <- authType
+			self$validateSSL <- validateSSL
 			self$debug <- debug
 		},
 		getByPath = function(path, selectedFields) {
@@ -29,7 +31,7 @@ attributeApi <- R6Class("attributeApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piAttribute"
@@ -51,14 +53,14 @@ attributeApi <- R6Class("attributeApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piAttribute"
 			}
 			return (contentResponse)
 		},
-		update = function(webId, attribute) {
+		update = function(webId, piAttribute) {
 			queryParameters <- list()
 			if (is.null(webId) || webId == "") {
 				return (paste0("Error: required parameter webId was null or undefined"))
@@ -66,15 +68,15 @@ attributeApi <- R6Class("attributeApi",
 			if (is.character(webId) == FALSE) {
 				return (print(paste0("Error: webId must be a string.")))
 			}
-			if (is.null(attribute) || attribute == "") {
-				return (paste0("Error: required parameter attribute was null or undefined"))
+			if (is.null(piAttribute) || piAttribute == "") {
+				return (paste0("Error: required parameter piAttribute was null or undefined"))
 			}
-			className <- attr(attribute, "className")
+			className <- attr(piAttribute, "className")
 			if ((is.null(className)) || (className != "piAttribute")) {
-				return (print(paste0("Error: the class from the parameter attribute should be piAttribute.")))
+				return (print(paste0("Error: the class from the parameter piAttribute should be piAttribute.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/attributes/', webId), collapse = "")
-			res <- patchHttpRequest(localVarPath, attribute, self$username, self$password, self$authType, self$debug)
+			res <- patchHttpRequest(localVarPath, piAttribute, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		delete = function(webId) {
@@ -86,7 +88,7 @@ attributeApi <- R6Class("attributeApi",
 				return (print(paste0("Error: webId must be a string.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/attributes/', webId), collapse = "")
-			res <- deleteHttpRequest(localVarPath, self$username, self$password, self$authType, self$debug)
+			res <- deleteHttpRequest(localVarPath, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		getAttributes = function(webId, categoryName, maxCount, nameFilter, searchFullHierarchy, selectedFields, showExcluded, showHidden, sortField, sortOrder, startIndex, templateName, valueType) {
@@ -170,14 +172,14 @@ attributeApi <- R6Class("attributeApi",
 					return (print(paste0("Error: valueType must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsAttribute"
 			}
 			return (contentResponse)
 		},
-		createAttribute = function(webId, attribute) {
+		createAttribute = function(webId, piAttribute) {
 			queryParameters <- list()
 			if (is.null(webId) || webId == "") {
 				return (paste0("Error: required parameter webId was null or undefined"))
@@ -185,15 +187,15 @@ attributeApi <- R6Class("attributeApi",
 			if (is.character(webId) == FALSE) {
 				return (print(paste0("Error: webId must be a string.")))
 			}
-			if (is.null(attribute) || attribute == "") {
-				return (paste0("Error: required parameter attribute was null or undefined"))
+			if (is.null(piAttribute) || piAttribute == "") {
+				return (paste0("Error: required parameter piAttribute was null or undefined"))
 			}
-			className <- attr(attribute, "className")
+			className <- attr(piAttribute, "className")
 			if ((is.null(className)) || (className != "piAttribute")) {
-				return (print(paste0("Error: the class from the parameter attribute should be piAttribute.")))
+				return (print(paste0("Error: the class from the parameter piAttribute should be piAttribute.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/attributes/', webId, '/attributes'), collapse = "")
-			res <- postHttpRequest(localVarPath, attribute, self$username, self$password, self$authType, self$debug)
+			res <- postHttpRequest(localVarPath, piAttribute, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		getCategories = function(webId, selectedFields) {
@@ -211,7 +213,7 @@ attributeApi <- R6Class("attributeApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsAttributeCategory"
@@ -227,7 +229,7 @@ attributeApi <- R6Class("attributeApi",
 				return (print(paste0("Error: webId must be a string.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/attributes/', webId, '/config'), collapse = "")
-			res <- postHttpRequest(localVarPath, , self$username, self$password, self$authType, self$debug)
+			res <- postHttpRequest(localVarPath, , self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		getValue = function(webId, selectedFields) {
@@ -245,14 +247,14 @@ attributeApi <- R6Class("attributeApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piTimedValue"
 			}
 			return (contentResponse)
 		},
-		setValue = function(webId, value) {
+		setValue = function(webId, piTimedValue) {
 			queryParameters <- list()
 			if (is.null(webId) || webId == "") {
 				return (paste0("Error: required parameter webId was null or undefined"))
@@ -260,15 +262,15 @@ attributeApi <- R6Class("attributeApi",
 			if (is.character(webId) == FALSE) {
 				return (print(paste0("Error: webId must be a string.")))
 			}
-			if (is.null(value) || value == "") {
-				return (paste0("Error: required parameter value was null or undefined"))
+			if (is.null(piTimedValue) || piTimedValue == "") {
+				return (paste0("Error: required parameter piTimedValue was null or undefined"))
 			}
-			className <- attr(value, "className")
+			className <- attr(piTimedValue, "className")
 			if ((is.null(className)) || (className != "piTimedValue")) {
-				return (print(paste0("Error: the class from the parameter value should be piTimedValue.")))
+				return (print(paste0("Error: the class from the parameter piTimedValue should be piTimedValue.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/attributes/', webId, '/value'), collapse = "")
-			res <- putHttpRequest(localVarPath, value, self$username, self$password, self$authType, self$debug)
+			res <- putHttpRequest(localVarPath, queryParameters, piTimedValue, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		getMultiple = function(asParallel, includeMode, path, selectedFields, webId) {
@@ -304,7 +306,7 @@ attributeApi <- R6Class("attributeApi",
 					return (print(paste0("Error: webId must be a list.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsItemAttribute"

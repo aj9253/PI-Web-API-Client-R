@@ -12,7 +12,7 @@ piItemsAnnotation(items = NULL, links = NULL)
 \item{links}{(object)}
 }
 \value{
-itemsAnnotation
+piItemsAnnotation
 }
 \description{
 Generate an instance of the piItemsAnnotation PI Web API class

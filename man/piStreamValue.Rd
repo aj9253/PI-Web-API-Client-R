@@ -19,12 +19,12 @@ piStreamValue(webId = NULL, name = NULL, path = NULL, value = NULL,
 \item{links}{(object)}
 }
 \value{
-streamValue
+piStreamValue
 }
 \description{
 Generate an instance of the piStreamValue PI Web API class
 }
 \examples{
-streamValue(webId = "A0EDqD5loBNH0erqeqJodtALAUvtkqIDl4xG-twAFmjx6AA79jxF7HiqFwpsgMBxwgWmgUkVTVFVOSVRcU1VNJQVHQU5cTlVHUkVZTlxIT1VTVE9f0FBMQU5UQ0lUWQ", name = "Water", path = "\\\\\\\\MYSERVER\\\\MyDatabase\\\\MyElement|Water")
+streamValue <- piStreamValue(webId = "A0EDqD5loBNH0erqeqJodtALAUvtkqIDl4xG-twAFmjx6AA79jxF7HiqFwpsgMBxwgWmgUkVTVFVOSVRcU1VNJQVHQU5cTlVHUkVZTlxIT1VTVE9f0FBMQU5UQ0lUWQ", name = "Water", path = "\\\\\\\\MYSERVER\\\\MyDatabase\\\\MyElement|Water")
 
 }

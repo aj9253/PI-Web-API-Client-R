@@ -5,8 +5,6 @@
 \title{Delete an Analysis Rule.}
 \arguments{
 \item{webId}{The ID of the Analysis Rule.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 The Analysis Rule was deleted.

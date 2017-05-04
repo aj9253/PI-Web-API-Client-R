@@ -23,12 +23,12 @@ piRequest(method = NULL, resource = NULL, requestTemplate = NULL,
 \item{parentIds}{(array)}
 }
 \value{
-request
+piRequest
 }
 \description{
 Generate an instance of the piRequest PI Web API class
 }
 \examples{
-request(method = "GET", resource = "", content = "")
+request <- piRequest(method = "GET", resource = "", content = "")
 
 }

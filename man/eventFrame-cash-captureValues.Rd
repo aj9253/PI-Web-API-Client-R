@@ -5,8 +5,6 @@
 \title{Calls the EventFrame's CaptureValues method.}
 \arguments{
 \item{webId}{The ID of the event frame.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 The event frame attribute's values were captured.

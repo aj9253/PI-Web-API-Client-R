@@ -12,7 +12,7 @@ piItemsSubstatus(items = NULL, links = NULL)
 \item{links}{(object)}
 }
 \value{
-itemsSubstatus
+piItemsSubstatus
 }
 \description{
 Generate an instance of the piItemsSubstatus PI Web API class

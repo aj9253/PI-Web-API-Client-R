@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the table on which to update the data.}
 
-\item{data}{The new table data definition.}
-
-\item{column}{the value of the user label column}
+\item{piTableData}{The new table data definition.}
 }
 \value{
 The table data was updated.

@@ -5,12 +5,14 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 		authType = NULL,
 		username = NULL,
 		password = NULL,
+		validateSSL = NULL,
 		debug = NULL,
-		initialize = function(baseUrl, authType, username, password, debug) {
+		initialize = function(baseUrl, authType, username, password, validateSSL, debug) {
 			self$serviceBase <- baseUrl
 			self$username <- username
 			self$password <- password
 			self$authType <- authType
+			self$validateSSL <- validateSSL
 			self$debug <- debug
 		},
 		getByPath = function(path, selectedFields) {
@@ -29,7 +31,7 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piAssetDatabase"
@@ -51,14 +53,14 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piAssetDatabase"
 			}
 			return (contentResponse)
 		},
-		update = function(webId, database) {
+		update = function(webId, piAssetDatabase) {
 			queryParameters <- list()
 			if (is.null(webId) || webId == "") {
 				return (paste0("Error: required parameter webId was null or undefined"))
@@ -66,15 +68,15 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 			if (is.character(webId) == FALSE) {
 				return (print(paste0("Error: webId must be a string.")))
 			}
-			if (is.null(database) || database == "") {
-				return (paste0("Error: required parameter database was null or undefined"))
+			if (is.null(piAssetDatabase) || piAssetDatabase == "") {
+				return (paste0("Error: required parameter piAssetDatabase was null or undefined"))
 			}
-			className <- attr(database, "className")
+			className <- attr(piAssetDatabase, "className")
 			if ((is.null(className)) || (className != "piAssetDatabase")) {
-				return (print(paste0("Error: the class from the parameter database should be piAssetDatabase.")))
+				return (print(paste0("Error: the class from the parameter piAssetDatabase should be piAssetDatabase.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/assetdatabases/', webId), collapse = "")
-			res <- patchHttpRequest(localVarPath, database, self$username, self$password, self$authType, self$debug)
+			res <- patchHttpRequest(localVarPath, piAssetDatabase, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		delete = function(webId) {
@@ -86,7 +88,7 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 				return (print(paste0("Error: webId must be a string.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/assetdatabases/', webId), collapse = "")
-			res <- deleteHttpRequest(localVarPath, self$username, self$password, self$authType, self$debug)
+			res <- deleteHttpRequest(localVarPath, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		findAnalyses = function(webId, field, maxCount, query, selectedFields, sortField, sortOrder, startIndex) {
@@ -140,7 +142,7 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 					return (print(paste0("Error: startIndex must be an integer.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsAnalysis"
@@ -162,14 +164,14 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsAnalysisCategory"
 			}
 			return (contentResponse)
 		},
-		createAnalysisCategory = function(webId, analysisCategory) {
+		createAnalysisCategory = function(webId, piAnalysisCategory) {
 			queryParameters <- list()
 			if (is.null(webId) || webId == "") {
 				return (paste0("Error: required parameter webId was null or undefined"))
@@ -177,15 +179,15 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 			if (is.character(webId) == FALSE) {
 				return (print(paste0("Error: webId must be a string.")))
 			}
-			if (is.null(analysisCategory) || analysisCategory == "") {
-				return (paste0("Error: required parameter analysisCategory was null or undefined"))
+			if (is.null(piAnalysisCategory) || piAnalysisCategory == "") {
+				return (paste0("Error: required parameter piAnalysisCategory was null or undefined"))
 			}
-			className <- attr(analysisCategory, "className")
+			className <- attr(piAnalysisCategory, "className")
 			if ((is.null(className)) || (className != "piAnalysisCategory")) {
-				return (print(paste0("Error: the class from the parameter analysisCategory should be piAnalysisCategory.")))
+				return (print(paste0("Error: the class from the parameter piAnalysisCategory should be piAnalysisCategory.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/assetdatabases/', webId, '/analysiscategories'), collapse = "")
-			res <- postHttpRequest(localVarPath, analysisCategory, self$username, self$password, self$authType, self$debug)
+			res <- postHttpRequest(localVarPath, piAnalysisCategory, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		getAnalysisTemplates = function(webId, field, maxCount, query, selectedFields, sortField, sortOrder) {
@@ -233,14 +235,14 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 					return (print(paste0("Error: sortOrder must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsAnalysisTemplate"
 			}
 			return (contentResponse)
 		},
-		createAnalysisTemplate = function(webId, template) {
+		createAnalysisTemplate = function(webId, piAnalysisTemplate) {
 			queryParameters <- list()
 			if (is.null(webId) || webId == "") {
 				return (paste0("Error: required parameter webId was null or undefined"))
@@ -248,15 +250,15 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 			if (is.character(webId) == FALSE) {
 				return (print(paste0("Error: webId must be a string.")))
 			}
-			if (is.null(template) || template == "") {
-				return (paste0("Error: required parameter template was null or undefined"))
+			if (is.null(piAnalysisTemplate) || piAnalysisTemplate == "") {
+				return (paste0("Error: required parameter piAnalysisTemplate was null or undefined"))
 			}
-			className <- attr(template, "className")
+			className <- attr(piAnalysisTemplate, "className")
 			if ((is.null(className)) || (className != "piAnalysisTemplate")) {
-				return (print(paste0("Error: the class from the parameter template should be piAnalysisTemplate.")))
+				return (print(paste0("Error: the class from the parameter piAnalysisTemplate should be piAnalysisTemplate.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/assetdatabases/', webId, '/analysistemplates'), collapse = "")
-			res <- postHttpRequest(localVarPath, template, self$username, self$password, self$authType, self$debug)
+			res <- postHttpRequest(localVarPath, piAnalysisTemplate, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		getAttributeCategories = function(webId, selectedFields) {
@@ -274,14 +276,14 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsAttributeCategory"
 			}
 			return (contentResponse)
 		},
-		createAttributeCategory = function(webId, attributeCategory) {
+		createAttributeCategory = function(webId, piAttributeCategory) {
 			queryParameters <- list()
 			if (is.null(webId) || webId == "") {
 				return (paste0("Error: required parameter webId was null or undefined"))
@@ -289,15 +291,15 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 			if (is.character(webId) == FALSE) {
 				return (print(paste0("Error: webId must be a string.")))
 			}
-			if (is.null(attributeCategory) || attributeCategory == "") {
-				return (paste0("Error: required parameter attributeCategory was null or undefined"))
+			if (is.null(piAttributeCategory) || piAttributeCategory == "") {
+				return (paste0("Error: required parameter piAttributeCategory was null or undefined"))
 			}
-			className <- attr(attributeCategory, "className")
+			className <- attr(piAttributeCategory, "className")
 			if ((is.null(className)) || (className != "piAttributeCategory")) {
-				return (print(paste0("Error: the class from the parameter attributeCategory should be piAttributeCategory.")))
+				return (print(paste0("Error: the class from the parameter piAttributeCategory should be piAttributeCategory.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/assetdatabases/', webId, '/attributecategories'), collapse = "")
-			res <- postHttpRequest(localVarPath, attributeCategory, self$username, self$password, self$authType, self$debug)
+			res <- postHttpRequest(localVarPath, piAttributeCategory, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		findElementAttributes = function(webId, attributeCategory, attributeDescriptionFilter, attributeNameFilter, attributeType, elementCategory, elementDescriptionFilter, elementNameFilter, elementTemplate, elementType, maxCount, searchFullHierarchy, selectedFields, sortField, sortOrder, startIndex) {
@@ -399,7 +401,7 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 					return (print(paste0("Error: startIndex must be an integer.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsAttribute"
@@ -421,14 +423,14 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsElementCategory"
 			}
 			return (contentResponse)
 		},
-		createElementCategory = function(webId, elementCategory) {
+		createElementCategory = function(webId, piElementCategory) {
 			queryParameters <- list()
 			if (is.null(webId) || webId == "") {
 				return (paste0("Error: required parameter webId was null or undefined"))
@@ -436,15 +438,15 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 			if (is.character(webId) == FALSE) {
 				return (print(paste0("Error: webId must be a string.")))
 			}
-			if (is.null(elementCategory) || elementCategory == "") {
-				return (paste0("Error: required parameter elementCategory was null or undefined"))
+			if (is.null(piElementCategory) || piElementCategory == "") {
+				return (paste0("Error: required parameter piElementCategory was null or undefined"))
 			}
-			className <- attr(elementCategory, "className")
+			className <- attr(piElementCategory, "className")
 			if ((is.null(className)) || (className != "piElementCategory")) {
-				return (print(paste0("Error: the class from the parameter elementCategory should be piElementCategory.")))
+				return (print(paste0("Error: the class from the parameter piElementCategory should be piElementCategory.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/assetdatabases/', webId, '/elementcategories'), collapse = "")
-			res <- postHttpRequest(localVarPath, elementCategory, self$username, self$password, self$authType, self$debug)
+			res <- postHttpRequest(localVarPath, piElementCategory, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		getElements = function(webId, categoryName, descriptionFilter, elementType, maxCount, nameFilter, searchFullHierarchy, selectedFields, sortField, sortOrder, startIndex, templateName) {
@@ -522,14 +524,14 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 					return (print(paste0("Error: templateName must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsElement"
 			}
 			return (contentResponse)
 		},
-		createElement = function(webId, element) {
+		createElement = function(webId, piElement) {
 			queryParameters <- list()
 			if (is.null(webId) || webId == "") {
 				return (paste0("Error: required parameter webId was null or undefined"))
@@ -537,15 +539,15 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 			if (is.character(webId) == FALSE) {
 				return (print(paste0("Error: webId must be a string.")))
 			}
-			if (is.null(element) || element == "") {
-				return (paste0("Error: required parameter element was null or undefined"))
+			if (is.null(piElement) || piElement == "") {
+				return (paste0("Error: required parameter piElement was null or undefined"))
 			}
-			className <- attr(element, "className")
+			className <- attr(piElement, "className")
 			if ((is.null(className)) || (className != "piElement")) {
-				return (print(paste0("Error: the class from the parameter element should be piElement.")))
+				return (print(paste0("Error: the class from the parameter piElement should be piElement.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/assetdatabases/', webId, '/elements'), collapse = "")
-			res <- postHttpRequest(localVarPath, element, self$username, self$password, self$authType, self$debug)
+			res <- postHttpRequest(localVarPath, piElement, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		getElementTemplates = function(webId, field, maxCount, query, selectedFields, sortField, sortOrder) {
@@ -593,14 +595,14 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 					return (print(paste0("Error: sortOrder must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsElementTemplate"
 			}
 			return (contentResponse)
 		},
-		createElementTemplate = function(webId, template) {
+		createElementTemplate = function(webId, piElementTemplate) {
 			queryParameters <- list()
 			if (is.null(webId) || webId == "") {
 				return (paste0("Error: required parameter webId was null or undefined"))
@@ -608,15 +610,15 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 			if (is.character(webId) == FALSE) {
 				return (print(paste0("Error: webId must be a string.")))
 			}
-			if (is.null(template) || template == "") {
-				return (paste0("Error: required parameter template was null or undefined"))
+			if (is.null(piElementTemplate) || piElementTemplate == "") {
+				return (paste0("Error: required parameter piElementTemplate was null or undefined"))
 			}
-			className <- attr(template, "className")
+			className <- attr(piElementTemplate, "className")
 			if ((is.null(className)) || (className != "piElementTemplate")) {
-				return (print(paste0("Error: the class from the parameter template should be piElementTemplate.")))
+				return (print(paste0("Error: the class from the parameter piElementTemplate should be piElementTemplate.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/assetdatabases/', webId, '/elementtemplates'), collapse = "")
-			res <- postHttpRequest(localVarPath, template, self$username, self$password, self$authType, self$debug)
+			res <- postHttpRequest(localVarPath, piElementTemplate, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		getEnumerationSets = function(webId, selectedFields) {
@@ -634,14 +636,14 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsEnumerationSet"
 			}
 			return (contentResponse)
 		},
-		createEnumerationSet = function(webId, enumerationSet) {
+		createEnumerationSet = function(webId, piEnumerationSet) {
 			queryParameters <- list()
 			if (is.null(webId) || webId == "") {
 				return (paste0("Error: required parameter webId was null or undefined"))
@@ -649,15 +651,15 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 			if (is.character(webId) == FALSE) {
 				return (print(paste0("Error: webId must be a string.")))
 			}
-			if (is.null(enumerationSet) || enumerationSet == "") {
-				return (paste0("Error: required parameter enumerationSet was null or undefined"))
+			if (is.null(piEnumerationSet) || piEnumerationSet == "") {
+				return (paste0("Error: required parameter piEnumerationSet was null or undefined"))
 			}
-			className <- attr(enumerationSet, "className")
+			className <- attr(piEnumerationSet, "className")
 			if ((is.null(className)) || (className != "piEnumerationSet")) {
-				return (print(paste0("Error: the class from the parameter enumerationSet should be piEnumerationSet.")))
+				return (print(paste0("Error: the class from the parameter piEnumerationSet should be piEnumerationSet.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/assetdatabases/', webId, '/enumerationsets'), collapse = "")
-			res <- postHttpRequest(localVarPath, enumerationSet, self$username, self$password, self$authType, self$debug)
+			res <- postHttpRequest(localVarPath, piEnumerationSet, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		findEventFrameAttributes = function(webId, attributeCategory, attributeDescriptionFilter, attributeNameFilter, attributeType, endTime, eventFrameCategory, eventFrameDescriptionFilter, eventFrameNameFilter, eventFrameTemplate, maxCount, referencedElementNameFilter, searchFullHierarchy, searchMode, selectedFields, sortField, sortOrder, startIndex, startTime) {
@@ -777,7 +779,7 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 					return (print(paste0("Error: startTime must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsAttribute"
@@ -895,14 +897,14 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 					return (print(paste0("Error: templateName must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsEventFrame"
 			}
 			return (contentResponse)
 		},
-		createEventFrame = function(webId, eventFrame) {
+		createEventFrame = function(webId, piEventFrame) {
 			queryParameters <- list()
 			if (is.null(webId) || webId == "") {
 				return (paste0("Error: required parameter webId was null or undefined"))
@@ -910,15 +912,15 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 			if (is.character(webId) == FALSE) {
 				return (print(paste0("Error: webId must be a string.")))
 			}
-			if (is.null(eventFrame) || eventFrame == "") {
-				return (paste0("Error: required parameter eventFrame was null or undefined"))
+			if (is.null(piEventFrame) || piEventFrame == "") {
+				return (paste0("Error: required parameter piEventFrame was null or undefined"))
 			}
-			className <- attr(eventFrame, "className")
+			className <- attr(piEventFrame, "className")
 			if ((is.null(className)) || (className != "piEventFrame")) {
-				return (print(paste0("Error: the class from the parameter eventFrame should be piEventFrame.")))
+				return (print(paste0("Error: the class from the parameter piEventFrame should be piEventFrame.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/assetdatabases/', webId, '/eventframes'), collapse = "")
-			res <- postHttpRequest(localVarPath, eventFrame, self$username, self$password, self$authType, self$debug)
+			res <- postHttpRequest(localVarPath, piEventFrame, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		export = function(webId, endTime, exportMode, startTime) {
@@ -948,7 +950,7 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 					return (print(paste0("Error: startTime must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 			}
@@ -969,7 +971,7 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 					return (print(paste0("Error: importMode must be a list.")))
 				}
 			}
-			res <- postHttpRequest(localVarPath, , self$username, self$password, self$authType, self$debug)
+			res <- postHttpRequest(localVarPath, , self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		getReferencedElements = function(webId, categoryName, descriptionFilter, elementType, maxCount, nameFilter, selectedFields, sortField, sortOrder, startIndex, templateName) {
@@ -1041,7 +1043,7 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 					return (print(paste0("Error: templateName must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsElement"
@@ -1069,7 +1071,7 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 					return (print(paste0("Error: referenceType must be a string.")))
 				}
 			}
-			res <- postHttpRequest(localVarPath, , self$username, self$password, self$authType, self$debug)
+			res <- postHttpRequest(localVarPath, , self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		removeReferencedElement = function(webId, referencedElementWebId) {
@@ -1087,7 +1089,7 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 				return (print(paste0("Error: referencedElementWebId must be a list.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/assetdatabases/', webId, '/referencedelements'), collapse = "")
-			res <- deleteHttpRequest(localVarPath, self$username, self$password, self$authType, self$debug)
+			res <- deleteHttpRequest(localVarPath, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		getSecurity = function(webId, securityItem, userIdentity, forceRefresh, selectedFields) {
@@ -1123,7 +1125,7 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsSecurityRights"
@@ -1169,14 +1171,14 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsSecurityEntry"
 			}
 			return (contentResponse)
 		},
-		createSecurityEntry = function(webId, securityEntry, applyToChildren, securityItem) {
+		createSecurityEntry = function(webId, piSecurityEntry, applyToChildren, securityItem) {
 			queryParameters <- list()
 			if (is.null(webId) || webId == "") {
 				return (paste0("Error: required parameter webId was null or undefined"))
@@ -1184,12 +1186,12 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 			if (is.character(webId) == FALSE) {
 				return (print(paste0("Error: webId must be a string.")))
 			}
-			if (is.null(securityEntry) || securityEntry == "") {
-				return (paste0("Error: required parameter securityEntry was null or undefined"))
+			if (is.null(piSecurityEntry) || piSecurityEntry == "") {
+				return (paste0("Error: required parameter piSecurityEntry was null or undefined"))
 			}
-			className <- attr(securityEntry, "className")
+			className <- attr(piSecurityEntry, "className")
 			if ((is.null(className)) || (className != "piSecurityEntry")) {
-				return (print(paste0("Error: the class from the parameter securityEntry should be piSecurityEntry.")))
+				return (print(paste0("Error: the class from the parameter piSecurityEntry should be piSecurityEntry.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/assetdatabases/', webId, '/securityentries'), collapse = "")
 			if (missing(applyToChildren) == FALSE && is.null(applyToChildren) == FALSE && applyToChildren != "") {
@@ -1204,7 +1206,7 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 					return (print(paste0("Error: securityItem must be a string.")))
 				}
 			}
-			res <- postHttpRequest(localVarPath, securityEntry, self$username, self$password, self$authType, self$debug)
+			res <- postHttpRequest(localVarPath, piSecurityEntry, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		getSecurityEntryByName = function(name, webId, securityItem, selectedFields) {
@@ -1234,7 +1236,7 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piSecurityEntry"
@@ -1244,7 +1246,7 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 			}
 			return (contentResponse)
 		},
-		updateSecurityEntry = function(name, webId, securityEntry, applyToChildren, securityItem) {
+		updateSecurityEntry = function(name, webId, piSecurityEntry, applyToChildren, securityItem) {
 			queryParameters <- list()
 			if (is.null(name) || name == "") {
 				return (paste0("Error: required parameter name was null or undefined"))
@@ -1258,12 +1260,12 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 			if (is.character(webId) == FALSE) {
 				return (print(paste0("Error: webId must be a string.")))
 			}
-			if (is.null(securityEntry) || securityEntry == "") {
-				return (paste0("Error: required parameter securityEntry was null or undefined"))
+			if (is.null(piSecurityEntry) || piSecurityEntry == "") {
+				return (paste0("Error: required parameter piSecurityEntry was null or undefined"))
 			}
-			className <- attr(securityEntry, "className")
+			className <- attr(piSecurityEntry, "className")
 			if ((is.null(className)) || (className != "piSecurityEntry")) {
-				return (print(paste0("Error: the class from the parameter securityEntry should be piSecurityEntry.")))
+				return (print(paste0("Error: the class from the parameter piSecurityEntry should be piSecurityEntry.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/assetdatabases/', webId, '/securityentries/', name), collapse = "")
 			if (missing(applyToChildren) == FALSE && is.null(applyToChildren) == FALSE && applyToChildren != "") {
@@ -1278,7 +1280,7 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 					return (print(paste0("Error: securityItem must be a string.")))
 				}
 			}
-			res <- putHttpRequest(localVarPath, securityEntry, self$username, self$password, self$authType, self$debug)
+			res <- putHttpRequest(localVarPath, queryParameters, piSecurityEntry, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		deleteSecurityEntry = function(name, webId, applyToChildren, securityItem) {
@@ -1308,7 +1310,7 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 					return (print(paste0("Error: securityItem must be a string.")))
 				}
 			}
-			res <- deleteHttpRequest(localVarPath, self$username, self$password, self$authType, self$debug)
+			res <- deleteHttpRequest(localVarPath, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		getTableCategories = function(webId, selectedFields) {
@@ -1326,14 +1328,14 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsTableCategory"
 			}
 			return (contentResponse)
 		},
-		createTableCategory = function(webId, tableCategory) {
+		createTableCategory = function(webId, piTableCategory) {
 			queryParameters <- list()
 			if (is.null(webId) || webId == "") {
 				return (paste0("Error: required parameter webId was null or undefined"))
@@ -1341,15 +1343,15 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 			if (is.character(webId) == FALSE) {
 				return (print(paste0("Error: webId must be a string.")))
 			}
-			if (is.null(tableCategory) || tableCategory == "") {
-				return (paste0("Error: required parameter tableCategory was null or undefined"))
+			if (is.null(piTableCategory) || piTableCategory == "") {
+				return (paste0("Error: required parameter piTableCategory was null or undefined"))
 			}
-			className <- attr(tableCategory, "className")
+			className <- attr(piTableCategory, "className")
 			if ((is.null(className)) || (className != "piTableCategory")) {
-				return (print(paste0("Error: the class from the parameter tableCategory should be piTableCategory.")))
+				return (print(paste0("Error: the class from the parameter piTableCategory should be piTableCategory.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/assetdatabases/', webId, '/tablecategories'), collapse = "")
-			res <- postHttpRequest(localVarPath, tableCategory, self$username, self$password, self$authType, self$debug)
+			res <- postHttpRequest(localVarPath, piTableCategory, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		getTables = function(webId, selectedFields) {
@@ -1367,14 +1369,14 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsTable"
 			}
 			return (contentResponse)
 		},
-		createTable = function(webId, table) {
+		createTable = function(webId, piTable) {
 			queryParameters <- list()
 			if (is.null(webId) || webId == "") {
 				return (paste0("Error: required parameter webId was null or undefined"))
@@ -1382,15 +1384,15 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 			if (is.character(webId) == FALSE) {
 				return (print(paste0("Error: webId must be a string.")))
 			}
-			if (is.null(table) || table == "") {
-				return (paste0("Error: required parameter table was null or undefined"))
+			if (is.null(piTable) || piTable == "") {
+				return (paste0("Error: required parameter piTable was null or undefined"))
 			}
-			className <- attr(table, "className")
+			className <- attr(piTable, "className")
 			if ((is.null(className)) || (className != "piTable")) {
-				return (print(paste0("Error: the class from the parameter table should be piTable.")))
+				return (print(paste0("Error: the class from the parameter piTable should be piTable.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/assetdatabases/', webId, '/tables'), collapse = "")
-			res <- postHttpRequest(localVarPath, table, self$username, self$password, self$authType, self$debug)
+			res <- postHttpRequest(localVarPath, piTable, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		}
 	)

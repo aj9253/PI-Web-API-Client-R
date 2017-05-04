@@ -9,8 +9,6 @@
 \item{desiredUnits}{The name or abbreviation of the desired units of measure for the returned value, as found in the UOM database associated with the attribute. If not specified for an attribute, the attribute's default unit of measure is used. If the underlying stream is a point, this value may not be specified, as points are not associated with a unit of measure.}
 
 \item{selectedFields}{List of fields to be returned in the response, separated by semicolons (;). If this parameter is not specified, all available fields will be returned.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 The value at the specified time value.

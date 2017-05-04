@@ -12,7 +12,7 @@ piItemsAttributeTemplate(items = NULL, links = NULL)
 \item{links}{(object)}
 }
 \value{
-itemsAttributeTemplate
+piItemsAttributeTemplate
 }
 \description{
 Generate an instance of the piItemsAttributeTemplate PI Web API class

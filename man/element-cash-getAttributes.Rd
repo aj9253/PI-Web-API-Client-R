@@ -29,8 +29,6 @@
 \item{templateName}{Specify that returned attributes must be members of this template. The default is no template filter.}
 
 \item{valueType}{Specify that returned attributes' value type must be the given value type. The default is no value type filter.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 A list of child attributes.

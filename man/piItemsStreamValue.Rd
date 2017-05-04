@@ -12,7 +12,7 @@ piItemsStreamValue(items = NULL, links = NULL)
 \item{links}{(object)}
 }
 \value{
-itemsStreamValue
+piItemsStreamValue
 }
 \description{
 Generate an instance of the piItemsStreamValue PI Web API class

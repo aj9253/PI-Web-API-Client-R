@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the asset server on which to create the security identity.}
 
-\item{securityIdentity}{The new security identity definition.}
-
-\item{column}{the value of the user label column}
+\item{piSecurityIdentity}{The new security identity definition.}
 }
 \value{
 The security identity was created. The response's Location header is a link to the security identity.

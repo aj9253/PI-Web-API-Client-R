@@ -11,8 +11,6 @@
 \item{bufferOption}{The desired AFBufferOption. The default is 'BufferIfPossible'.}
 
 \item{updateOption}{The desired AFUpdateOption. The default is 'Replace'.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 All updates executed successfully.

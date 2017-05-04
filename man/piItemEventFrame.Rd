@@ -17,12 +17,12 @@ piItemEventFrame(identifier = NULL, identifierType = NULL, object = NULL,
 \item{exception}{()}
 }
 \value{
-itemEventFrame
+piItemEventFrame
 }
 \description{
 Generate an instance of the piItemEventFrame PI Web API class
 }
 \examples{
-itemEventFrame(identifier = "\\\\\\\\server\\\\path", identifierType = "Path")
+itemEventFrame <- piItemEventFrame(identifier = "\\\\\\\\server\\\\path", identifierType = "Path")
 
 }

@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the table category to update.}
 
-\item{tableCategory}{A partial table category containing the desired changes.}
-
-\item{column}{the value of the user label column}
+\item{piTableCategory}{A partial table category containing the desired changes.}
 }
 \value{
 The table category was updated.

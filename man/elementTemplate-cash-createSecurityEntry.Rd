@@ -6,11 +6,9 @@
 \arguments{
 \item{webId}{The ID of the element template where the security entry will be created.}
 
-\item{securityEntry}{The new security entry definition. The full list of allow and deny rights must be supplied.}
+\item{piSecurityEntry}{The new security entry definition. The full list of allow and deny rights must be supplied.}
 
 \item{applyToChildren}{If false, the new access permissions are only applied to the associated object. If true, the access permissions of children with any parent-child reference types will change when the permissions on the primary parent change.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 The security entry was created. The response's Location header is a link to the security entry.

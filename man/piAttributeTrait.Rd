@@ -32,12 +32,12 @@ piAttributeTrait(name = NULL, abbreviation = NULL,
 \item{links}{(object)}
 }
 \value{
-attributeTrait
+piAttributeTrait
 }
 \description{
 Generate an instance of the piAttributeTrait PI Web API class
 }
 \examples{
-attributeTrait(name = "LimitLoLo", abbreviation = "LoLo", allowChildAttributes = FALSE, allowDuplicates = FALSE, isAllowedOnRootAttribute = FALSE, isTypeInherited = FALSE, isUOMInherited = FALSE, requireNumeric = FALSE, requireString = FALSE)
+attributeTrait <- piAttributeTrait(name = "LimitLoLo", abbreviation = "LoLo", allowChildAttributes = FALSE, allowDuplicates = FALSE, isAllowedOnRootAttribute = FALSE, isTypeInherited = FALSE, isUOMInherited = FALSE, requireNumeric = FALSE, requireString = FALSE)
 
 }

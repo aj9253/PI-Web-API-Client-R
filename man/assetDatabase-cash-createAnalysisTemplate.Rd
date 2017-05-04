@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the database in which to create the analysis template.}
 
-\item{template}{The new analysis template definition.}
-
-\item{column}{the value of the user label column}
+\item{piAnalysisTemplate}{The new analysis template definition.}
 }
 \value{
 The analysis template was created. The response's Location header is a link to the created template.

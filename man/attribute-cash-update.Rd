@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the attribute.}
 
-\item{attribute}{A partial attribute containing the desired changes.}
-
-\item{column}{the value of the user label column}
+\item{piAttribute}{A partial attribute containing the desired changes.}
 }
 \value{
 The attribute was updated.

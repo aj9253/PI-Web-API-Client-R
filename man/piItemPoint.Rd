@@ -17,12 +17,12 @@ piItemPoint(identifier = NULL, identifierType = NULL, object = NULL,
 \item{exception}{()}
 }
 \value{
-itemPoint
+piItemPoint
 }
 \description{
 Generate an instance of the piItemPoint PI Web API class
 }
 \examples{
-itemPoint(identifier = "\\\\\\\\server\\\\path", identifierType = "Path")
+itemPoint <- piItemPoint(identifier = "\\\\\\\\server\\\\path", identifierType = "Path")
 
 }

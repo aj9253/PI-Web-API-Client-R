@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the owner event frame on which to create the annotation.}
 
-\item{annotation}{The new annotation definition.}
-
-\item{column}{the value of the user label column}
+\item{piAnnotation}{The new annotation definition.}
 }
 \value{
 The annotation was created. The response's Location header is a link to the annotation.

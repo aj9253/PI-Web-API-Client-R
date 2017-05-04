@@ -28,12 +28,12 @@ piAnnotation(id = NULL, name = NULL, description = NULL, value = NULL,
 \item{links}{(object)}
 }
 \value{
-annotation
+piAnnotation
 }
 \description{
 Generate an instance of the piAnnotation PI Web API class
 }
 \examples{
-annotation(id = "512B6616-CE39-4F70-9048-8C6A025FB592", name = "Temperature Annotation", description = "Signifies a spike in temperature.", creator = "MyDomain\\\\UserA", creationDate = "21/06/2016 14:45:50", modifier = "MyDomain\\\\UserA", modifyDate = "21/06/2016 14:45:50")
+annotation <- piAnnotation(id = "512B6616-CE39-4F70-9048-8C6A025FB592", name = "Temperature Annotation", description = "Signifies a spike in temperature.", creator = "MyDomain\\\\UserA", creationDate = "21/06/2016 14:45:50", modifier = "MyDomain\\\\UserA", modifyDate = "21/06/2016 14:45:50")
 
 }

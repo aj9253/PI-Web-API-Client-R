@@ -7,8 +7,6 @@
 \item{id}{The Annotation identifier of the annotation to be deleted.}
 
 \item{webId}{The ID of the owner event frame of the annotation to delete.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 The annotation was deleted.

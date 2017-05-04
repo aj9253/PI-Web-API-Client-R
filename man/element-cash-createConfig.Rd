@@ -7,8 +7,6 @@
 \item{webId}{The ID of the element.}
 
 \item{includeChildElements}{If true, includes the child elements of the specified element.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 Process log of operations. Operations completed with no errors.

@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the enumeration set on which to create the enumeration value.}
 
-\item{enumerationValue}{The new enumeration value definition.}
-
-\item{column}{the value of the user label column}
+\item{piEnumerationValue}{The new enumeration value definition.}
 }
 \value{
 The enumeration value was created. The response's Location header is a link to the enumeration value.

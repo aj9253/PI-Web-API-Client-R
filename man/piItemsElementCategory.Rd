@@ -12,7 +12,7 @@ piItemsElementCategory(items = NULL, links = NULL)
 \item{links}{(object)}
 }
 \value{
-itemsElementCategory
+piItemsElementCategory
 }
 \description{
 Generate an instance of the piItemsElementCategory PI Web API class

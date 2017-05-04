@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the element template on which to create the attribute template.}
 
-\item{template}{The attribute template definition.}
-
-\item{column}{the value of the user label column}
+\item{piAttributeTemplate}{The attribute template definition.}
 }
 \value{
 The attribute template was created. The response's Location header is a link to the created resource.

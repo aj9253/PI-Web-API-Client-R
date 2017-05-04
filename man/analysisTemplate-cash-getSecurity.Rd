@@ -11,8 +11,6 @@
 \item{forceRefresh}{Indicates if the security cache should be refreshed before getting security information. The default is 'false'.}
 
 \item{selectedFields}{List of fields to be returned in the response, separated by semicolons (;). If this parameter is not specified, all available fields will be returned.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 Security rights.

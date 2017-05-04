@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the database in which to create the element category.}
 
-\item{elementCategory}{The new element category definition.}
-
-\item{column}{the value of the user label column}
+\item{piElementCategory}{The new element category definition.}
 }
 \value{
 The element category was created. The response's Location header is a link to the element category.

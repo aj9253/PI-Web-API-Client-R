@@ -41,8 +41,6 @@
 \item{startIndex}{The starting index (zero based) of the items to be returned. The default is 0.}
 
 \item{startTime}{A string representing the earliest starting time for the event frames to be matched. startTime must be less than or equal to the endTime. The default is '*-8h'.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 a list of matching attributes.

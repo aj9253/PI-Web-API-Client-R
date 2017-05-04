@@ -35,12 +35,12 @@ piUnit(webId = NULL, id = NULL, name = NULL, abbreviation = NULL,
 \item{links}{(object)}
 }
 \value{
-unit
+piUnit
 }
 \description{
 Generate an instance of the piUnit PI Web API class
 }
 \examples{
-unit(webId = "u0DqD5loBNH0eqreqJodtALAR5X5Ku22eUqbeawQJoWIdAUkVVTFVOSVRcVU9NFREUQUJBU0VcZEVSVFo", id = "609049B3-108A-4A9A-94B3-359AA092C5A0", name = "Hertz", abbreviation = "Hz", description = "Hertz Unit", path = "\\\\\\\\MyServer\\\\UOMDatabase\\\\Hertz", referenceUnitAbbreviation = "")
+unit <- piUnit(webId = "u0DqD5loBNH0eqreqJodtALAR5X5Ku22eUqbeawQJoWIdAUkVVTFVOSVRcVU9NFREUQUJBU0VcZEVSVFo", id = "609049B3-108A-4A9A-94B3-359AA092C5A0", name = "Hertz", abbreviation = "Hz", description = "Hertz Unit", path = "\\\\\\\\MyServer\\\\UOMDatabase\\\\Hertz", referenceUnitAbbreviation = "")
 
 }

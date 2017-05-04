@@ -19,6 +19,8 @@ Generate an instance of the top level object of this library
 
 \item{\code{useKerberos}}{Kerberos Authentication method selected}
 
-\item{\code{debug}}{Show HTTP requests debug}
+\item{\code{validateSSL}}{Verify if PI Web API SSL certificate is trusted}
+
+\item{\code{debug}}{Display HTTP requests debug information}
 }}
 

@@ -5,12 +5,14 @@ analysisTemplateApi <- R6Class("analysisTemplateApi",
 		authType = NULL,
 		username = NULL,
 		password = NULL,
+		validateSSL = NULL,
 		debug = NULL,
-		initialize = function(baseUrl, authType, username, password, debug) {
+		initialize = function(baseUrl, authType, username, password, validateSSL, debug) {
 			self$serviceBase <- baseUrl
 			self$username <- username
 			self$password <- password
 			self$authType <- authType
+			self$validateSSL <- validateSSL
 			self$debug <- debug
 		},
 		getByPath = function(path, selectedFields) {
@@ -29,7 +31,7 @@ analysisTemplateApi <- R6Class("analysisTemplateApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piAnalysisTemplate"
@@ -52,7 +54,7 @@ analysisTemplateApi <- R6Class("analysisTemplateApi",
 					return (print(paste0("Error: name must be a string.")))
 				}
 			}
-			res <- postHttpRequest(localVarPath, , self$username, self$password, self$authType, self$debug)
+			res <- postHttpRequest(localVarPath, , self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		get = function(webId, selectedFields) {
@@ -70,14 +72,14 @@ analysisTemplateApi <- R6Class("analysisTemplateApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piAnalysisTemplate"
 			}
 			return (contentResponse)
 		},
-		update = function(webId, template) {
+		update = function(webId, piAnalysisTemplate) {
 			queryParameters <- list()
 			if (is.null(webId) || webId == "") {
 				return (paste0("Error: required parameter webId was null or undefined"))
@@ -85,15 +87,15 @@ analysisTemplateApi <- R6Class("analysisTemplateApi",
 			if (is.character(webId) == FALSE) {
 				return (print(paste0("Error: webId must be a string.")))
 			}
-			if (is.null(template) || template == "") {
-				return (paste0("Error: required parameter template was null or undefined"))
+			if (is.null(piAnalysisTemplate) || piAnalysisTemplate == "") {
+				return (paste0("Error: required parameter piAnalysisTemplate was null or undefined"))
 			}
-			className <- attr(template, "className")
+			className <- attr(piAnalysisTemplate, "className")
 			if ((is.null(className)) || (className != "piAnalysisTemplate")) {
-				return (print(paste0("Error: the class from the parameter template should be piAnalysisTemplate.")))
+				return (print(paste0("Error: the class from the parameter piAnalysisTemplate should be piAnalysisTemplate.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/analysistemplates/', webId), collapse = "")
-			res <- patchHttpRequest(localVarPath, template, self$username, self$password, self$authType, self$debug)
+			res <- patchHttpRequest(localVarPath, piAnalysisTemplate, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		delete = function(webId) {
@@ -105,7 +107,7 @@ analysisTemplateApi <- R6Class("analysisTemplateApi",
 				return (print(paste0("Error: webId must be a string.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/analysistemplates/', webId), collapse = "")
-			res <- deleteHttpRequest(localVarPath, self$username, self$password, self$authType, self$debug)
+			res <- deleteHttpRequest(localVarPath, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		getCategories = function(webId, selectedFields) {
@@ -123,7 +125,7 @@ analysisTemplateApi <- R6Class("analysisTemplateApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsAnalysisCategory"
@@ -157,7 +159,7 @@ analysisTemplateApi <- R6Class("analysisTemplateApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsSecurityRights"
@@ -197,14 +199,14 @@ analysisTemplateApi <- R6Class("analysisTemplateApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsSecurityEntry"
 			}
 			return (contentResponse)
 		},
-		createSecurityEntry = function(webId, securityEntry, applyToChildren) {
+		createSecurityEntry = function(webId, piSecurityEntry, applyToChildren) {
 			queryParameters <- list()
 			if (is.null(webId) || webId == "") {
 				return (paste0("Error: required parameter webId was null or undefined"))
@@ -212,12 +214,12 @@ analysisTemplateApi <- R6Class("analysisTemplateApi",
 			if (is.character(webId) == FALSE) {
 				return (print(paste0("Error: webId must be a string.")))
 			}
-			if (is.null(securityEntry) || securityEntry == "") {
-				return (paste0("Error: required parameter securityEntry was null or undefined"))
+			if (is.null(piSecurityEntry) || piSecurityEntry == "") {
+				return (paste0("Error: required parameter piSecurityEntry was null or undefined"))
 			}
-			className <- attr(securityEntry, "className")
+			className <- attr(piSecurityEntry, "className")
 			if ((is.null(className)) || (className != "piSecurityEntry")) {
-				return (print(paste0("Error: the class from the parameter securityEntry should be piSecurityEntry.")))
+				return (print(paste0("Error: the class from the parameter piSecurityEntry should be piSecurityEntry.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/analysistemplates/', webId, '/securityentries'), collapse = "")
 			if (missing(applyToChildren) == FALSE && is.null(applyToChildren) == FALSE && applyToChildren != "") {
@@ -226,7 +228,7 @@ analysisTemplateApi <- R6Class("analysisTemplateApi",
 					return (print(paste0("Error: applyToChildren must be a boolean.")))
 				}
 			}
-			res <- postHttpRequest(localVarPath, securityEntry, self$username, self$password, self$authType, self$debug)
+			res <- postHttpRequest(localVarPath, piSecurityEntry, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		getSecurityEntryByName = function(name, webId, selectedFields) {
@@ -250,7 +252,7 @@ analysisTemplateApi <- R6Class("analysisTemplateApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piSecurityEntry"
@@ -260,7 +262,7 @@ analysisTemplateApi <- R6Class("analysisTemplateApi",
 			}
 			return (contentResponse)
 		},
-		updateSecurityEntry = function(name, webId, securityEntry, applyToChildren) {
+		updateSecurityEntry = function(name, webId, piSecurityEntry, applyToChildren) {
 			queryParameters <- list()
 			if (is.null(name) || name == "") {
 				return (paste0("Error: required parameter name was null or undefined"))
@@ -274,12 +276,12 @@ analysisTemplateApi <- R6Class("analysisTemplateApi",
 			if (is.character(webId) == FALSE) {
 				return (print(paste0("Error: webId must be a string.")))
 			}
-			if (is.null(securityEntry) || securityEntry == "") {
-				return (paste0("Error: required parameter securityEntry was null or undefined"))
+			if (is.null(piSecurityEntry) || piSecurityEntry == "") {
+				return (paste0("Error: required parameter piSecurityEntry was null or undefined"))
 			}
-			className <- attr(securityEntry, "className")
+			className <- attr(piSecurityEntry, "className")
 			if ((is.null(className)) || (className != "piSecurityEntry")) {
-				return (print(paste0("Error: the class from the parameter securityEntry should be piSecurityEntry.")))
+				return (print(paste0("Error: the class from the parameter piSecurityEntry should be piSecurityEntry.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/analysistemplates/', webId, '/securityentries/', name), collapse = "")
 			if (missing(applyToChildren) == FALSE && is.null(applyToChildren) == FALSE && applyToChildren != "") {
@@ -288,7 +290,7 @@ analysisTemplateApi <- R6Class("analysisTemplateApi",
 					return (print(paste0("Error: applyToChildren must be a boolean.")))
 				}
 			}
-			res <- putHttpRequest(localVarPath, securityEntry, self$username, self$password, self$authType, self$debug)
+			res <- putHttpRequest(localVarPath, queryParameters, piSecurityEntry, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		deleteSecurityEntry = function(name, webId, applyToChildren) {
@@ -312,7 +314,7 @@ analysisTemplateApi <- R6Class("analysisTemplateApi",
 					return (print(paste0("Error: applyToChildren must be a boolean.")))
 				}
 			}
-			res <- deleteHttpRequest(localVarPath, self$username, self$password, self$authType, self$debug)
+			res <- deleteHttpRequest(localVarPath, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		}
 	)

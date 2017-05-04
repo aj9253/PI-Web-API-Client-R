@@ -7,8 +7,6 @@
 \item{webId}{The ID of the database which the referenced element will be removed from.}
 
 \item{referencedElementWebId}{The ID of the referenced element. Multiple referenced elements may be specified with multiple instances of the parameter.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 The referenced element was successfully removed.

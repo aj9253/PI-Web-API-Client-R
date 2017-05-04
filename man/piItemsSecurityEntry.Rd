@@ -12,7 +12,7 @@ piItemsSecurityEntry(items = NULL, links = NULL)
 \item{links}{(object)}
 }
 \value{
-itemsSecurityEntry
+piItemsSecurityEntry
 }
 \description{
 Generate an instance of the piItemsSecurityEntry PI Web API class

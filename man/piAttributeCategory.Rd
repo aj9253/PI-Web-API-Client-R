@@ -21,12 +21,12 @@ piAttributeCategory(webId = NULL, id = NULL, name = NULL,
 \item{links}{(object)}
 }
 \value{
-attributeCategory
+piAttributeCategory
 }
 \description{
 Generate an instance of the piAttributeCategory PI Web API class
 }
 \examples{
-attributeCategory(webId = "c0DqD5loBNH0erqeqJodtALAofQgBVRE3E-0dk03Hqa1ngUkVTVFVOSVRcUk9OR1xDQVRFR09SSUVTQVRUUklCVVRFW0FDMF0", id = "0520f4a1-4454-4fdc-b476-4d371ea6b59e", name = "CategoryName", description = "Relative energy use per ton of process feed.", path = "\\\\\\\\MyServer\\\\Database\\\\CategoriesAttribute[CategoryName]")
+attributeCategory <- piAttributeCategory(webId = "c0DqD5loBNH0erqeqJodtALAofQgBVRE3E-0dk03Hqa1ngUkVTVFVOSVRcUk9OR1xDQVRFR09SSUVTQVRUUklCVVRFW0FDMF0", id = "0520f4a1-4454-4fdc-b476-4d371ea6b59e", name = "CategoryName", description = "Relative energy use per ton of process feed.", path = "\\\\\\\\MyServer\\\\Database\\\\CategoriesAttribute[CategoryName]")
 
 }

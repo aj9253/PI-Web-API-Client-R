@@ -24,12 +24,12 @@ piTimedValue(timestamp = NULL, unitsAbbreviation = NULL, good = NULL,
 \item{exception}{()}
 }
 \value{
-timedValue
+piTimedValue
 }
 \description{
 Generate an instance of the piTimedValue PI Web API class
 }
 \examples{
-timedValue(timestamp = "22/07/2014 14:00:00", unitsAbbreviation = "m", good = FALSE, questionable = FALSE, substituted = FALSE)
+timedValue <- piTimedValue(timestamp = "22/07/2014 14:00:00", unitsAbbreviation = "m", good = FALSE, questionable = FALSE, substituted = FALSE)
 
 }

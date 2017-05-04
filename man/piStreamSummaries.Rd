@@ -19,12 +19,12 @@ piStreamSummaries(webId = NULL, name = NULL, path = NULL, items = NULL,
 \item{links}{(object)}
 }
 \value{
-streamSummaries
+piStreamSummaries
 }
 \description{
 Generate an instance of the piStreamSummaries PI Web API class
 }
 \examples{
-streamSummaries(webId = "A0EDqD5loBNH0erqeqJodtALAUvtkqIDl4xG-twAFmjx6AA79jxF7HiqFwpsgMBxwgWmgUkVTVFVOSVRcU1VNJQVHQU5cTlVHUkVZTlxIT1VTVE9f0FBMQU5UQ0lUWQ", name = "Water", path = "\\\\\\\\MYSERVER\\\\MyDatabase\\\\MyElement|Water")
+streamSummaries <- piStreamSummaries(webId = "A0EDqD5loBNH0erqeqJodtALAUvtkqIDl4xG-twAFmjx6AA79jxF7HiqFwpsgMBxwgWmgUkVTVFVOSVRcU1VNJQVHQU5cTlVHUkVZTlxIT1VTVE9f0FBMQU5UQ0lUWQ", name = "Water", path = "\\\\\\\\MYSERVER\\\\MyDatabase\\\\MyElement|Water")
 
 }

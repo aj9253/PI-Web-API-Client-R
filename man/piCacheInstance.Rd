@@ -19,12 +19,12 @@ piCacheInstance(id = NULL, lastRefreshTime = NULL,
 \item{user}{(string)}
 }
 \value{
-cacheInstance
+piCacheInstance
 }
 \description{
 Generate an instance of the piCacheInstance PI Web API class
 }
 \examples{
-cacheInstance(id = "8a5033c9-b77f-431c-9820-c9f538d80dc6", lastRefreshTime = "20/07/2014 14:08:00", willRefreshAfter = "20/07/2014 18:08:00", scheduledExpirationTime = "20/07/2014 23:08:00", user = "MyDomain\\\\Username")
+cacheInstance <- piCacheInstance(id = "8a5033c9-b77f-431c-9820-c9f538d80dc6", lastRefreshTime = "20/07/2014 14:08:00", willRefreshAfter = "20/07/2014 18:08:00", scheduledExpirationTime = "20/07/2014 23:08:00", user = "MyDomain\\\\Username")
 
 }

@@ -5,8 +5,6 @@
 \title{Delete a table category.}
 \arguments{
 \item{webId}{The ID of the table category to delete.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 The table category was deleted.

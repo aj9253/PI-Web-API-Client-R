@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the element.}
 
-\item{element}{A partial element containing the desired changes.}
-
-\item{column}{the value of the user label column}
+\item{piElement}{A partial element containing the desired changes.}
 }
 \value{
 The element was updated.

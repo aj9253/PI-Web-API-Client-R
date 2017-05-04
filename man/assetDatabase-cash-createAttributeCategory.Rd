@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the database in which to create the attribute category.}
 
-\item{attributeCategory}{The new attribute category definition.}
-
-\item{column}{the value of the user label column}
+\item{piAttributeCategory}{The new attribute category definition.}
 }
 \value{
 The attribute category was created. The response's Location header is a link to the attribute category.

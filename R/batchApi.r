@@ -5,12 +5,14 @@ batchApi <- R6Class("batchApi",
 		authType = NULL,
 		username = NULL,
 		password = NULL,
+		validateSSL = NULL,
 		debug = NULL,
-		initialize = function(baseUrl, authType, username, password, debug) {
+		initialize = function(baseUrl, authType, username, password, validateSSL, debug) {
 			self$serviceBase <- baseUrl
 			self$username <- username
 			self$password <- password
 			self$authType <- authType
+			self$validateSSL <- validateSSL
 			self$debug <- debug
 		},
 		execute = function(batch) {
@@ -19,7 +21,7 @@ batchApi <- R6Class("batchApi",
 				return (paste0("Error: required parameter batch was null or undefined"))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/batch'), collapse = "")
-			res <- postHttpRequest(localVarPath, batch, self$username, self$password, self$authType, self$debug)
+			res <- postHttpRequest(localVarPath, batch, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		}
 	)

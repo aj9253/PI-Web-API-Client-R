@@ -3,9 +3,6 @@
 \name{configuration$list}
 \alias{configuration$list}
 \title{Get the current system configuration.}
-\arguments{
-\item{column}{the value of the user label column}
-}
 \value{
 The current system configuration.
 }

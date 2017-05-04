@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the asset server on which to create the database.}
 
-\item{database}{The new database definition.}
-
-\item{column}{the value of the user label column}
+\item{piAssetDatabase}{The new database definition.}
 }
 \value{
 The database was created. The response's Location header is a link to the database.

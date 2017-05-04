@@ -12,12 +12,12 @@ piSubstatus(substatus = NULL, message = NULL)
 \item{message}{(string)}
 }
 \value{
-substatus
+piSubstatus
 }
 \description{
 Generate an instance of the piSubstatus PI Web API class
 }
 \examples{
-substatus(substatus = 200, message = "")
+substatus <- piSubstatus(substatus = 200, message = "")
 
 }

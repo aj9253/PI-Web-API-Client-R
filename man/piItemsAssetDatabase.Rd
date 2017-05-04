@@ -12,7 +12,7 @@ piItemsAssetDatabase(items = NULL, links = NULL)
 \item{links}{(object)}
 }
 \value{
-itemsAssetDatabase
+piItemsAssetDatabase
 }
 \description{
 Generate an instance of the piItemsAssetDatabase PI Web API class

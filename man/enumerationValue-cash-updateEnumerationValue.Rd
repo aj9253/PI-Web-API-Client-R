@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the enumeration value to update.}
 
-\item{enumerationValue}{A partial enumeration value containing the desired changes.}
-
-\item{column}{the value of the user label column}
+\item{piEnumerationValue}{A partial enumeration value containing the desired changes.}
 }
 \value{
 The enumeration set was updated.

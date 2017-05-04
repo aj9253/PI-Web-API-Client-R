@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the database on which to create the event frame.}
 
-\item{eventFrame}{The new event frame definition.}
-
-\item{column}{the value of the user label column}
+\item{piEventFrame}{The new event frame definition.}
 }
 \value{
 The event frame was created. The response's Location header is a link to the event frame.

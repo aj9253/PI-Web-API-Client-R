@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the attribute template.}
 
-\item{template}{A partial attribute template containing the desired changes.}
-
-\item{column}{the value of the user label column}
+\item{piAttributeTemplate}{A partial attribute template containing the desired changes.}
 }
 \value{
 The attribute template was updated.

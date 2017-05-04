@@ -5,12 +5,14 @@ securityIdentityApi <- R6Class("securityIdentityApi",
 		authType = NULL,
 		username = NULL,
 		password = NULL,
+		validateSSL = NULL,
 		debug = NULL,
-		initialize = function(baseUrl, authType, username, password, debug) {
+		initialize = function(baseUrl, authType, username, password, validateSSL, debug) {
 			self$serviceBase <- baseUrl
 			self$username <- username
 			self$password <- password
 			self$authType <- authType
+			self$validateSSL <- validateSSL
 			self$debug <- debug
 		},
 		getByPath = function(path, selectedFields) {
@@ -29,7 +31,7 @@ securityIdentityApi <- R6Class("securityIdentityApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piSecurityIdentity"
@@ -51,14 +53,14 @@ securityIdentityApi <- R6Class("securityIdentityApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piSecurityIdentity"
 			}
 			return (contentResponse)
 		},
-		update = function(webId, securityIdentity) {
+		update = function(webId, piSecurityIdentity) {
 			queryParameters <- list()
 			if (is.null(webId) || webId == "") {
 				return (paste0("Error: required parameter webId was null or undefined"))
@@ -66,15 +68,15 @@ securityIdentityApi <- R6Class("securityIdentityApi",
 			if (is.character(webId) == FALSE) {
 				return (print(paste0("Error: webId must be a string.")))
 			}
-			if (is.null(securityIdentity) || securityIdentity == "") {
-				return (paste0("Error: required parameter securityIdentity was null or undefined"))
+			if (is.null(piSecurityIdentity) || piSecurityIdentity == "") {
+				return (paste0("Error: required parameter piSecurityIdentity was null or undefined"))
 			}
-			className <- attr(securityIdentity, "className")
+			className <- attr(piSecurityIdentity, "className")
 			if ((is.null(className)) || (className != "piSecurityIdentity")) {
-				return (print(paste0("Error: the class from the parameter securityIdentity should be piSecurityIdentity.")))
+				return (print(paste0("Error: the class from the parameter piSecurityIdentity should be piSecurityIdentity.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/securityidentities/', webId), collapse = "")
-			res <- patchHttpRequest(localVarPath, securityIdentity, self$username, self$password, self$authType, self$debug)
+			res <- patchHttpRequest(localVarPath, piSecurityIdentity, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		delete = function(webId) {
@@ -86,7 +88,7 @@ securityIdentityApi <- R6Class("securityIdentityApi",
 				return (print(paste0("Error: webId must be a string.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/securityidentities/', webId), collapse = "")
-			res <- deleteHttpRequest(localVarPath, self$username, self$password, self$authType, self$debug)
+			res <- deleteHttpRequest(localVarPath, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		getSecurity = function(webId, userIdentity, forceRefresh, selectedFields) {
@@ -116,7 +118,7 @@ securityIdentityApi <- R6Class("securityIdentityApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsSecurityRights"
@@ -156,7 +158,7 @@ securityIdentityApi <- R6Class("securityIdentityApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsSecurityEntry"
@@ -184,7 +186,7 @@ securityIdentityApi <- R6Class("securityIdentityApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piSecurityEntry"
@@ -209,7 +211,7 @@ securityIdentityApi <- R6Class("securityIdentityApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsSecurityMapping"

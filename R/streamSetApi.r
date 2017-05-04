@@ -5,12 +5,14 @@ streamSetApi <- R6Class("streamSetApi",
 		authType = NULL,
 		username = NULL,
 		password = NULL,
+		validateSSL = NULL,
 		debug = NULL,
-		initialize = function(baseUrl, authType, username, password, debug) {
+		initialize = function(baseUrl, authType, username, password, validateSSL, debug) {
 			self$serviceBase <- baseUrl
 			self$username <- username
 			self$password <- password
 			self$authType <- authType
+			self$validateSSL <- validateSSL
 			self$debug <- debug
 		},
 		getChannel = function(webId, categoryName, includeInitialValues, nameFilter, searchFullHierarchy, showExcluded, showHidden, templateName) {
@@ -64,7 +66,7 @@ streamSetApi <- R6Class("streamSetApi",
 					return (print(paste0("Error: templateName must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 101) {
 				attr(contentResponse, "className") <- "piItemsStreamValue"
@@ -125,7 +127,7 @@ streamSetApi <- R6Class("streamSetApi",
 					return (print(paste0("Error: templateName must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsStreamValue"
@@ -222,7 +224,7 @@ streamSetApi <- R6Class("streamSetApi",
 					return (print(paste0("Error: timeZone must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsStreamValues"
@@ -310,7 +312,7 @@ streamSetApi <- R6Class("streamSetApi",
 					return (print(paste0("Error: timeZone must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsStreamValues"
@@ -398,7 +400,7 @@ streamSetApi <- R6Class("streamSetApi",
 					return (print(paste0("Error: timeZone must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsStreamValues"
@@ -501,7 +503,7 @@ streamSetApi <- R6Class("streamSetApi",
 					return (print(paste0("Error: timeZone must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsStreamValues"
@@ -538,7 +540,7 @@ streamSetApi <- R6Class("streamSetApi",
 					return (print(paste0("Error: updateOption must be a string.")))
 				}
 			}
-			res <- postHttpRequest(localVarPath, values, self$username, self$password, self$authType, self$debug)
+			res <- postHttpRequest(localVarPath, values, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		getRecordedAtTime = function(webId, time, categoryName, nameFilter, retrievalMode, searchFullHierarchy, selectedFields, showExcluded, showHidden, templateName, timeZone) {
@@ -611,7 +613,7 @@ streamSetApi <- R6Class("streamSetApi",
 					return (print(paste0("Error: timeZone must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsStreamValues"
@@ -696,7 +698,7 @@ streamSetApi <- R6Class("streamSetApi",
 					return (print(paste0("Error: timeZone must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsStreamValues"
@@ -820,7 +822,7 @@ streamSetApi <- R6Class("streamSetApi",
 					return (print(paste0("Error: timeZone must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsStreamSummaries"
@@ -893,7 +895,7 @@ streamSetApi <- R6Class("streamSetApi",
 					return (print(paste0("Error: timeZone must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsStreamValue"
@@ -930,7 +932,7 @@ streamSetApi <- R6Class("streamSetApi",
 					return (print(paste0("Error: updateOption must be a string.")))
 				}
 			}
-			res <- postHttpRequest(localVarPath, values, self$username, self$password, self$authType, self$debug)
+			res <- postHttpRequest(localVarPath, values, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		getChannelAdHoc = function(webId, includeInitialValues) {
@@ -948,7 +950,7 @@ streamSetApi <- R6Class("streamSetApi",
 					return (print(paste0("Error: includeInitialValues must be a boolean.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 101) {
 				attr(contentResponse, "className") <- "piItemsStreamValue"
@@ -970,7 +972,7 @@ streamSetApi <- R6Class("streamSetApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsStreamValues"
@@ -1028,7 +1030,7 @@ streamSetApi <- R6Class("streamSetApi",
 					return (print(paste0("Error: timeZone must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsStreamValues"
@@ -1080,7 +1082,7 @@ streamSetApi <- R6Class("streamSetApi",
 					return (print(paste0("Error: timeZone must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsStreamValues"
@@ -1132,7 +1134,7 @@ streamSetApi <- R6Class("streamSetApi",
 					return (print(paste0("Error: timeZone must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsStreamValues"
@@ -1199,7 +1201,7 @@ streamSetApi <- R6Class("streamSetApi",
 					return (print(paste0("Error: timeZone must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsStreamValues"
@@ -1230,7 +1232,7 @@ streamSetApi <- R6Class("streamSetApi",
 					return (print(paste0("Error: updateOption must be a string.")))
 				}
 			}
-			res <- postHttpRequest(localVarPath, values, self$username, self$password, self$authType, self$debug)
+			res <- postHttpRequest(localVarPath, values, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		getRecordedAtTimeAdHoc = function(time, webId, retrievalMode, selectedFields, timeZone) {
@@ -1267,7 +1269,7 @@ streamSetApi <- R6Class("streamSetApi",
 					return (print(paste0("Error: timeZone must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsStreamValue"
@@ -1316,7 +1318,7 @@ streamSetApi <- R6Class("streamSetApi",
 					return (print(paste0("Error: timeZone must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsStreamValues"
@@ -1404,7 +1406,7 @@ streamSetApi <- R6Class("streamSetApi",
 					return (print(paste0("Error: timeZone must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsStreamSummaries"
@@ -1441,7 +1443,7 @@ streamSetApi <- R6Class("streamSetApi",
 					return (print(paste0("Error: timeZone must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsStreamValue"
@@ -1472,7 +1474,7 @@ streamSetApi <- R6Class("streamSetApi",
 					return (print(paste0("Error: updateOption must be a string.")))
 				}
 			}
-			res <- postHttpRequest(localVarPath, values, self$username, self$password, self$authType, self$debug)
+			res <- postHttpRequest(localVarPath, values, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		}
 	)

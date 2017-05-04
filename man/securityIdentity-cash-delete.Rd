@@ -5,8 +5,6 @@
 \title{Delete a security identity.}
 \arguments{
 \item{webId}{The ID of the security identity.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 The security identity was deleted.

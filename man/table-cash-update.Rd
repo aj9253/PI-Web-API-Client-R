@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the table to update.}
 
-\item{table}{A partial table containing the desired changes.}
-
-\item{column}{the value of the user label column}
+\item{piTable}{A partial table containing the desired changes.}
 }
 \value{
 The table was updated.

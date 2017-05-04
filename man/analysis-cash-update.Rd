@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the Analysis to update.}
 
-\item{analysis}{A partial Analysis containing the desired changes.}
-
-\item{column}{the value of the user label column}
+\item{piAnalysis}{A partial Analysis containing the desired changes.}
 }
 \value{
 The Analysis was updated.

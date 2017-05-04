@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the event frame to update.}
 
-\item{eventFrame}{A partial event frame containing the desired changes.}
-
-\item{column}{the value of the user label column}
+\item{piEventFrame}{A partial event frame containing the desired changes.}
 }
 \value{
 The event frame was updated.

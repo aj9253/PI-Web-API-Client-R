@@ -13,8 +13,6 @@
 \item{selectedFields}{List of fields to be returned in the response, separated by semicolons (;). If this parameter is not specified, all available fields will be returned.}
 
 \item{startIndex}{The starting index (zero based) of the items to be returned. The default is '0'.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 A list of matching points.

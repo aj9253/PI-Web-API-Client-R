@@ -42,12 +42,12 @@ piAnalysisTemplate(webId = NULL, id = NULL, name = NULL,
 \item{links}{(object)}
 }
 \value{
-analysisTemplate
+piAnalysisTemplate
 }
 \description{
 Generate an instance of the piAnalysisTemplate PI Web API class
 }
 \examples{
-analysisTemplate(webId = "Y0DqD5loBNH0erqeqJodtALA0IiywCJ7mkyCQYNQSlvYWwUkVTVFVOSVRcOTdCRjMyMzMtNDgyMi00OTYxLTg4M0YtQzU2REFERERDODUzXEFOQUxZU0lTVEVNUExBVEVTW0EzMjcwNzI2LTkzMDEtNDY5NS1BQTE1LTBCOEM0NUNCNDJDQ10", id = "c0b288d0-7b22-4c9a-8241-83504a5bd85b", name = "MyAnalysisTemplate", description = "", path = "\\\\\\\\MYSERVER\\\\MyDatabase\\\\AnalysisTemplates[MyAnalysisTemplate]", analysisRulePlugInName = "PerformanceEquation", createEnabled = FALSE, groupId = 0, hasNotificationTemplate = FALSE, hasTarget = FALSE, outputTime = "", targetName = "MyElementTemplate", timeRulePlugInName = "Periodic")
+analysisTemplate <- piAnalysisTemplate(webId = "Y0DqD5loBNH0erqeqJodtALA0IiywCJ7mkyCQYNQSlvYWwUkVTVFVOSVRcOTdCRjMyMzMtNDgyMi00OTYxLTg4M0YtQzU2REFERERDODUzXEFOQUxZU0lTVEVNUExBVEVTW0EzMjcwNzI2LTkzMDEtNDY5NS1BQTE1LTBCOEM0NUNCNDJDQ10", id = "c0b288d0-7b22-4c9a-8241-83504a5bd85b", name = "MyAnalysisTemplate", description = "", path = "\\\\\\\\MYSERVER\\\\MyDatabase\\\\AnalysisTemplates[MyAnalysisTemplate]", analysisRulePlugInName = "PerformanceEquation", createEnabled = FALSE, groupId = 0, hasNotificationTemplate = FALSE, hasTarget = FALSE, outputTime = "", targetName = "MyElementTemplate", timeRulePlugInName = "Periodic")
 
 }

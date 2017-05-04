@@ -8,11 +8,9 @@
 
 \item{webId}{The ID of the event frame where the security entry will be updated.}
 
-\item{securityEntry}{The new security entry definition. The full list of allow and deny rights must be supplied or they will be removed.}
+\item{piSecurityEntry}{The new security entry definition. The full list of allow and deny rights must be supplied or they will be removed.}
 
 \item{applyToChildren}{If false, the new access permissions are only applied to the associated object. If true, the access permissions of children with any parent-child reference types will change when the permissions on the primary parent change.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 The security entry was updated.

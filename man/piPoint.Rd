@@ -35,12 +35,12 @@ piPoint(webId = NULL, id = NULL, name = NULL, path = NULL,
 \item{links}{(object)}
 }
 \value{
-point
+piPoint
 }
 \description{
 Generate an instance of the piPoint PI Web API class
 }
 \examples{
-point(webId = "P0ZkdQMwx9oUCCzSWmnpgoEwTB8AAAUEhMVlpOXDAwR0FMDjBDRjAwMV9YUTAx", id = 8012, name = "PointName", path = "\\\\\\\\MyPIServer\\\\PointName", descriptor = "12 Hour Sine Wave", pointClass = "classic", pointType = "Float32", digitalSetName = "", engineeringUnits = "", step = FALSE, future = FALSE)
+point <- piPoint(webId = "P0ZkdQMwx9oUCCzSWmnpgoEwTB8AAAUEhMVlpOXDAwR0FMDjBDRjAwMV9YUTAx", id = 8012, name = "PointName", path = "\\\\\\\\MyPIServer\\\\PointName", descriptor = "12 Hour Sine Wave", pointClass = "classic", pointType = "Float32", digitalSetName = "", engineeringUnits = "", step = FALSE, future = FALSE)
 
 }

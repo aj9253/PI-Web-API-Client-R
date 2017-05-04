@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the database in which to create the element template.}
 
-\item{template}{The new element template definition.}
-
-\item{column}{the value of the user label column}
+\item{piElementTemplate}{The new element template definition.}
 }
 \value{
 The element template was created. The response's Location header is a link to the created template.

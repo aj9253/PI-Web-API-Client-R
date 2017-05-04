@@ -45,12 +45,12 @@ piAnalysisRulePlugIn(webId = NULL, id = NULL, name = NULL,
 \item{links}{(object)}
 }
 \value{
-analysisRulePlugIn
+piAnalysisRulePlugIn
 }
 \description{
 Generate an instance of the piAnalysisRulePlugIn PI Web API class
 }
 \examples{
-analysisRulePlugIn(webId = "L0DqD5loBNH0erqeqJodtALAAc7dxPJowEixZDO6X94w4AUkVTVFVOSVRcUExVR0lOU0FOQUxZU0lTUlVMRVtJTUJBTEFOQ0Vd", id = "c4ddce01-68f2-48c0-b164-33ba5fde30e0", name = "Imbalance", description = "Calculates simple material imbalances on nodes of a model.", path = "\\\\\\\\MYSERVER\\\\PlugInsAnalysisRule[Imbalance]", assemblyFileName = "OSIsoft.AF.Analysis.AnalysisRule.Imbalance.dll", assemblyID = "1acd00c2-79d0-4818-a03c-0616c4513750", assemblyTime = "25/05/2016 14:01:07", compatibilityVersion = 2, isBrowsable = FALSE, isNonEditableConfig = FALSE, loadedAssemblyTime = "01/01/1970 00:00:00", loadedVersion = "", version = "2.8.5.7552")
+analysisRulePlugIn <- piAnalysisRulePlugIn(webId = "L0DqD5loBNH0erqeqJodtALAAc7dxPJowEixZDO6X94w4AUkVTVFVOSVRcUExVR0lOU0FOQUxZU0lTUlVMRVtJTUJBTEFOQ0Vd", id = "c4ddce01-68f2-48c0-b164-33ba5fde30e0", name = "Imbalance", description = "Calculates simple material imbalances on nodes of a model.", path = "\\\\\\\\MYSERVER\\\\PlugInsAnalysisRule[Imbalance]", assemblyFileName = "OSIsoft.AF.Analysis.AnalysisRule.Imbalance.dll", assemblyID = "1acd00c2-79d0-4818-a03c-0616c4513750", assemblyTime = "25/05/2016 14:01:07", compatibilityVersion = 2, isBrowsable = FALSE, isNonEditableConfig = FALSE, loadedAssemblyTime = "01/01/1970 00:00:00", loadedVersion = "", version = "2.8.5.7552")
 
 }

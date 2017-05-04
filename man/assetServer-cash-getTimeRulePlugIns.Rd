@@ -7,8 +7,6 @@
 \item{webId}{The ID of the asset server, where the Time Rule Plug-in's are installed.}
 
 \item{selectedFields}{List of fields to be returned in the response, separated by semicolons (;). If this parameter is not specified, all available fields will be returned.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 A list of Time Rule Plug-in's.

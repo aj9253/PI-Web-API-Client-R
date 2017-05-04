@@ -23,12 +23,12 @@ piSecurityIdentity(webId = NULL, id = NULL, name = NULL,
 \item{links}{(object)}
 }
 \value{
-securityIdentity
+piSecurityIdentity
 }
 \description{
 Generate an instance of the piSecurityIdentity PI Web API class
 }
 \examples{
-securityIdentity(webId = "I07v5To0Ux7Eus2sjMsdqq_AUEhMQUZTMDU", id = "a353feee-3145-4bec-acda-c8ccb1daaafc", name = "MySecurityIdentity", description = "", path = "\\\\\\\\RESTUNIT\\\\SecurityIdentities[MySecurityIdentity]", isEnabled = FALSE)
+securityIdentity <- piSecurityIdentity(webId = "I07v5To0Ux7Eus2sjMsdqq_AUEhMQUZTMDU", id = "a353feee-3145-4bec-acda-c8ccb1daaafc", name = "MySecurityIdentity", description = "", path = "\\\\\\\\RESTUNIT\\\\SecurityIdentities[MySecurityIdentity]", isEnabled = FALSE)
 
 }

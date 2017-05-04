@@ -12,7 +12,7 @@ piItemsCacheInstance(items = NULL, links = NULL)
 \item{links}{(object)}
 }
 \value{
-itemsCacheInstance
+piItemsCacheInstance
 }
 \description{
 Generate an instance of the piItemsCacheInstance PI Web API class

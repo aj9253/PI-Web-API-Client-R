@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the Time Rule.}
 
-\item{timeRule}{A partial Time Rule containing the desired changes.}
-
-\item{column}{the value of the user label column}
+\item{piTimeRule}{A partial Time Rule containing the desired changes.}
 }
 \value{
 The Time Rule was updated.

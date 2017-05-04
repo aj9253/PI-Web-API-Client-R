@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the attribute category to update.}
 
-\item{category}{A partial attribute category containing the desired changes.}
-
-\item{column}{the value of the user label column}
+\item{piAttributeCategory}{A partial attribute category containing the desired changes.}
 }
 \value{
 The attribute category was updated.

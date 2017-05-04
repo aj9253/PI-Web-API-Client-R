@@ -5,12 +5,14 @@ unitClassApi <- R6Class("unitClassApi",
 		authType = NULL,
 		username = NULL,
 		password = NULL,
+		validateSSL = NULL,
 		debug = NULL,
-		initialize = function(baseUrl, authType, username, password, debug) {
+		initialize = function(baseUrl, authType, username, password, validateSSL, debug) {
 			self$serviceBase <- baseUrl
 			self$username <- username
 			self$password <- password
 			self$authType <- authType
+			self$validateSSL <- validateSSL
 			self$debug <- debug
 		},
 		getByPath = function(path, selectedFields) {
@@ -29,7 +31,7 @@ unitClassApi <- R6Class("unitClassApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piUnitClass"
@@ -51,14 +53,14 @@ unitClassApi <- R6Class("unitClassApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piUnitClass"
 			}
 			return (contentResponse)
 		},
-		update = function(webId, unitClassDTO) {
+		update = function(webId, piUnitClass) {
 			queryParameters <- list()
 			if (is.null(webId) || webId == "") {
 				return (paste0("Error: required parameter webId was null or undefined"))
@@ -66,15 +68,15 @@ unitClassApi <- R6Class("unitClassApi",
 			if (is.character(webId) == FALSE) {
 				return (print(paste0("Error: webId must be a string.")))
 			}
-			if (is.null(unitClassDTO) || unitClassDTO == "") {
-				return (paste0("Error: required parameter unitClassDTO was null or undefined"))
+			if (is.null(piUnitClass) || piUnitClass == "") {
+				return (paste0("Error: required parameter piUnitClass was null or undefined"))
 			}
-			className <- attr(unitClassDTO, "className")
+			className <- attr(piUnitClass, "className")
 			if ((is.null(className)) || (className != "piUnitClass")) {
-				return (print(paste0("Error: the class from the parameter unitClassDTO should be piUnitClass.")))
+				return (print(paste0("Error: the class from the parameter piUnitClass should be piUnitClass.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/unitclasses/', webId), collapse = "")
-			res <- patchHttpRequest(localVarPath, unitClassDTO, self$username, self$password, self$authType, self$debug)
+			res <- patchHttpRequest(localVarPath, piUnitClass, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		delete = function(webId) {
@@ -86,7 +88,7 @@ unitClassApi <- R6Class("unitClassApi",
 				return (print(paste0("Error: webId must be a string.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/unitclasses/', webId), collapse = "")
-			res <- deleteHttpRequest(localVarPath, self$username, self$password, self$authType, self$debug)
+			res <- deleteHttpRequest(localVarPath, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		getCanonicalUnit = function(webId, selectedFields) {
@@ -104,7 +106,7 @@ unitClassApi <- R6Class("unitClassApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piUnit"
@@ -126,14 +128,14 @@ unitClassApi <- R6Class("unitClassApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piUnit"
 			}
 			return (contentResponse)
 		},
-		createUnit = function(webId, unitDTO) {
+		createUnit = function(webId, piUnit) {
 			queryParameters <- list()
 			if (is.null(webId) || webId == "") {
 				return (paste0("Error: required parameter webId was null or undefined"))
@@ -141,15 +143,15 @@ unitClassApi <- R6Class("unitClassApi",
 			if (is.character(webId) == FALSE) {
 				return (print(paste0("Error: webId must be a string.")))
 			}
-			if (is.null(unitDTO) || unitDTO == "") {
-				return (paste0("Error: required parameter unitDTO was null or undefined"))
+			if (is.null(piUnit) || piUnit == "") {
+				return (paste0("Error: required parameter piUnit was null or undefined"))
 			}
-			className <- attr(unitDTO, "className")
+			className <- attr(piUnit, "className")
 			if ((is.null(className)) || (className != "piUnit")) {
-				return (print(paste0("Error: the class from the parameter unitDTO should be piUnit.")))
+				return (print(paste0("Error: the class from the parameter piUnit should be piUnit.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/unitclasses/', webId, '/units'), collapse = "")
-			res <- postHttpRequest(localVarPath, unitDTO, self$username, self$password, self$authType, self$debug)
+			res <- postHttpRequest(localVarPath, piUnit, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		}
 	)

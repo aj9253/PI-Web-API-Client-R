@@ -12,7 +12,7 @@ piTableData(columns = NULL, rows = NULL)
 \item{rows}{(array)}
 }
 \value{
-tableData
+piTableData
 }
 \description{
 Generate an instance of the piTableData PI Web API class

@@ -12,7 +12,7 @@ piItemsStreamSummaries(items = NULL, links = NULL)
 \item{links}{(object)}
 }
 \value{
-itemsStreamSummaries
+piItemsStreamSummaries
 }
 \description{
 Generate an instance of the piItemsStreamSummaries PI Web API class

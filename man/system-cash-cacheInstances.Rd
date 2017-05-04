@@ -3,9 +3,6 @@
 \name{system$cacheInstances}
 \alias{system$cacheInstances}
 \title{Get AF cache instances currently in use by the system. These are caches from which user requests are serviced. The number of instances depends on the number of users connected to the service, the service's authentication method, and the cache instance configuration.}
-\arguments{
-\item{column}{the value of the user label column}
-}
 \value{
 Cache instance information.
 }

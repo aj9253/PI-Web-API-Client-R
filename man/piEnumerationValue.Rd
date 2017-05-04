@@ -35,12 +35,12 @@ piEnumerationValue(webId = NULL, id = NULL, name = NULL,
 \item{serializeLinks}{(boolean)}
 }
 \value{
-enumerationValue
+piEnumerationValue
 }
 \description{
 Generate an instance of the piEnumerationValue PI Web API class
 }
 \examples{
-enumerationValue(webId = "V0SDqD5loBNH0erqeqJodtALAChs3W0xcXUG6x0ibnAnQdgUN6jDehdLkWYmU1CkJMzgNUkTVVFVOSVR1CuVHQVJNQU5cRU5VTUVSQVRJT05TRVRTW0VOVU1FUkFUSU9OIFNFVCAzXVxB", id = "7DC2449E-B31D-41AF-AA08-75A17AA32D6A", name = "BMW", description = "Model Number of BMW", value = 2005, path = "\\\\\\\\MyServer\\\\NuGreen\\\\EnumerationSets[Model Number]\\\\BMW", serializeWebId = FALSE, serializeId = FALSE, serializeDescription = FALSE, serializePath = FALSE, serializeLinks = FALSE)
+enumerationValue <- piEnumerationValue(webId = "V0SDqD5loBNH0erqeqJodtALAChs3W0xcXUG6x0ibnAnQdgUN6jDehdLkWYmU1CkJMzgNUkTVVFVOSVR1CuVHQVJNQU5cRU5VTUVSQVRJT05TRVRTW0VOVU1FUkFUSU9OIFNFVCAzXVxB", id = "7DC2449E-B31D-41AF-AA08-75A17AA32D6A", name = "BMW", description = "Model Number of BMW", value = 2005, path = "\\\\\\\\MyServer\\\\NuGreen\\\\EnumerationSets[Model Number]\\\\BMW", serializeWebId = FALSE, serializeId = FALSE, serializeDescription = FALSE, serializePath = FALSE, serializeLinks = FALSE)
 
 }

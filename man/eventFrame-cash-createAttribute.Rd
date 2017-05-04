@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the event frame on which to create the attribute.}
 
-\item{attribute}{The definition of the new attribute.}
-
-\item{column}{the value of the user label column}
+\item{piAttribute}{The definition of the new attribute.}
 }
 \value{
 The attribute was created. The response's Location header is a link to the created attribute.

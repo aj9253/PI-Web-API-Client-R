@@ -3,9 +3,6 @@
 \name{channel$instances}
 \alias{channel$instances}
 \title{Retrieves a list of currently running channel instances.}
-\arguments{
-\item{column}{the value of the user label column}
-}
 \value{
 A list of currently running channel instances.
 }

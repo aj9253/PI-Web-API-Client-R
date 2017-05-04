@@ -26,12 +26,12 @@ piUnitClass(webId = NULL, id = NULL, name = NULL, description = NULL,
 \item{links}{(object)}
 }
 \value{
-unitClass
+piUnitClass
 }
 \description{
 Generate an instance of the piUnitClass PI Web API class
 }
 \examples{
-unitClass(webId = "K0DqD5loBNH0erqeqJodtALAEYKC2hx4DU2jygG2_AT33gVUkTVFVOSVRcVU9NREFUQUJUB0VcVU9NQ0xBU1NFU1tRVFUOVElUWV2", id = "09FBCC8A-796D-4568-9287-C8B7BC5EA129", name = "Power", description = "Power Unit Class", canonicalUnitName = "watt", canonicalUnitAbbreviation = "W", path = "\\\\\\\\MyServer\\\\UOMDatabase\\\\UOMClasses[Power]")
+unitClass <- piUnitClass(webId = "K0DqD5loBNH0erqeqJodtALAEYKC2hx4DU2jygG2_AT33gVUkTVFVOSVRcVU9NREFUQUJUB0VcVU9NQ0xBU1NFU1tRVFUOVElUWV2", id = "09FBCC8A-796D-4568-9287-C8B7BC5EA129", name = "Power", description = "Power Unit Class", canonicalUnitName = "watt", canonicalUnitAbbreviation = "W", path = "\\\\\\\\MyServer\\\\UOMDatabase\\\\UOMClasses[Power]")
 
 }

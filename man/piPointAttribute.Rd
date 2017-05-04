@@ -14,12 +14,12 @@ piPointAttribute(name = NULL, value = NULL, links = NULL)
 \item{links}{(object)}
 }
 \value{
-pointAttribute
+piPointAttribute
 }
 \description{
 Generate an instance of the piPointAttribute PI Web API class
 }
 \examples{
-pointAttribute(name = "typicalvalue")
+pointAttribute <- piPointAttribute(name = "typicalvalue")
 
 }

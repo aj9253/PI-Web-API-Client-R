@@ -7,8 +7,6 @@
 \item{webId}{The ID of a stream.  Multiple streams may be specified with multiple instances of the parameter.}
 
 \item{selectedFields}{List of fields to be returned in the response, separated by semicolons (;). If this parameter is not specified, all available fields will be returned.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 End of stream values of the streams that meet the specified conditions.

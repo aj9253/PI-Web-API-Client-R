@@ -12,7 +12,7 @@ piItemsAttributeTrait(items = NULL, links = NULL)
 \item{links}{(object)}
 }
 \value{
-itemsAttributeTrait
+piItemsAttributeTrait
 }
 \description{
 Generate an instance of the piItemsAttributeTrait PI Web API class

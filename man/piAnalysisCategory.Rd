@@ -21,12 +21,12 @@ piAnalysisCategory(webId = NULL, id = NULL, name = NULL,
 \item{links}{(object)}
 }
 \value{
-analysisCategory
+piAnalysisCategory
 }
 \description{
 Generate an instance of the piAnalysisCategory PI Web API class
 }
 \examples{
-analysisCategory(webId = "n0DqD5loBNH0erqeqJodtALAoko2-UoOVEibhTWQCk1MDwUkVTVFVOSVRcUk9OR1xDQVRFR09SSUVTQU5BTFlTSVNbQ0FURUdPUlkxXQ", id = "f9364aa2-0e4a-4854-9b85-35900a4d4c0f", name = "CategoryName", description = "Relative energy use per ton of process feed.", path = "\\\\\\\\MyServer\\\\Database\\\\CategoriesAnalysis[CategoryName]")
+analysisCategory <- piAnalysisCategory(webId = "n0DqD5loBNH0erqeqJodtALAoko2-UoOVEibhTWQCk1MDwUkVTVFVOSVRcUk9OR1xDQVRFR09SSUVTQU5BTFlTSVNbQ0FURUdPUlkxXQ", id = "f9364aa2-0e4a-4854-9b85-35900a4d4c0f", name = "CategoryName", description = "Relative energy use per ton of process feed.", path = "\\\\\\\\MyServer\\\\Database\\\\CategoriesAnalysis[CategoryName]")
 
 }

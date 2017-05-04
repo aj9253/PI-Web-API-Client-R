@@ -5,8 +5,6 @@
 \title{Create or update an attribute's DataReference configuration (Create/Update PI point for PI Point DataReference).}
 \arguments{
 \item{webId}{The ID of the attribute.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 The attribute's DataReference configuration was created or updated.

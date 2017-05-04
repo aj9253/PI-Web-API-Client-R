@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the database in which to create the table category.}
 
-\item{tableCategory}{The new table category definition.}
-
-\item{column}{the value of the user label column}
+\item{piTableCategory}{The new table category definition.}
 }
 \value{
 The table category was created. The response's Location header is a link to the table category.

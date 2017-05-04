@@ -5,8 +5,6 @@
 \title{Delete an attribute category.}
 \arguments{
 \item{webId}{The ID of the attribute category to delete.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 The attribute category was deleted.

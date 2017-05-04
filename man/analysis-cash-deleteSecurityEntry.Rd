@@ -9,8 +9,6 @@
 \item{webId}{The ID of the analysis, where the security entry will be deleted.}
 
 \item{applyToChildren}{If false, the new access permissions are only applied to the associated object. If true, the access permissions of children with any parent-child reference types will change when the permissions on the primary parent change.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 The security entry was deleted.

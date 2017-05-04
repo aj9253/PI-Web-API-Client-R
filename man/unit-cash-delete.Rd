@@ -5,8 +5,6 @@
 \title{Delete a unit.}
 \arguments{
 \item{webId}{The ID of the unit.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 The unit was deleted.

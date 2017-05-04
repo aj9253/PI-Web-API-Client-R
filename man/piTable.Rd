@@ -28,12 +28,12 @@ piTable(webId = NULL, id = NULL, name = NULL, description = NULL,
 \item{links}{(object)}
 }
 \value{
-table
+piTable
 }
 \description{
 Generate an instance of the piTable PI Web API class
 }
 \examples{
-table(webId = "B0DqD5loBNH0erqeqJodtALAgAMa5wsjA0acPM-MJytrPAUkVTVFVOSVRcTUFSS1xUQUJMRVNbVEVTVFRBQkxFXQ", id = "e71a0380-230b-4603-9c3c-cf8c272b6b3c", name = "CarInfo", description = "Table of car info.", path = "\\\\\\\\MyServer\\\\MyDatabase\\\\Tables[CarInfo]", timeZone = "Eastern Standard Time", convertToLocalTime = FALSE)
+table <- piTable(webId = "B0DqD5loBNH0erqeqJodtALAgAMa5wsjA0acPM-MJytrPAUkVTVFVOSVRcTUFSS1xUQUJMRVNbVEVTVFRBQkxFXQ", id = "e71a0380-230b-4603-9c3c-cf8c272b6b3c", name = "CarInfo", description = "Table of car info.", path = "\\\\\\\\MyServer\\\\MyDatabase\\\\Tables[CarInfo]", timeZone = "Eastern Standard Time", convertToLocalTime = FALSE)
 
 }

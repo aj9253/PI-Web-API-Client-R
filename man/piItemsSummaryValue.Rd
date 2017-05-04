@@ -12,7 +12,7 @@ piItemsSummaryValue(items = NULL, links = NULL)
 \item{links}{(object)}
 }
 \value{
-itemsSummaryValue
+piItemsSummaryValue
 }
 \description{
 Generate an instance of the piItemsSummaryValue PI Web API class

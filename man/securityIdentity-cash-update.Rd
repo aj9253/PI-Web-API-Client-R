@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the security identity.}
 
-\item{securityIdentity}{A partial security identity containing the desired changes.}
-
-\item{column}{the value of the user label column}
+\item{piSecurityIdentity}{A partial security identity containing the desired changes.}
 }
 \value{
 The security identity was updated.

@@ -35,8 +35,6 @@
 \item{sortOrder}{The order that the returned collection is sorted. The default is 'Ascending'.}
 
 \item{startIndex}{The starting index (zero based) of the items to be returned. The default is 0.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 a list of matching attributes.

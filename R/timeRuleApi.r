@@ -5,12 +5,14 @@ timeRuleApi <- R6Class("timeRuleApi",
 		authType = NULL,
 		username = NULL,
 		password = NULL,
+		validateSSL = NULL,
 		debug = NULL,
-		initialize = function(baseUrl, authType, username, password, debug) {
+		initialize = function(baseUrl, authType, username, password, validateSSL, debug) {
 			self$serviceBase <- baseUrl
 			self$username <- username
 			self$password <- password
 			self$authType <- authType
+			self$validateSSL <- validateSSL
 			self$debug <- debug
 		},
 		getByPath = function(path, selectedFields) {
@@ -29,7 +31,7 @@ timeRuleApi <- R6Class("timeRuleApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piTimeRule"
@@ -51,14 +53,14 @@ timeRuleApi <- R6Class("timeRuleApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piTimeRule"
 			}
 			return (contentResponse)
 		},
-		update = function(webId, timeRule) {
+		update = function(webId, piTimeRule) {
 			queryParameters <- list()
 			if (is.null(webId) || webId == "") {
 				return (paste0("Error: required parameter webId was null or undefined"))
@@ -66,15 +68,15 @@ timeRuleApi <- R6Class("timeRuleApi",
 			if (is.character(webId) == FALSE) {
 				return (print(paste0("Error: webId must be a string.")))
 			}
-			if (is.null(timeRule) || timeRule == "") {
-				return (paste0("Error: required parameter timeRule was null or undefined"))
+			if (is.null(piTimeRule) || piTimeRule == "") {
+				return (paste0("Error: required parameter piTimeRule was null or undefined"))
 			}
-			className <- attr(timeRule, "className")
+			className <- attr(piTimeRule, "className")
 			if ((is.null(className)) || (className != "piTimeRule")) {
-				return (print(paste0("Error: the class from the parameter timeRule should be piTimeRule.")))
+				return (print(paste0("Error: the class from the parameter piTimeRule should be piTimeRule.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/timerules/', webId), collapse = "")
-			res <- patchHttpRequest(localVarPath, timeRule, self$username, self$password, self$authType, self$debug)
+			res <- patchHttpRequest(localVarPath, piTimeRule, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		delete = function(webId) {
@@ -86,7 +88,7 @@ timeRuleApi <- R6Class("timeRuleApi",
 				return (print(paste0("Error: webId must be a string.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/timerules/', webId), collapse = "")
-			res <- deleteHttpRequest(localVarPath, self$username, self$password, self$authType, self$debug)
+			res <- deleteHttpRequest(localVarPath, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		}
 	)

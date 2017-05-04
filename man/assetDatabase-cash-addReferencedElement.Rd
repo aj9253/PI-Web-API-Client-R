@@ -9,8 +9,6 @@
 \item{referencedElementWebId}{The ID of the referenced element. Multiple referenced elements may be specified with multiple instances of the parameter.}
 
 \item{referenceType}{The name of the reference type between the parent and the referenced element. This must be a "strong" reference type. The default is "parent-child".}
-
-\item{column}{the value of the user label column}
 }
 \value{
 The referenced element was successfully added.

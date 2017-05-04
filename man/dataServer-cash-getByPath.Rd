@@ -7,8 +7,6 @@
 \item{path}{The path to the server. Note that the path supplied to this method must be of the form '\\\\servername'.}
 
 \item{selectedFields}{List of fields to be returned in the response, separated by semicolons (;). If this parameter is not specified, all available fields will be returned.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 The requested server.

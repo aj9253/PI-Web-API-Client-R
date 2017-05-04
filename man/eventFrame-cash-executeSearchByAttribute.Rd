@@ -33,8 +33,6 @@
 \item{startIndex}{The starting index (zero based) of the items to be returned. The default is 0.}
 
 \item{startTime}{The starting time for the search. startTime must be less than or equal to the endTime. The searchMode parameter will control whether the comparison will be performed against the event frame's startTime or endTime. The default is '*-8h'.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 a list of matching EventFrames.

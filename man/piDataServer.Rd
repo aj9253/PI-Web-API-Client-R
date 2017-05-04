@@ -23,12 +23,12 @@ piDataServer(webId = NULL, id = NULL, name = NULL, path = NULL,
 \item{links}{(object)}
 }
 \value{
-dataServer
+piDataServer
 }
 \description{
 Generate an instance of the piDataServer PI Web API class
 }
 \examples{
-dataServer(webId = "s0ZkdQM9wxoUCScZWmnpgoEwUEhMVlpO", id = "6F88ABE1-7F0B-421A-852F-A0AE50035888", name = "MyPIServer", path = "\\\\\\\\PIServer[MyPIServer]", isConnected = FALSE, serverVersion = "3.4.390.18")
+dataServer <- piDataServer(webId = "s0ZkdQM9wxoUCScZWmnpgoEwUEhMVlpO", id = "6F88ABE1-7F0B-421A-852F-A0AE50035888", name = "MyPIServer", path = "\\\\\\\\PIServer[MyPIServer]", isConnected = FALSE, serverVersion = "3.4.390.18")
 
 }

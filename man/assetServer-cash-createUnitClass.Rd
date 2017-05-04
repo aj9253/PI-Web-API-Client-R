@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the server.}
 
-\item{unitClass}{The new unit class definition.}
-
-\item{column}{the value of the user label column}
+\item{piUnitClass}{The new unit class definition.}
 }
 \value{
 The unit class was created. The response's Location header is a link to the unit class.

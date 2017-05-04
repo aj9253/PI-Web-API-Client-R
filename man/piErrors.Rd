@@ -10,7 +10,7 @@ piErrors(errors = NULL)
 \item{errors}{(array)}
 }
 \value{
-errors
+piErrors
 }
 \description{
 Generate an instance of the piErrors PI Web API class

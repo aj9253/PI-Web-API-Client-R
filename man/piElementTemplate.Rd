@@ -40,12 +40,12 @@ piElementTemplate(webId = NULL, id = NULL, name = NULL,
 \item{links}{(object)}
 }
 \value{
-elementTemplate
+piElementTemplate
 }
 \description{
 Generate an instance of the piElementTemplate PI Web API class
 }
 \examples{
-elementTemplate(webId = "T0DqD5loBNH0erqeqJodtALAvdrykzvWo0SXjjgcl9gTqAkUVTVFVOSVRcU1VHQVJ5UQNcRUxFTUVOVFRFTVBMQVRFU1t1TFRFUlBSSVNFXQ", id = "74646B96-A130-40A3-AA25-49396C9D6B3C", name = "Boiler", description = "Boiler", path = "\\\\\\\\MyServer\\\\NuGreen\\\\ElementTemplates[Boiler]", allowElementToExtend = FALSE, baseTemplate = "Equipment", instanceType = "Element", namingPattern = "\%TEMPLATE\%", severity = "None", canBeAcknowledged = FALSE)
+elementTemplate <- piElementTemplate(webId = "T0DqD5loBNH0erqeqJodtALAvdrykzvWo0SXjjgcl9gTqAkUVTVFVOSVRcU1VHQVJ5UQNcRUxFTUVOVFRFTVBMQVRFU1t1TFRFUlBSSVNFXQ", id = "74646B96-A130-40A3-AA25-49396C9D6B3C", name = "Boiler", description = "Boiler", path = "\\\\\\\\MyServer\\\\NuGreen\\\\ElementTemplates[Boiler]", allowElementToExtend = FALSE, baseTemplate = "Equipment", instanceType = "Element", namingPattern = "\%TEMPLATE\%", severity = "None", canBeAcknowledged = FALSE)
 
 }

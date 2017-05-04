@@ -10,7 +10,7 @@ piLanding(links = NULL)
 \item{links}{(object)}
 }
 \value{
-landing
+piLanding
 }
 \description{
 Generate an instance of the piLanding PI Web API class

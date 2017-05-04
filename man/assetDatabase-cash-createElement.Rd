@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the asset database on which to create the element.}
 
-\item{element}{The new element definition.}
-
-\item{column}{the value of the user label column}
+\item{piElement}{The new element definition.}
 }
 \value{
 The element was created. The response's Location header is a link to the element.

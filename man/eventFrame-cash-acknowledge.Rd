@@ -5,8 +5,6 @@
 \title{Calls the EventFrame's Acknowledge method.}
 \arguments{
 \item{webId}{The ID of the event frame.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 The event frame has been acknowledged.

@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the unit.}
 
-\item{unitDTO}{A partial unit containing the desired changes.}
-
-\item{column}{the value of the user label column}
+\item{piUnit}{A partial unit containing the desired changes.}
 }
 \value{
 The unit was updated.

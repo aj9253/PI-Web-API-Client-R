@@ -31,8 +31,6 @@
 \item{templateName}{Specify that included attributes must be members of this template. The default is no template filter.}
 
 \item{timeZone}{The time zone in which the time string will be interpreted. This parameter will be ignored if a time zone is specified in the time string. If no time zone is specified in either places, the PI Web API server time zone will be used.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 Interpolated values of the streams that meet the specified conditions.

@@ -11,8 +11,6 @@
 \item{applyToChildren}{If false, the new access permissions are only applied to the associated object. If true, the access permissions of children with any parent-child reference types will change when the permissions on the primary parent change.}
 
 \item{securityItem}{The security item of the desired security entries to be deleted. If the parameter is not specified, security entries of the 'Default' security item will be deleted.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 The security entry was deleted.

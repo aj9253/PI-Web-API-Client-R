@@ -5,8 +5,6 @@
 \title{Delete an element.}
 \arguments{
 \item{webId}{The ID of the element.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 The element was deleted.

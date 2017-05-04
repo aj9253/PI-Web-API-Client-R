@@ -14,12 +14,12 @@ piSystemLanding(productTitle = NULL, productVersion = NULL, links = NULL)
 \item{links}{(object)}
 }
 \value{
-systemLanding
+piSystemLanding
 }
 \description{
 Generate an instance of the piSystemLanding PI Web API class
 }
 \examples{
-systemLanding(productTitle = "PI Web API 2016 R2", productVersion = "1.8.0.201")
+systemLanding <- piSystemLanding(productTitle = "PI Web API 2016 R2", productVersion = "1.8.0.201")
 
 }

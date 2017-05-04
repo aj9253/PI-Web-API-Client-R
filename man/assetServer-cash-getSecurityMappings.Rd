@@ -17,8 +17,6 @@
 \item{sortField}{The field or property of the object used to sort the returned collection. The default is 'Name'.}
 
 \item{sortOrder}{The order that the returned collection is sorted. The default is 'Ascending'.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 A list of security mappings matching the specified condition.

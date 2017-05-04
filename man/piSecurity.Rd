@@ -33,12 +33,12 @@ piSecurity(canAnnotate = NULL, canDelete = NULL, canExecute = NULL,
 \item{rights}{(array)}
 }
 \value{
-security
+piSecurity
 }
 \description{
 Generate an instance of the piSecurity PI Web API class
 }
 \examples{
-security(canAnnotate = FALSE, canDelete = FALSE, canExecute = FALSE, canRead = FALSE, canReadData = FALSE, canSubscribe = FALSE, canSubscribeOthers = FALSE, canWrite = FALSE, canWriteData = FALSE, hasAdmin = FALSE)
+security <- piSecurity(canAnnotate = FALSE, canDelete = FALSE, canExecute = FALSE, canRead = FALSE, canReadData = FALSE, canSubscribe = FALSE, canSubscribeOthers = FALSE, canWrite = FALSE, canWriteData = FALSE, hasAdmin = FALSE)
 
 }

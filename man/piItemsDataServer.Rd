@@ -12,7 +12,7 @@ piItemsDataServer(items = NULL, links = NULL)
 \item{links}{(object)}
 }
 \value{
-itemsDataServer
+piItemsDataServer
 }
 \description{
 Generate an instance of the piItemsDataServer PI Web API class

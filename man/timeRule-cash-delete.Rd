@@ -5,8 +5,6 @@
 \title{Delete a Time Rule.}
 \arguments{
 \item{webId}{The ID of the Time Rule.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 The Time Rule was deleted.

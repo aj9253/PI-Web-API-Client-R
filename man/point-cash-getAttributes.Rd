@@ -11,8 +11,6 @@
 \item{nameFilter}{The filter to the names of the list of point attributes to be returned. The default is no filter.}
 
 \item{selectedFields}{List of fields to be returned in the response, separated by semicolons (;). If this parameter is not specified, all available fields will be returned.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 A list of point attributes based on the specified names and name filter.

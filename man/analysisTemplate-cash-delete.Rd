@@ -5,8 +5,6 @@
 \title{Delete an analysis template.}
 \arguments{
 \item{webId}{The ID of the analysis template to update.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 The analysis template was deleted.

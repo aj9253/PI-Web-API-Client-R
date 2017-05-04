@@ -10,12 +10,12 @@ piRequestTemplate(resource = NULL)
 \item{resource}{(string)}
 }
 \value{
-requestTemplate
+piRequestTemplate
 }
 \description{
 Generate an instance of the piRequestTemplate PI Web API class
 }
 \examples{
-requestTemplate(resource = "")
+requestTemplate <- piRequestTemplate(resource = "")
 
 }

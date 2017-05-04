@@ -3,9 +3,6 @@
 \name{system$versions}
 \alias{system$versions}
 \title{Get the current versions of the PI Web API instance and all external plugins.}
-\arguments{
-\item{column}{the value of the user label column}
-}
 \value{
 A dictionary of assembly name-version information pairs.
 }

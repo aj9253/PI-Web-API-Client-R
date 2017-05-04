@@ -25,8 +25,6 @@
 \item{timeType}{Specifies how to calculate the timestamp for each interval. The default is 'Auto'.}
 
 \item{webId}{The ID of the target object of the expression. A target object can be a Data Server, a database, an element, an event frame or an attribute. References to attributes or points are based on the target. If this parameter is not provided, the target object is set to null.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 The calculated values.

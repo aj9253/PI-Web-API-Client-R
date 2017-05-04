@@ -5,12 +5,14 @@ dataServerApi <- R6Class("dataServerApi",
 		authType = NULL,
 		username = NULL,
 		password = NULL,
+		validateSSL = NULL,
 		debug = NULL,
-		initialize = function(baseUrl, authType, username, password, debug) {
+		initialize = function(baseUrl, authType, username, password, validateSSL, debug) {
 			self$serviceBase <- baseUrl
 			self$username <- username
 			self$password <- password
 			self$authType <- authType
+			self$validateSSL <- validateSSL
 			self$debug <- debug
 		},
 		list = function(selectedFields) {
@@ -22,7 +24,7 @@ dataServerApi <- R6Class("dataServerApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsDataServer"
@@ -45,7 +47,7 @@ dataServerApi <- R6Class("dataServerApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piDataServer"
@@ -68,7 +70,7 @@ dataServerApi <- R6Class("dataServerApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piDataServer"
@@ -90,7 +92,7 @@ dataServerApi <- R6Class("dataServerApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piDataServer"
@@ -112,14 +114,14 @@ dataServerApi <- R6Class("dataServerApi",
 					return (print(paste0("Error: selectedFields must be a string.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsEnumerationSet"
 			}
 			return (contentResponse)
 		},
-		createEnumerationSet = function(webId, enumerationSet) {
+		createEnumerationSet = function(webId, piEnumerationSet) {
 			queryParameters <- list()
 			if (is.null(webId) || webId == "") {
 				return (paste0("Error: required parameter webId was null or undefined"))
@@ -127,15 +129,15 @@ dataServerApi <- R6Class("dataServerApi",
 			if (is.character(webId) == FALSE) {
 				return (print(paste0("Error: webId must be a string.")))
 			}
-			if (is.null(enumerationSet) || enumerationSet == "") {
-				return (paste0("Error: required parameter enumerationSet was null or undefined"))
+			if (is.null(piEnumerationSet) || piEnumerationSet == "") {
+				return (paste0("Error: required parameter piEnumerationSet was null or undefined"))
 			}
-			className <- attr(enumerationSet, "className")
+			className <- attr(piEnumerationSet, "className")
 			if ((is.null(className)) || (className != "piEnumerationSet")) {
-				return (print(paste0("Error: the class from the parameter enumerationSet should be piEnumerationSet.")))
+				return (print(paste0("Error: the class from the parameter piEnumerationSet should be piEnumerationSet.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/dataservers/', webId, '/enumerationsets'), collapse = "")
-			res <- postHttpRequest(localVarPath, enumerationSet, self$username, self$password, self$authType, self$debug)
+			res <- postHttpRequest(localVarPath, piEnumerationSet, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		},
 		getPoints = function(webId, maxCount, nameFilter, selectedFields, startIndex) {
@@ -171,14 +173,14 @@ dataServerApi <- R6Class("dataServerApi",
 					return (print(paste0("Error: startIndex must be an integer.")))
 				}
 			}
-			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$debug)
+			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			contentResponse <- content(res)
 			if (res$status == 200) {
 				attr(contentResponse, "className") <- "piItemsPoint"
 			}
 			return (contentResponse)
 		},
-		createPoint = function(webId, pointDTO) {
+		createPoint = function(webId, piPoint) {
 			queryParameters <- list()
 			if (is.null(webId) || webId == "") {
 				return (paste0("Error: required parameter webId was null or undefined"))
@@ -186,15 +188,15 @@ dataServerApi <- R6Class("dataServerApi",
 			if (is.character(webId) == FALSE) {
 				return (print(paste0("Error: webId must be a string.")))
 			}
-			if (is.null(pointDTO) || pointDTO == "") {
-				return (paste0("Error: required parameter pointDTO was null or undefined"))
+			if (is.null(piPoint) || piPoint == "") {
+				return (paste0("Error: required parameter piPoint was null or undefined"))
 			}
-			className <- attr(pointDTO, "className")
+			className <- attr(piPoint, "className")
 			if ((is.null(className)) || (className != "piPoint")) {
-				return (print(paste0("Error: the class from the parameter pointDTO should be piPoint.")))
+				return (print(paste0("Error: the class from the parameter piPoint should be piPoint.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/dataservers/', webId, '/points'), collapse = "")
-			res <- postHttpRequest(localVarPath, pointDTO, self$username, self$password, self$authType, self$debug)
+			res <- postHttpRequest(localVarPath, piPoint, self$username, self$password, self$authType, self$validateSSL, self$debug)
 			return (res)
 		}
 	)

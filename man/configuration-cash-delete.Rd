@@ -5,8 +5,6 @@
 \title{Delete a configuration item.}
 \arguments{
 \item{key}{The key of the configuration item to remove.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 The change has been accepted, and will take effect when the service can cleanly restart.

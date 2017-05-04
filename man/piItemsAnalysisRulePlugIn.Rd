@@ -12,7 +12,7 @@ piItemsAnalysisRulePlugIn(items = NULL, links = NULL)
 \item{links}{(object)}
 }
 \value{
-itemsAnalysisRulePlugIn
+piItemsAnalysisRulePlugIn
 }
 \description{
 Generate an instance of the piItemsAnalysisRulePlugIn PI Web API class

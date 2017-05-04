@@ -12,7 +12,7 @@ piItemsEventFrame(items = NULL, links = NULL)
 \item{links}{(object)}
 }
 \value{
-itemsEventFrame
+piItemsEventFrame
 }
 \description{
 Generate an instance of the piItemsEventFrame PI Web API class

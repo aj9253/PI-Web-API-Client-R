@@ -17,12 +17,12 @@ piItemAttribute(identifier = NULL, identifierType = NULL, object = NULL,
 \item{exception}{()}
 }
 \value{
-itemAttribute
+piItemAttribute
 }
 \description{
 Generate an instance of the piItemAttribute PI Web API class
 }
 \examples{
-itemAttribute(identifier = "\\\\\\\\server\\\\path", identifierType = "Path")
+itemAttribute <- piItemAttribute(identifier = "\\\\\\\\server\\\\path", identifierType = "Path")
 
 }

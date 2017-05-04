@@ -3,9 +3,6 @@
 \name{system$landing}
 \alias{system$landing}
 \title{Get system links for this PI System Web API instance.}
-\arguments{
-\item{column}{the value of the user label column}
-}
 \value{
 Links to top level collections and system information.
 }

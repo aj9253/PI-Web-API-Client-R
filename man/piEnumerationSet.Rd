@@ -24,12 +24,12 @@ piEnumerationSet(webId = NULL, id = NULL, name = NULL,
 \item{serializeDescription}{(boolean)}
 }
 \value{
-enumerationSet
+piEnumerationSet
 }
 \description{
 Generate an instance of the piEnumerationSet PI Web API class
 }
 \examples{
-enumerationSet(webId = "U0qDSD5loBNH0erqeqJodtALAChs3W0xcXUG6x0ibnAnQdgUkVTVFVOScVRU1VHQVJNQU5cRX5VTUVSQVRJT05TRVRTW0VOVU1FUkFUSU9OIFNFVCAzXQ", id = "C186EF94-2028-4954-A136-FAEA79CEE9AA", name = "Model Number", description = "Model numbers by brand of vehicle", path = "\\\\\\\\MyServer\\\\NuGreen\\\\EnumerationSets[Model Number]", serializeDescription = FALSE)
+enumerationSet <- piEnumerationSet(webId = "U0qDSD5loBNH0erqeqJodtALAChs3W0xcXUG6x0ibnAnQdgUkVTVFVOScVRU1VHQVJNQU5cRX5VTUVSQVRJT05TRVRTW0VOVU1FUkFUSU9OIFNFVCAzXQ", id = "C186EF94-2028-4954-A136-FAEA79CEE9AA", name = "Model Number", description = "Model numbers by brand of vehicle", path = "\\\\\\\\MyServer\\\\NuGreen\\\\EnumerationSets[Model Number]", serializeDescription = FALSE)
 
 }

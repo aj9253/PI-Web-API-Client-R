@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the database in which to create the table.}
 
-\item{table}{The new table definition.}
-
-\item{column}{the value of the user label column}
+\item{piTable}{The new table definition.}
 }
 \value{
 The table was created. The response's Location header is a link to the created table.

@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the attribute.}
 
-\item{value}{The value to write.}
-
-\item{column}{the value of the user label column}
+\item{piTimedValue}{The value to write.}
 }
 \value{
 The value was set successfully.

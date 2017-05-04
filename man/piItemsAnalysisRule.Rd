@@ -12,7 +12,7 @@ piItemsAnalysisRule(items = NULL, links = NULL)
 \item{links}{(object)}
 }
 \value{
-itemsAnalysisRule
+piItemsAnalysisRule
 }
 \description{
 Generate an instance of the piItemsAnalysisRule PI Web API class

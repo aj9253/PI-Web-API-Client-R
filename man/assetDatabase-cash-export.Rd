@@ -11,8 +11,6 @@
 \item{exportMode}{Indicates the type of export to perform. The default is 'StrongReferences'. Multiple export modes may be specified by using multiple instances of exportMode.}
 
 \item{startTime}{The earliest starting time for AFEventFrame, AFTransfer, and AFCase objects that may be part of the export. The default is '*-30d'.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 Database exported. The response body contains the serialized database.

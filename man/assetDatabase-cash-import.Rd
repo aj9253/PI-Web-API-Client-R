@@ -7,8 +7,6 @@
 \item{webId}{The ID of the asset database.}
 
 \item{importMode}{Indicates the type of import to perform. The default is 'AllowCreate | AllowUpdate | AutoCheckIn'. Multiple import modes may be specified by using multiple instances of importMode.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 Database imported.

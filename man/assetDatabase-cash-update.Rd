@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the database.}
 
-\item{database}{A partial database containing the desired changes.}
-
-\item{column}{the value of the user label column}
+\item{piAssetDatabase}{A partial database containing the desired changes.}
 }
 \value{
 The database was updated.

@@ -12,12 +12,12 @@ piTimedValues(items = NULL, unitsAbbreviation = NULL)
 \item{unitsAbbreviation}{(string)}
 }
 \value{
-timedValues
+piTimedValues
 }
 \description{
 Generate an instance of the piTimedValues PI Web API class
 }
 \examples{
-timedValues(unitsAbbreviation = "")
+timedValues <- piTimedValues(unitsAbbreviation = "")
 
 }

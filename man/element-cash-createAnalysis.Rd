@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the element on which to create the Analysis.}
 
-\item{analysis}{The new Analysis definition.}
-
-\item{column}{the value of the user label column}
+\item{piAnalysis}{The new Analysis definition.}
 }
 \value{
 The Analysis was created. The response's Location header is a link to the Analysis.

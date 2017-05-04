@@ -30,12 +30,12 @@ piElement(webId = NULL, id = NULL, name = NULL, description = NULL,
 \item{links}{(object)}
 }
 \value{
-element
+piElement
 }
 \description{
 Generate an instance of the piElement PI Web API class
 }
 \examples{
-element(webId = "E0DqD5loBNH0erqeqJodtALAvGEqktDl4xG-twAFmjx6UAUkVTVFVOSVRUc1VHQVJNQU5V1TcHUkVFTg", id = "FCBC2D39-4085-491B-A0EE-E25767C85FA5", name = "B-210", description = "Boiler B-210", path = "\\\\\\\\MyServer\\\\NuGreen\\\\NuGreen\\\\Houston\\\\Cracking Process\\\\Equipment\\\\B-210", templateName = "Boiler", hasChildren = FALSE)
+element <- piElement(webId = "E0DqD5loBNH0erqeqJodtALAvGEqktDl4xG-twAFmjx6UAUkVTVFVOSVRUc1VHQVJNQU5V1TcHUkVFTg", id = "FCBC2D39-4085-491B-A0EE-E25767C85FA5", name = "B-210", description = "Boiler B-210", path = "\\\\\\\\MyServer\\\\NuGreen\\\\NuGreen\\\\Houston\\\\Cracking Process\\\\Equipment\\\\B-210", templateName = "Boiler", hasChildren = FALSE)
 
 }

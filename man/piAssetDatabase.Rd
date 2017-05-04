@@ -24,12 +24,12 @@ piAssetDatabase(webId = NULL, id = NULL, name = NULL,
 \item{links}{(object)}
 }
 \value{
-assetDatabase
+piAssetDatabase
 }
 \description{
 Generate an instance of the piAssetDatabase PI Web API class
 }
 \examples{
-assetDatabase(webId = "D0NxzXSxtlKkGzAaZhKOB-KABJ2buwfWrkye3YhdL2FOUAUEhMQUZTMDRcQgYUUEVSRk9STUFOQ0UgVEVTVElORw", id = "23913034-072C-41AC-BBBD-95FB6C4122D5", name = "NuGreen", description = "PI BI Project Asset Model", path = "\\\\\\\\MyServer\\\\NuGreen")
+assetDatabase <- piAssetDatabase(webId = "D0NxzXSxtlKkGzAaZhKOB-KABJ2buwfWrkye3YhdL2FOUAUEhMQUZTMDRcQgYUUEVSRk9STUFOQ0UgVEVTVElORw", id = "23913034-072C-41AC-BBBD-95FB6C4122D5", name = "NuGreen", description = "PI BI Project Asset Model", path = "\\\\\\\\MyServer\\\\NuGreen")
 
 }

@@ -5,8 +5,6 @@
 \title{Get the value of a configuration item.}
 \arguments{
 \item{key}{The key of the configuration item.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 The value of the configuration item.

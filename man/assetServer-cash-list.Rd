@@ -5,8 +5,6 @@
 \title{Retrieve a list of all Asset Servers known to this service.}
 \arguments{
 \item{selectedFields}{List of fields to be returned in the response, separated by semicolons (;). If this parameter is not specified, all available fields will be returned.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 A list of servers.

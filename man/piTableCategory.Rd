@@ -21,12 +21,12 @@ piTableCategory(webId = NULL, id = NULL, name = NULL,
 \item{links}{(object)}
 }
 \value{
-tableCategory
+piTableCategory
 }
 \description{
 Generate an instance of the piTableCategory PI Web API class
 }
 \examples{
-tableCategory(webId = "a0DqD5loBNH0erqeqJodtALAwgzHiSFSd06HP4lKPqYefQUkVTVFVOSVRcUk9OR1xDQVRFR09SSUVTVEFCTEVbQ0FURUdPUlkxXQ", id = "89c70cc2-5221-4e77-873f-894a3ea61e7d", name = "CategoryName", description = "Relative energy use per ton of process feed.", path = "\\\\\\\\MyServer\\\\Database\\\\CategoriesTable[CategoryName]")
+tableCategory <- piTableCategory(webId = "a0DqD5loBNH0erqeqJodtALAwgzHiSFSd06HP4lKPqYefQUkVTVFVOSVRcUk9OR1xDQVRFR09SSUVTVEFCTEVbQ0FURUdPUlkxXQ", id = "89c70cc2-5221-4e77-873f-894a3ea61e7d", name = "CategoryName", description = "Relative energy use per ton of process feed.", path = "\\\\\\\\MyServer\\\\Database\\\\CategoriesTable[CategoryName]")
 
 }

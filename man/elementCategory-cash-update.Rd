@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the element category to update.}
 
-\item{elementCategory}{A partial element category containing the desired changes.}
-
-\item{column}{the value of the user label column}
+\item{piElementCategory}{A partial element category containing the desired changes.}
 }
 \value{
 The element category was updated.

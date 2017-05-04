@@ -21,12 +21,12 @@ piElementCategory(webId = NULL, id = NULL, name = NULL,
 \item{links}{(object)}
 }
 \value{
-elementCategory
+piElementCategory
 }
 \description{
 Generate an instance of the piElementCategory PI Web API class
 }
 \examples{
-elementCategory(webId = "e0DqD5loBNH0erqeqJodtALAQ_lRME1-QUKrnEUKhMgEUAUkVTVFVOSVRcUk9OR1xDQVRFR09SSUVTRUxFTUVOVFtDQVRFR09SWTFd", id = "3051f943-7e4d-4241-ab9c-450a84c80450", name = "CategoryName", description = "Relative energy use per ton of process feed.", path = "\\\\\\\\MyServer\\\\Database\\\\CategoriesElement[CategoryName]")
+elementCategory <- piElementCategory(webId = "e0DqD5loBNH0erqeqJodtALAQ_lRME1-QUKrnEUKhMgEUAUkVTVFVOSVRcUk9OR1xDQVRFR09SSUVTRUxFTUVOVFtDQVRFR09SWTFd", id = "3051f943-7e4d-4241-ab9c-450a84c80450", name = "CategoryName", description = "Relative energy use per ton of process feed.", path = "\\\\\\\\MyServer\\\\Database\\\\CategoriesElement[CategoryName]")
 
 }

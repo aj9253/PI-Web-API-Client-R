@@ -12,7 +12,7 @@ piItemsUnitClass(items = NULL, links = NULL)
 \item{links}{(object)}
 }
 \value{
-itemsUnitClass
+piItemsUnitClass
 }
 \description{
 Generate an instance of the piItemsUnitClass PI Web API class

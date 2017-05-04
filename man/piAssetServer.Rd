@@ -28,12 +28,12 @@ piAssetServer(webId = NULL, id = NULL, name = NULL, description = NULL,
 \item{links}{(object)}
 }
 \value{
-assetServer
+piAssetServer
 }
 \description{
 Generate an instance of the piAssetServer PI Web API class
 }
 \examples{
-assetServer(webId = "S0DqD5loBNH0erqeqJodtBZxUkVTyRVOmNQ", id = "88AC2613-6A25-43EE-8C72-11EA52AF9025", name = "MyServer", description = "Sample Description", path = "\\\\\\\\MyServer", isConnected = FALSE, serverVersion = "2.5.0.5039")
+assetServer <- piAssetServer(webId = "S0DqD5loBNH0erqeqJodtBZxUkVTyRVOmNQ", id = "88AC2613-6A25-43EE-8C72-11EA52AF9025", name = "MyServer", description = "Sample Description", path = "\\\\\\\\MyServer", isConnected = FALSE, serverVersion = "2.5.0.5039")
 
 }

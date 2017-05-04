@@ -39,8 +39,6 @@
 \item{startTime}{The starting time for the search. startTime must be less than or equal to the endTime. The searchMode parameter will control whether the comparison will be performed against the event frame's startTime or endTime. The default is '*-8h'.}
 
 \item{templateName}{Specify that returned event frames must have this template or a template derived from this template. The default is no template filter. Specify this parameter by name.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 A list of event frames matching the specified conditions.

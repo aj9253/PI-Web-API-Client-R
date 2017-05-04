@@ -5,8 +5,6 @@
 \title{Delete an event frame.}
 \arguments{
 \item{webId}{The ID of the event frame to delete.}
-
-\item{column}{the value of the user label column}
 }
 \value{
 The event frame was deleted.

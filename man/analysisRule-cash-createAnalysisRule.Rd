@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the parent Analysis Rule, on which to create the child Analysis Rule.}
 
-\item{analysisRule}{The definition of the new Analysis Rule.}
-
-\item{column}{the value of the user label column}
+\item{piAnalysisRule}{The definition of the new Analysis Rule.}
 }
 \value{
 The Analysis Rule was created. The response's Location header is a link to the created Analysis Rule.

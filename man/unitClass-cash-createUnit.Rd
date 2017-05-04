@@ -6,9 +6,7 @@
 \arguments{
 \item{webId}{The ID of the server.}
 
-\item{unitDTO}{The new unit definition.}
-
-\item{column}{the value of the user label column}
+\item{piUnit}{The new unit definition.}
 }
 \value{
 The unit was created. The response's Location header is a link to the unit.
