@@ -242,8 +242,8 @@ streamSetApi <- R6Class("streamSetApi",
 			if (is.null(time) || time == "") {
 				return (paste0("Error: required parameter time was null or undefined"))
 			}
-			if (is.list(time) == FALSE) {
-				return (print(paste0("Error: time must be a list.")))
+			if (is.vector(time) == FALSE) {
+				return (print(paste0("Error: time must be a vector.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/streamsets/', webId, '/interpolatedattimes'), collapse = "")
 			if (missing(categoryName) == FALSE && is.null(categoryName) == FALSE && categoryName != "") {
@@ -524,8 +524,8 @@ streamSetApi <- R6Class("streamSetApi",
 			if (is.null(values) || values == "") {
 				return (paste0("Error: required parameter values was null or undefined"))
 			}
-			if (is.list(values) == FALSE) {
-				return (print(paste0("Error: values must be a list.")))
+			if (is.vector(values) == FALSE) {
+				return (print(paste0("Error: values must be a vector.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/streamsets/', webId, '/recorded'), collapse = "")
 			if (missing(bufferOption) == FALSE && is.null(bufferOption) == FALSE && bufferOption != "") {
@@ -634,8 +634,8 @@ streamSetApi <- R6Class("streamSetApi",
 			if (is.null(time) || time == "") {
 				return (paste0("Error: required parameter time was null or undefined"))
 			}
-			if (is.list(time) == FALSE) {
-				return (print(paste0("Error: time must be a list.")))
+			if (is.vector(time) == FALSE) {
+				return (print(paste0("Error: time must be a vector.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/streamsets/', webId, '/recordedattimes'), collapse = "")
 			if (missing(categoryName) == FALSE && is.null(categoryName) == FALSE && categoryName != "") {
@@ -800,8 +800,8 @@ streamSetApi <- R6Class("streamSetApi",
 			}
 			if (missing(summaryType) == FALSE && is.null(summaryType) == FALSE && summaryType != "") {
 				queryParameters$summaryType <- summaryType
-				if (is.list(summaryType) == FALSE) {
-					return (print(paste0("Error: summaryType must be a list.")))
+				if (is.vector(summaryType) == FALSE) {
+					return (print(paste0("Error: summaryType must be a vector.")))
 				}
 			}
 			if (missing(templateName) == FALSE && is.null(templateName) == FALSE && templateName != "") {
@@ -916,8 +916,8 @@ streamSetApi <- R6Class("streamSetApi",
 			if (is.null(values) || values == "") {
 				return (paste0("Error: required parameter values was null or undefined"))
 			}
-			if (is.list(values) == FALSE) {
-				return (print(paste0("Error: values must be a list.")))
+			if (is.vector(values) == FALSE) {
+				return (print(paste0("Error: values must be a vector.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/streamsets/', webId, '/value'), collapse = "")
 			if (missing(bufferOption) == FALSE && is.null(bufferOption) == FALSE && bufferOption != "") {
@@ -940,8 +940,8 @@ streamSetApi <- R6Class("streamSetApi",
 			if (is.null(webId) || webId == "") {
 				return (paste0("Error: required parameter webId was null or undefined"))
 			}
-			if (is.list(webId) == FALSE) {
-				return (print(paste0("Error: webId must be a list.")))
+			if (is.vector(webId) == FALSE) {
+				return (print(paste0("Error: webId must be a vector.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/streamsets/channel'), collapse = "")
 			if (missing(includeInitialValues) == FALSE && is.null(includeInitialValues) == FALSE && includeInitialValues != "") {
@@ -962,8 +962,8 @@ streamSetApi <- R6Class("streamSetApi",
 			if (is.null(webId) || webId == "") {
 				return (paste0("Error: required parameter webId was null or undefined"))
 			}
-			if (is.list(webId) == FALSE) {
-				return (print(paste0("Error: webId must be a list.")))
+			if (is.vector(webId) == FALSE) {
+				return (print(paste0("Error: webId must be a vector.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/streamsets/end'), collapse = "")
 			if (missing(selectedFields) == FALSE && is.null(selectedFields) == FALSE && selectedFields != "") {
@@ -984,8 +984,8 @@ streamSetApi <- R6Class("streamSetApi",
 			if (is.null(webId) || webId == "") {
 				return (paste0("Error: required parameter webId was null or undefined"))
 			}
-			if (is.list(webId) == FALSE) {
-				return (print(paste0("Error: webId must be a list.")))
+			if (is.vector(webId) == FALSE) {
+				return (print(paste0("Error: webId must be a vector.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/streamsets/interpolated'), collapse = "")
 			if (missing(endTime) == FALSE && is.null(endTime) == FALSE && endTime != "") {
@@ -1042,14 +1042,14 @@ streamSetApi <- R6Class("streamSetApi",
 			if (is.null(time) || time == "") {
 				return (paste0("Error: required parameter time was null or undefined"))
 			}
-			if (is.list(time) == FALSE) {
-				return (print(paste0("Error: time must be a list.")))
+			if (is.vector(time) == FALSE) {
+				return (print(paste0("Error: time must be a vector.")))
 			}
 			if (is.null(webId) || webId == "") {
 				return (paste0("Error: required parameter webId was null or undefined"))
 			}
-			if (is.list(webId) == FALSE) {
-				return (print(paste0("Error: webId must be a list.")))
+			if (is.vector(webId) == FALSE) {
+				return (print(paste0("Error: webId must be a vector.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/streamsets/interpolatedattimes'), collapse = "")
 			if (missing(filterExpression) == FALSE && is.null(filterExpression) == FALSE && filterExpression != "") {
@@ -1100,8 +1100,8 @@ streamSetApi <- R6Class("streamSetApi",
 			if (is.null(webId) || webId == "") {
 				return (paste0("Error: required parameter webId was null or undefined"))
 			}
-			if (is.list(webId) == FALSE) {
-				return (print(paste0("Error: webId must be a list.")))
+			if (is.vector(webId) == FALSE) {
+				return (print(paste0("Error: webId must be a vector.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/streamsets/plot'), collapse = "")
 			if (missing(endTime) == FALSE && is.null(endTime) == FALSE && endTime != "") {
@@ -1149,8 +1149,8 @@ streamSetApi <- R6Class("streamSetApi",
 			if (is.null(webId) || webId == "") {
 				return (paste0("Error: required parameter webId was null or undefined"))
 			}
-			if (is.list(webId) == FALSE) {
-				return (print(paste0("Error: webId must be a list.")))
+			if (is.vector(webId) == FALSE) {
+				return (print(paste0("Error: webId must be a vector.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/streamsets/recorded'), collapse = "")
 			if (missing(boundaryType) == FALSE && is.null(boundaryType) == FALSE && boundaryType != "") {
@@ -1216,8 +1216,8 @@ streamSetApi <- R6Class("streamSetApi",
 			if (is.null(values) || values == "") {
 				return (paste0("Error: required parameter values was null or undefined"))
 			}
-			if (is.list(values) == FALSE) {
-				return (print(paste0("Error: values must be a list.")))
+			if (is.vector(values) == FALSE) {
+				return (print(paste0("Error: values must be a vector.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/streamsets/recorded'), collapse = "")
 			if (missing(bufferOption) == FALSE && is.null(bufferOption) == FALSE && bufferOption != "") {
@@ -1247,8 +1247,8 @@ streamSetApi <- R6Class("streamSetApi",
 			if (is.null(webId) || webId == "") {
 				return (paste0("Error: required parameter webId was null or undefined"))
 			}
-			if (is.list(webId) == FALSE) {
-				return (print(paste0("Error: webId must be a list.")))
+			if (is.vector(webId) == FALSE) {
+				return (print(paste0("Error: webId must be a vector.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/streamsets/recordedattime'), collapse = "")
 			if (missing(retrievalMode) == FALSE && is.null(retrievalMode) == FALSE && retrievalMode != "") {
@@ -1284,14 +1284,14 @@ streamSetApi <- R6Class("streamSetApi",
 			if (is.null(time) || time == "") {
 				return (paste0("Error: required parameter time was null or undefined"))
 			}
-			if (is.list(time) == FALSE) {
-				return (print(paste0("Error: time must be a list.")))
+			if (is.vector(time) == FALSE) {
+				return (print(paste0("Error: time must be a vector.")))
 			}
 			if (is.null(webId) || webId == "") {
 				return (paste0("Error: required parameter webId was null or undefined"))
 			}
-			if (is.list(webId) == FALSE) {
-				return (print(paste0("Error: webId must be a list.")))
+			if (is.vector(webId) == FALSE) {
+				return (print(paste0("Error: webId must be a vector.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/streamsets/recordedattimes'), collapse = "")
 			if (missing(retrievalMode) == FALSE && is.null(retrievalMode) == FALSE && retrievalMode != "") {
@@ -1336,8 +1336,8 @@ streamSetApi <- R6Class("streamSetApi",
 			if (is.null(webId) || webId == "") {
 				return (paste0("Error: required parameter webId was null or undefined"))
 			}
-			if (is.list(webId) == FALSE) {
-				return (print(paste0("Error: webId must be a list.")))
+			if (is.vector(webId) == FALSE) {
+				return (print(paste0("Error: webId must be a vector.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/streamsets/summary'), collapse = "")
 			if (missing(calculationBasis) == FALSE && is.null(calculationBasis) == FALSE && calculationBasis != "") {
@@ -1390,8 +1390,8 @@ streamSetApi <- R6Class("streamSetApi",
 			}
 			if (missing(summaryType) == FALSE && is.null(summaryType) == FALSE && summaryType != "") {
 				queryParameters$summaryType <- summaryType
-				if (is.list(summaryType) == FALSE) {
-					return (print(paste0("Error: summaryType must be a list.")))
+				if (is.vector(summaryType) == FALSE) {
+					return (print(paste0("Error: summaryType must be a vector.")))
 				}
 			}
 			if (missing(timeType) == FALSE && is.null(timeType) == FALSE && timeType != "") {
@@ -1421,8 +1421,8 @@ streamSetApi <- R6Class("streamSetApi",
 			if (is.null(webId) || webId == "") {
 				return (paste0("Error: required parameter webId was null or undefined"))
 			}
-			if (is.list(webId) == FALSE) {
-				return (print(paste0("Error: webId must be a list.")))
+			if (is.vector(webId) == FALSE) {
+				return (print(paste0("Error: webId must be a vector.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/streamsets/value'), collapse = "")
 			if (missing(selectedFields) == FALSE && is.null(selectedFields) == FALSE && selectedFields != "") {
@@ -1458,8 +1458,8 @@ streamSetApi <- R6Class("streamSetApi",
 			if (is.null(values) || values == "") {
 				return (paste0("Error: required parameter values was null or undefined"))
 			}
-			if (is.list(values) == FALSE) {
-				return (print(paste0("Error: values must be a list.")))
+			if (is.vector(values) == FALSE) {
+				return (print(paste0("Error: values must be a vector.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/streamsets/value'), collapse = "")
 			if (missing(bufferOption) == FALSE && is.null(bufferOption) == FALSE && bufferOption != "") {

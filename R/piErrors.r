@@ -1,7 +1,7 @@
 piErrors <- function(errors = NULL) {
 	if (is.null(errors) == FALSE) {
-		if (is.list(errors) == FALSE) {
-			return (print(paste0("Error: errors must be a list.")))
+		if (is.vector(errors) == FALSE) {
+			return (print(paste0("Error: errors must be a vector.")))
 		}
 		if (is.character(errors[[1]]) == FALSE) {
 			return (print(paste0("Error: errors[[1]] must be a string.")))

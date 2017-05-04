@@ -124,8 +124,8 @@ analysisApi <- R6Class("analysisApi",
 			if (is.null(userIdentity) || userIdentity == "") {
 				return (paste0("Error: required parameter userIdentity was null or undefined"))
 			}
-			if (is.list(userIdentity) == FALSE) {
-				return (print(paste0("Error: userIdentity must be a list.")))
+			if (is.vector(userIdentity) == FALSE) {
+				return (print(paste0("Error: userIdentity must be a vector.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/analyses/', webId, '/security'), collapse = "")
 			if (missing(forceRefresh) == FALSE && is.null(forceRefresh) == FALSE && forceRefresh != "") {

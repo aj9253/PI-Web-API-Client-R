@@ -173,14 +173,14 @@ assetServerApi <- R6Class("assetServerApi",
 			if (is.null(securityItem) || securityItem == "") {
 				return (paste0("Error: required parameter securityItem was null or undefined"))
 			}
-			if (is.list(securityItem) == FALSE) {
-				return (print(paste0("Error: securityItem must be a list.")))
+			if (is.vector(securityItem) == FALSE) {
+				return (print(paste0("Error: securityItem must be a vector.")))
 			}
 			if (is.null(userIdentity) || userIdentity == "") {
 				return (paste0("Error: required parameter userIdentity was null or undefined"))
 			}
-			if (is.list(userIdentity) == FALSE) {
-				return (print(paste0("Error: userIdentity must be a list.")))
+			if (is.vector(userIdentity) == FALSE) {
+				return (print(paste0("Error: userIdentity must be a vector.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/assetservers/', webId, '/security'), collapse = "")
 			if (missing(forceRefresh) == FALSE && is.null(forceRefresh) == FALSE && forceRefresh != "") {

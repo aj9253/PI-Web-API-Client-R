@@ -35,8 +35,8 @@ piEventFrame <- function(webId = NULL, id = NULL, name = NULL, description = NUL
 		}
 	}
 	if (is.null(categoryNames) == FALSE) {
-		if (is.list(categoryNames) == FALSE) {
-			return (print(paste0("Error: categoryNames must be a list.")))
+		if (is.vector(categoryNames) == FALSE) {
+			return (print(paste0("Error: categoryNames must be a vector.")))
 		}
 		if (is.character(categoryNames[[1]]) == FALSE) {
 			return (print(paste0("Error: categoryNames[[1]] must be a string.")))
@@ -95,8 +95,8 @@ piEventFrame <- function(webId = NULL, id = NULL, name = NULL, description = NUL
 		}
 	}
 	if (is.null(refElementWebIds) == FALSE) {
-		if (is.list(refElementWebIds) == FALSE) {
-			return (print(paste0("Error: refElementWebIds must be a list.")))
+		if (is.vector(refElementWebIds) == FALSE) {
+			return (print(paste0("Error: refElementWebIds must be a vector.")))
 		}
 		if (is.character(refElementWebIds[[1]]) == FALSE) {
 			return (print(paste0("Error: refElementWebIds[[1]] must be a string.")))

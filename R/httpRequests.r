@@ -61,10 +61,10 @@ check.integer <- function(N) {
     return(res)
 }
 
-generateListForQueryString <- function(array, queryStringName) {
+generateListForQueryString <- function(vector, queryStringName) {
     queryParameters <- list()
-    for (i in 1:length(array)) {
-        value = array[i]
+    for (i in 1:length(vector)) {
+        value = vector[i]
         key <- paste0(queryStringName, i)
         queryParameters[[key]] = value
         names(queryParameters)[i] <- queryStringName
@@ -72,21 +72,21 @@ generateListForQueryString <- function(array, queryStringName) {
     return(queryParameters)
 }
 
-generateListForTwoQueryString <- function(array1, queryStringName1, array2, queryStringName2) {
+generateListForTwoQueryString <- function(vector1, queryStringName1, vector2, queryStringName2) {
     queryParameters <- list()
-    for (i in 1:length(array1)) {
-        value = array1[i]
+    for (i in 1:length(vector1)) {
+        value = vector1[i]
         key <- paste0(queryStringName1, i)
         queryParameters[[key]] = value
         names(queryParameters)[i] <- queryStringName1
     }
 
-    for (i in 1:length(array2)) {
-        value = array2[i]
+    for (i in 1:length(vector2)) {
+        value = vector2[i]
         key <- paste0(queryStringName2, i)
         queryParameters[[key]] = value
     }
-    startIndex <- 1 + length(array1)
+    startIndex <- 1 + length(vector1)
     endIndex <- length(names(queryParameters))
     for (i in startIndex:endIndex) {
         names(queryParameters)[i] <- queryStringName2

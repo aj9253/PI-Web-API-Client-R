@@ -10,16 +10,16 @@ piSecurityEntry <- function(name = NULL, securityIdentityName = NULL, allowRight
 		}
 	}
 	if (is.null(allowRights) == FALSE) {
-		if (is.list(allowRights) == FALSE) {
-			return (print(paste0("Error: allowRights must be a list.")))
+		if (is.vector(allowRights) == FALSE) {
+			return (print(paste0("Error: allowRights must be a vector.")))
 		}
 		if (is.character(allowRights[[1]]) == FALSE) {
 			return (print(paste0("Error: allowRights[[1]] must be a string.")))
 		}
 	}
 	if (is.null(denyRights) == FALSE) {
-		if (is.list(denyRights) == FALSE) {
-			return (print(paste0("Error: denyRights must be a list.")))
+		if (is.vector(denyRights) == FALSE) {
+			return (print(paste0("Error: denyRights must be a vector.")))
 		}
 		if (is.character(denyRights[[1]]) == FALSE) {
 			return (print(paste0("Error: denyRights[[1]] must be a string.")))

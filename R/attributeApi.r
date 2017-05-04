@@ -290,8 +290,8 @@ attributeApi <- R6Class("attributeApi",
 			}
 			if (missing(path) == FALSE && is.null(path) == FALSE && path != "") {
 				queryParameters$path <- path
-				if (is.list(path) == FALSE) {
-					return (print(paste0("Error: path must be a list.")))
+				if (is.vector(path) == FALSE) {
+					return (print(paste0("Error: path must be a vector.")))
 				}
 			}
 			if (missing(selectedFields) == FALSE && is.null(selectedFields) == FALSE && selectedFields != "") {
@@ -302,8 +302,8 @@ attributeApi <- R6Class("attributeApi",
 			}
 			if (missing(webId) == FALSE && is.null(webId) == FALSE && webId != "") {
 				queryParameters$webId <- webId
-				if (is.list(webId) == FALSE) {
-					return (print(paste0("Error: webId must be a list.")))
+				if (is.vector(webId) == FALSE) {
+					return (print(paste0("Error: webId must be a vector.")))
 				}
 			}
 			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)

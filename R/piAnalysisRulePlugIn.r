@@ -35,8 +35,8 @@ piAnalysisRulePlugIn <- function(webId = NULL, id = NULL, name = NULL, descripti
 		}
 	}
 	if (is.null(assemblyLoadProperties) == FALSE) {
-		if (is.list(assemblyLoadProperties) == FALSE) {
-			return (print(paste0("Error: assemblyLoadProperties must be a list.")))
+		if (is.vector(assemblyLoadProperties) == FALSE) {
+			return (print(paste0("Error: assemblyLoadProperties must be a vector.")))
 		}
 		if (is.character(assemblyLoadProperties[[1]]) == FALSE) {
 			return (print(paste0("Error: assemblyLoadProperties[[1]] must be a string.")))

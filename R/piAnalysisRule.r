@@ -60,8 +60,8 @@ piAnalysisRule <- function(webId = NULL, id = NULL, name = NULL, description = N
 		}
 	}
 	if (is.null(supportedBehaviors) == FALSE) {
-		if (is.list(supportedBehaviors) == FALSE) {
-			return (print(paste0("Error: supportedBehaviors must be a list.")))
+		if (is.vector(supportedBehaviors) == FALSE) {
+			return (print(paste0("Error: supportedBehaviors must be a vector.")))
 		}
 		if (is.character(supportedBehaviors[[1]]) == FALSE) {
 			return (print(paste0("Error: supportedBehaviors[[1]] must be a string.")))

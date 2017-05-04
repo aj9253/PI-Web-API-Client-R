@@ -160,8 +160,8 @@ calculationApi <- R6Class("calculationApi",
 			}
 			if (missing(summaryType) == FALSE && is.null(summaryType) == FALSE && summaryType != "") {
 				queryParameters$summaryType <- summaryType
-				if (is.list(summaryType) == FALSE) {
-					return (print(paste0("Error: summaryType must be a list.")))
+				if (is.vector(summaryType) == FALSE) {
+					return (print(paste0("Error: summaryType must be a vector.")))
 				}
 			}
 			if (missing(timeType) == FALSE && is.null(timeType) == FALSE && timeType != "") {
@@ -209,8 +209,8 @@ calculationApi <- R6Class("calculationApi",
 			}
 			if (missing(time) == FALSE && is.null(time) == FALSE && time != "") {
 				queryParameters$time <- time
-				if (is.list(time) == FALSE) {
-					return (print(paste0("Error: time must be a list.")))
+				if (is.vector(time) == FALSE) {
+					return (print(paste0("Error: time must be a vector.")))
 				}
 			}
 			if (missing(webId) == FALSE && is.null(webId) == FALSE && webId != "") {

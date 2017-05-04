@@ -102,8 +102,8 @@ pointApi <- R6Class("pointApi",
 			localVarPath <- paste(c(self$serviceBase, '/points/', webId, '/attributes'), collapse = "")
 			if (missing(name) == FALSE && is.null(name) == FALSE && name != "") {
 				queryParameters$name <- name
-				if (is.list(name) == FALSE) {
-					return (print(paste0("Error: name must be a list.")))
+				if (is.vector(name) == FALSE) {
+					return (print(paste0("Error: name must be a vector.")))
 				}
 			}
 			if (missing(nameFilter) == FALSE && is.null(nameFilter) == FALSE && nameFilter != "") {
@@ -173,8 +173,8 @@ pointApi <- R6Class("pointApi",
 			}
 			if (missing(path) == FALSE && is.null(path) == FALSE && path != "") {
 				queryParameters$path <- path
-				if (is.list(path) == FALSE) {
-					return (print(paste0("Error: path must be a list.")))
+				if (is.vector(path) == FALSE) {
+					return (print(paste0("Error: path must be a vector.")))
 				}
 			}
 			if (missing(selectedFields) == FALSE && is.null(selectedFields) == FALSE && selectedFields != "") {
@@ -185,8 +185,8 @@ pointApi <- R6Class("pointApi",
 			}
 			if (missing(webId) == FALSE && is.null(webId) == FALSE && webId != "") {
 				queryParameters$webId <- webId
-				if (is.list(webId) == FALSE) {
-					return (print(paste0("Error: webId must be a list.")))
+				if (is.vector(webId) == FALSE) {
+					return (print(paste0("Error: webId must be a vector.")))
 				}
 			}
 			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)

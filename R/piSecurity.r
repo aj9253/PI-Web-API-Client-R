@@ -50,8 +50,8 @@ piSecurity <- function(canAnnotate = NULL, canDelete = NULL, canExecute = NULL, 
 		}
 	}
 	if (is.null(rights) == FALSE) {
-		if (is.list(rights) == FALSE) {
-			return (print(paste0("Error: rights must be a list.")))
+		if (is.vector(rights) == FALSE) {
+			return (print(paste0("Error: rights must be a vector.")))
 		}
 		if (is.character(rights[[1]]) == FALSE) {
 			return (print(paste0("Error: rights[[1]] must be a string.")))

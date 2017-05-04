@@ -16,8 +16,8 @@ piRequest <- function(method = NULL, resource = NULL, requestTemplate = NULL, pa
 		}
 	}
 	if (is.null(parameters) == FALSE) {
-		if (is.list(parameters) == FALSE) {
-			return (print(paste0("Error: parameters must be a list.")))
+		if (is.vector(parameters) == FALSE) {
+			return (print(paste0("Error: parameters must be a vector.")))
 		}
 		if (is.character(parameters[[1]]) == FALSE) {
 			return (print(paste0("Error: parameters[[1]] must be a string.")))
@@ -31,8 +31,8 @@ piRequest <- function(method = NULL, resource = NULL, requestTemplate = NULL, pa
 		}
 	}
 	if (is.null(parentIds) == FALSE) {
-		if (is.list(parentIds) == FALSE) {
-			return (print(paste0("Error: parentIds must be a list.")))
+		if (is.vector(parentIds) == FALSE) {
+			return (print(paste0("Error: parentIds must be a vector.")))
 		}
 		if (is.character(parentIds[[1]]) == FALSE) {
 			return (print(paste0("Error: parentIds[[1]] must be a string.")))

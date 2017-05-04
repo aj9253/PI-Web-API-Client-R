@@ -575,8 +575,8 @@ eventFrameApi <- R6Class("eventFrameApi",
 			}
 			if (missing(severity) == FALSE && is.null(severity) == FALSE && severity != "") {
 				queryParameters$severity <- severity
-				if (is.list(severity) == FALSE) {
-					return (print(paste0("Error: severity must be a list.")))
+				if (is.vector(severity) == FALSE) {
+					return (print(paste0("Error: severity must be a vector.")))
 				}
 			}
 			if (missing(sortField) == FALSE && is.null(sortField) == FALSE && sortField != "") {
@@ -668,8 +668,8 @@ eventFrameApi <- R6Class("eventFrameApi",
 			if (is.null(userIdentity) || userIdentity == "") {
 				return (paste0("Error: required parameter userIdentity was null or undefined"))
 			}
-			if (is.list(userIdentity) == FALSE) {
-				return (print(paste0("Error: userIdentity must be a list.")))
+			if (is.vector(userIdentity) == FALSE) {
+				return (print(paste0("Error: userIdentity must be a vector.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/eventframes/', webId, '/security'), collapse = "")
 			if (missing(forceRefresh) == FALSE && is.null(forceRefresh) == FALSE && forceRefresh != "") {
@@ -859,8 +859,8 @@ eventFrameApi <- R6Class("eventFrameApi",
 			}
 			if (missing(path) == FALSE && is.null(path) == FALSE && path != "") {
 				queryParameters$path <- path
-				if (is.list(path) == FALSE) {
-					return (print(paste0("Error: path must be a list.")))
+				if (is.vector(path) == FALSE) {
+					return (print(paste0("Error: path must be a vector.")))
 				}
 			}
 			if (missing(selectedFields) == FALSE && is.null(selectedFields) == FALSE && selectedFields != "") {
@@ -871,8 +871,8 @@ eventFrameApi <- R6Class("eventFrameApi",
 			}
 			if (missing(webId) == FALSE && is.null(webId) == FALSE && webId != "") {
 				queryParameters$webId <- webId
-				if (is.list(webId) == FALSE) {
-					return (print(paste0("Error: webId must be a list.")))
+				if (is.vector(webId) == FALSE) {
+					return (print(paste0("Error: webId must be a vector.")))
 				}
 			}
 			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)
@@ -956,8 +956,8 @@ eventFrameApi <- R6Class("eventFrameApi",
 			}
 			if (missing(severity) == FALSE && is.null(severity) == FALSE && severity != "") {
 				queryParameters$severity <- severity
-				if (is.list(severity) == FALSE) {
-					return (print(paste0("Error: severity must be a list.")))
+				if (is.vector(severity) == FALSE) {
+					return (print(paste0("Error: severity must be a vector.")))
 				}
 			}
 			if (missing(sortField) == FALSE && is.null(sortField) == FALSE && sortField != "") {

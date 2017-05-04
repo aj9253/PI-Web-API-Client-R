@@ -569,8 +569,8 @@ elementApi <- R6Class("elementApi",
 			}
 			if (missing(severity) == FALSE && is.null(severity) == FALSE && severity != "") {
 				queryParameters$severity <- severity
-				if (is.list(severity) == FALSE) {
-					return (print(paste0("Error: severity must be a list.")))
+				if (is.vector(severity) == FALSE) {
+					return (print(paste0("Error: severity must be a vector.")))
 				}
 			}
 			if (missing(sortField) == FALSE && is.null(sortField) == FALSE && sortField != "") {
@@ -697,8 +697,8 @@ elementApi <- R6Class("elementApi",
 			if (is.null(referencedElementWebId) || referencedElementWebId == "") {
 				return (paste0("Error: required parameter referencedElementWebId was null or undefined"))
 			}
-			if (is.list(referencedElementWebId) == FALSE) {
-				return (print(paste0("Error: referencedElementWebId must be a list.")))
+			if (is.vector(referencedElementWebId) == FALSE) {
+				return (print(paste0("Error: referencedElementWebId must be a vector.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/elements/', webId, '/referencedelements'), collapse = "")
 			if (missing(referenceType) == FALSE && is.null(referenceType) == FALSE && referenceType != "") {
@@ -721,8 +721,8 @@ elementApi <- R6Class("elementApi",
 			if (is.null(referencedElementWebId) || referencedElementWebId == "") {
 				return (paste0("Error: required parameter referencedElementWebId was null or undefined"))
 			}
-			if (is.list(referencedElementWebId) == FALSE) {
-				return (print(paste0("Error: referencedElementWebId must be a list.")))
+			if (is.vector(referencedElementWebId) == FALSE) {
+				return (print(paste0("Error: referencedElementWebId must be a vector.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/elements/', webId, '/referencedelements'), collapse = "")
 			res <- deleteHttpRequest(localVarPath, self$username, self$password, self$authType, self$validateSSL, self$debug)
@@ -739,8 +739,8 @@ elementApi <- R6Class("elementApi",
 			if (is.null(userIdentity) || userIdentity == "") {
 				return (paste0("Error: required parameter userIdentity was null or undefined"))
 			}
-			if (is.list(userIdentity) == FALSE) {
-				return (print(paste0("Error: userIdentity must be a list.")))
+			if (is.vector(userIdentity) == FALSE) {
+				return (print(paste0("Error: userIdentity must be a vector.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/elements/', webId, '/security'), collapse = "")
 			if (missing(forceRefresh) == FALSE && is.null(forceRefresh) == FALSE && forceRefresh != "") {
@@ -930,8 +930,8 @@ elementApi <- R6Class("elementApi",
 			}
 			if (missing(path) == FALSE && is.null(path) == FALSE && path != "") {
 				queryParameters$path <- path
-				if (is.list(path) == FALSE) {
-					return (print(paste0("Error: path must be a list.")))
+				if (is.vector(path) == FALSE) {
+					return (print(paste0("Error: path must be a vector.")))
 				}
 			}
 			if (missing(selectedFields) == FALSE && is.null(selectedFields) == FALSE && selectedFields != "") {
@@ -942,8 +942,8 @@ elementApi <- R6Class("elementApi",
 			}
 			if (missing(webId) == FALSE && is.null(webId) == FALSE && webId != "") {
 				queryParameters$webId <- webId
-				if (is.list(webId) == FALSE) {
-					return (print(paste0("Error: webId must be a list.")))
+				if (is.vector(webId) == FALSE) {
+					return (print(paste0("Error: webId must be a vector.")))
 				}
 			}
 			res <- getHttpRequest(localVarPath, queryParameters, self$username, self$password, self$authType, self$validateSSL, self$debug)

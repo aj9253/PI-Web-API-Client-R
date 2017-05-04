@@ -102,8 +102,8 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 			if (is.null(field) || field == "") {
 				return (paste0("Error: required parameter field was null or undefined"))
 			}
-			if (is.list(field) == FALSE) {
-				return (print(paste0("Error: field must be a list.")))
+			if (is.vector(field) == FALSE) {
+				return (print(paste0("Error: field must be a vector.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/assetdatabases/', webId, '/analyses'), collapse = "")
 			if (missing(maxCount) == FALSE && is.null(maxCount) == FALSE && maxCount != "") {
@@ -201,8 +201,8 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 			if (is.null(field) || field == "") {
 				return (paste0("Error: required parameter field was null or undefined"))
 			}
-			if (is.list(field) == FALSE) {
-				return (print(paste0("Error: field must be a list.")))
+			if (is.vector(field) == FALSE) {
+				return (print(paste0("Error: field must be a vector.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/assetdatabases/', webId, '/analysistemplates'), collapse = "")
 			if (missing(maxCount) == FALSE && is.null(maxCount) == FALSE && maxCount != "") {
@@ -561,8 +561,8 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 			if (is.null(field) || field == "") {
 				return (paste0("Error: required parameter field was null or undefined"))
 			}
-			if (is.list(field) == FALSE) {
-				return (print(paste0("Error: field must be a list.")))
+			if (is.vector(field) == FALSE) {
+				return (print(paste0("Error: field must be a vector.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/assetdatabases/', webId, '/elementtemplates'), collapse = "")
 			if (missing(maxCount) == FALSE && is.null(maxCount) == FALSE && maxCount != "") {
@@ -863,8 +863,8 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 			}
 			if (missing(severity) == FALSE && is.null(severity) == FALSE && severity != "") {
 				queryParameters$severity <- severity
-				if (is.list(severity) == FALSE) {
-					return (print(paste0("Error: severity must be a list.")))
+				if (is.vector(severity) == FALSE) {
+					return (print(paste0("Error: severity must be a vector.")))
 				}
 			}
 			if (missing(sortField) == FALSE && is.null(sortField) == FALSE && sortField != "") {
@@ -940,8 +940,8 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 			}
 			if (missing(exportMode) == FALSE && is.null(exportMode) == FALSE && exportMode != "") {
 				queryParameters$exportMode <- exportMode
-				if (is.list(exportMode) == FALSE) {
-					return (print(paste0("Error: exportMode must be a list.")))
+				if (is.vector(exportMode) == FALSE) {
+					return (print(paste0("Error: exportMode must be a vector.")))
 				}
 			}
 			if (missing(startTime) == FALSE && is.null(startTime) == FALSE && startTime != "") {
@@ -967,8 +967,8 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 			localVarPath <- paste(c(self$serviceBase, '/assetdatabases/', webId, '/import'), collapse = "")
 			if (missing(importMode) == FALSE && is.null(importMode) == FALSE && importMode != "") {
 				queryParameters$importMode <- importMode
-				if (is.list(importMode) == FALSE) {
-					return (print(paste0("Error: importMode must be a list.")))
+				if (is.vector(importMode) == FALSE) {
+					return (print(paste0("Error: importMode must be a vector.")))
 				}
 			}
 			res <- postHttpRequest(localVarPath, , self$username, self$password, self$authType, self$validateSSL, self$debug)
@@ -1061,8 +1061,8 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 			if (is.null(referencedElementWebId) || referencedElementWebId == "") {
 				return (paste0("Error: required parameter referencedElementWebId was null or undefined"))
 			}
-			if (is.list(referencedElementWebId) == FALSE) {
-				return (print(paste0("Error: referencedElementWebId must be a list.")))
+			if (is.vector(referencedElementWebId) == FALSE) {
+				return (print(paste0("Error: referencedElementWebId must be a vector.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/assetdatabases/', webId, '/referencedelements'), collapse = "")
 			if (missing(referenceType) == FALSE && is.null(referenceType) == FALSE && referenceType != "") {
@@ -1085,8 +1085,8 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 			if (is.null(referencedElementWebId) || referencedElementWebId == "") {
 				return (paste0("Error: required parameter referencedElementWebId was null or undefined"))
 			}
-			if (is.list(referencedElementWebId) == FALSE) {
-				return (print(paste0("Error: referencedElementWebId must be a list.")))
+			if (is.vector(referencedElementWebId) == FALSE) {
+				return (print(paste0("Error: referencedElementWebId must be a vector.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/assetdatabases/', webId, '/referencedelements'), collapse = "")
 			res <- deleteHttpRequest(localVarPath, self$username, self$password, self$authType, self$validateSSL, self$debug)
@@ -1103,14 +1103,14 @@ assetDatabaseApi <- R6Class("assetDatabaseApi",
 			if (is.null(securityItem) || securityItem == "") {
 				return (paste0("Error: required parameter securityItem was null or undefined"))
 			}
-			if (is.list(securityItem) == FALSE) {
-				return (print(paste0("Error: securityItem must be a list.")))
+			if (is.vector(securityItem) == FALSE) {
+				return (print(paste0("Error: securityItem must be a vector.")))
 			}
 			if (is.null(userIdentity) || userIdentity == "") {
 				return (paste0("Error: required parameter userIdentity was null or undefined"))
 			}
-			if (is.list(userIdentity) == FALSE) {
-				return (print(paste0("Error: userIdentity must be a list.")))
+			if (is.vector(userIdentity) == FALSE) {
+				return (print(paste0("Error: userIdentity must be a vector.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/assetdatabases/', webId, '/security'), collapse = "")
 			if (missing(forceRefresh) == FALSE && is.null(forceRefresh) == FALSE && forceRefresh != "") {

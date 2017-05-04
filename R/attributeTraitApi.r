@@ -20,8 +20,8 @@ attributeTraitApi <- R6Class("attributeTraitApi",
 			if (is.null(category) || category == "") {
 				return (paste0("Error: required parameter category was null or undefined"))
 			}
-			if (is.list(category) == FALSE) {
-				return (print(paste0("Error: category must be a list.")))
+			if (is.vector(category) == FALSE) {
+				return (print(paste0("Error: category must be a vector.")))
 			}
 			localVarPath <- paste(c(self$serviceBase, '/attributetraits'), collapse = "")
 			if (missing(selectedFields) == FALSE && is.null(selectedFields) == FALSE && selectedFields != "") {

@@ -77,8 +77,8 @@ piAttributeTemplate <- function(webId = NULL, id = NULL, name = NULL, descriptio
 		}
 	}
 	if (is.null(categoryNames) == FALSE) {
-		if (is.list(categoryNames) == FALSE) {
-			return (print(paste0("Error: categoryNames must be a list.")))
+		if (is.vector(categoryNames) == FALSE) {
+			return (print(paste0("Error: categoryNames must be a vector.")))
 		}
 		if (is.character(categoryNames[[1]]) == FALSE) {
 			return (print(paste0("Error: categoryNames[[1]] must be a string.")))
