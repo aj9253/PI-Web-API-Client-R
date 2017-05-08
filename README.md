@@ -80,6 +80,7 @@ response19 <- piWebApiService$data$getMultipleInterpolatedValues(paths = c("pi:\
 response20 <- piWebApiService$data$getMultiplePlotValues(paths = c("pi:\\\\pifitness-srv2\\sinusoid", "pi:\\\\pifitness-srv2\\sinusoidu"), startTime = "y-2d", endTime = "t", intervals = 30)
 ```
 
+The path from the methods above should start with "pi:" (if your stream is a PI Point) or "af:" (if your stream is an AF attribute).
 
 
 
