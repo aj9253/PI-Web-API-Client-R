@@ -183,16 +183,6 @@ response14 <- piWebApiService$element$updateSecurityEntry("SwaggerIdentity", ele
 
 
 
-
-
-
-
-
-## Organization
-This repository has the sample application from the blog post published on PI Square:
-https://pisquare.osisoft.com/community/developers-club/blog/2015/11/27/using-pi-web-api-on-html5-with-angularjs
-
-
 ## Licensing
 Copyright 2017 OSIsoft, LLC.
 
