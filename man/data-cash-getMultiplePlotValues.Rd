@@ -17,7 +17,7 @@
 \item{timeZone}{The time zone in which the time string will be interpreted. This parameter will be ignored if a time zone is specified in the time string. If no time zone is specified in either places, the PI Web API server time zone will be used.}
 }
 \value{
-Plot values of the streams that meet the specified conditions.
+A data frame with the plot values of the streams that meet the specified conditions.
 }
 \description{
 Returns values of attributes for the specified streams over the specified time range suitable for plotting over the number of intervals (typically represents pixels).

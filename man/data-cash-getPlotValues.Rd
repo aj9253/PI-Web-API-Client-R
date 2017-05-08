@@ -19,7 +19,7 @@
 \item{timeZone}{The time zone in which the time string will be interpreted. This parameter will be ignored if a time zone is specified in the time string. If no time zone is specified in either places, the PI Web API server time zone will be used.}
 }
 \value{
-The values that meet the specified conditions
+A data frame with the values that meet the specified conditions.
 }
 \description{
 Retrieves values over the specified time range suitable for plotting over the number of intervals (typically represents pixels).

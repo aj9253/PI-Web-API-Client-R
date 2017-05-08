@@ -23,7 +23,7 @@
 \item{timeZone}{The time zone in which the time string will be interpreted. This parameter will be ignored if a time zone is specified in the time string. If no time zone is specified in either places, the PI Web API server time zone will be used.}
 }
 \value{
-Recorded values of the streams that meet the specified conditions.
+A list with multiple data frames with the recorded values of the streams that meet the specified conditions.
 }
 \description{
 Returns recorded values of the specified streams.

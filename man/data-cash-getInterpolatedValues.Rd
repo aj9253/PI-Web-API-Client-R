@@ -23,7 +23,7 @@
 \item{timeZone}{The time zone in which the time string will be interpreted. This parameter will be ignored if a time zone is specified in the time string. If no time zone is specified in either places, the PI Web API server time zone will be used.}
 }
 \value{
-The values that meet the specified conditions.
+A data frame with the values that meet the specified conditions.
 }
 \description{
 Retrieves interpolated values over the specified time range at the specified sampling interval.
