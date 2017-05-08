@@ -1,11 +1,11 @@
 PI Web API Swagger client R package
 =========
 
-### Introduction
+## Introduction
 
 This is an R package that integrates the PI System with R through PI Web API. This package was build with the Swagger definition of PI Web API available on version 2017. 
 
-### Installation
+## Installation
 
 This R package is not available on CRAN yet. Nevertheless, you can download it directly from this GitHub repository using the devtools R package. If you don't have it installed, please use the command below:
 
@@ -26,7 +26,7 @@ If the installation is successfull, the command below will load the package:
 library(piwebapi)
 ```
 
-### Documentation
+## Documentation
 
 All the methods and classes are described on the package documentation, which can be opened by typing:
 
@@ -34,28 +34,28 @@ All the methods and classes are described on the package documentation, which ca
 help(package="piwebapi") 
 ```
 
-### Examples
+## Examples
 
 Please refer to the following examples to understand how to use this library: 
 
-# Create an intance of the piwebapi top level object.
+### Create an intance of the piwebapi top level object.
 
 ```r
 piWebApiService <- piwebapi$new("https://webserver/piwebapi", useKerberos, username, password, validateSSL, debug)
 ```
-# Request 1 - Main PI Web API endpoint
+### Request 1 - Main PI Web API endpoint
 
 ```r
 response1 = piWebApiService$home$get()
 ```
 
-# Request 2 - Get PI Data Archive
+### Request 2 - Get PI Data Archive
 
 ```r
 response2 = piWebApiService$dataServer$getByPath("\\\\pifitness-srv2", "name")
 ```
 
-# Request 3 - Create a PI Point
+### Request 3 - Create a PI Point
 
 ```r
 newPoint <- piPoint(NULL, NULL, "SINUSOIDR", NULL, "12 Hour Sine Wave", "classic", "Float32", NULL, NULL, NULL, NULL, NULL)
@@ -64,13 +64,13 @@ response3 = piWebApiService$dataServer$createPoint("s0TJVKOA0Ws0KihcA8rM1GogUElG
 
 
 
-# Request 4 - Get values in bulk
+### Request 4 - Get values in bulk
 
 ```r
 response4 = piWebApiService$streamSet$getValuesAdHoc(webIds)
 ```
 
-# Request 5 - UpdateValues in bulk
+### Request 5 - UpdateValues in bulk
 
 ```r
 timedValue1 <- piTimedValue(timestamp = "2017-04-26T17:40:54Z", value = 30)
@@ -85,7 +85,7 @@ values <- list(s1, s2)
 response5 <- piWebApiService$streamSet$updateValuesAdHoc(values, "BufferIfPossible", "Replace");
 ```
 
-# Request 6 - Get recorded values in bulk
+### Request 6 - Get recorded values in bulk
 
 
 ```r
@@ -93,13 +93,13 @@ response6 <- piWebApiService$streamSet$getRecordedAdHoc(webId = webIds, startTim
 ```
 
 
-# Request 7 - Get value from a stream
+### Request 7 - Get value from a stream
 
 ```r
 response7 <- piWebApiService$stream$getValue(webIds[1])
 ```
 
-# Request 8 - Update PI Point
+### Request 8 - Update PI Point
 
 
 ```r
@@ -110,14 +110,14 @@ response8 <- piWebApiService$point$update(createdPoint$WebId, updatePoint)
 ```
 
 
-# Request 9 - Delete PI Point
+### Request 9 - Delete PI Point
 
 ```r
 response9 <- piWebApiService$point$delete(createdPoint$WebId)
 ```
 
 
-#Request 10 - StreamSet getInterpolatedAtTimesAdHoc
+### Request 10 - StreamSet getInterpolatedAtTimesAdHoc
 
 
 ```r
@@ -125,7 +125,7 @@ time <- c("t", "t-1d", "t-2d", "t-3d")
 response10 <- piWebApiService$streamSet$getInterpolatedAtTimesAdHoc(webId = webIds, time = time)
 ```
 
-#Request 11 -Batch
+### Request 11 -Batch
 
 ```r
 getSinReq <- list(Method = "GET", Resource = "https://cross-platform-lab-uc2017.osisoft.com/piwebapi/points?path=\\\\pifitness-srv2\\sinusoid")
@@ -140,7 +140,7 @@ content(response11)
 
 
 
-# Request 12 - CreateSecurityEntry
+### Request 12 - CreateSecurityEntry
 ```r
 allowRight <- array(1:2)
 allowRight[1] = "Read"
@@ -155,14 +155,14 @@ response12 <- piWebApiService$element$createSecurityEntry(elementWebId, security
 ```
 
 
-# Request 13- GetSecurityEntry
+### Request 13- GetSecurityEntry
 
 ```r
 response13 <- piWebApiService$element$getSecurityEntries(elementWebId)
 ```
 
 
-# Request 14- UpdateSecurityEntry
+### Request 14- UpdateSecurityEntry
 
 ```r
 allowRight <- array(1)
@@ -191,12 +191,12 @@ response20 <- piWebApiService$data$getMultiplePlotValues(paths = c("pi:\\\\pifit
 
 
 
-##Organization
+## Organization
 This repository has the sample application from the blog post published on PI Square:
 https://pisquare.osisoft.com/community/developers-club/blog/2015/11/27/using-pi-web-api-on-html5-with-angularjs
 
 
-##Licensing
+## Licensing
 Copyright 2017 OSIsoft, LLC.
 
    Licensed under the Apache License, Version 2.0 (the "License");
