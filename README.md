@@ -1,34 +1,42 @@
-PI Web API Swagger client R package
+PI Web API Client R package
 =========
 
 ## Introduction
 
-This is an R package that integrates the PI System with R through PI Web API. This package was build with the Swagger definition of PI Web API available on version 2017. 
+This is an R package that integrates the PI System with R through PI Web API. It was built with the PI Web API 2017 Swagger definition. With this package, you can retrieve PI data without having to generate the URL for each request. 
 
 ## Installation
 
-This R package is not available on CRAN yet. Nevertheless, you can download it directly from this GitHub repository using the devtools R package. If you don't have it installed, please use the command below:
+This R package is not available on CRAN. You should download it directly from this GitHub repository by using the devtools R package. If you don't have it installed, please use the command below:
 
 ```r
 install.packages("devtools")
 ```
 
-Then, load the library and install the R package by download it directly from GitHub: 
+Then, load the library and install the PI Web API R package with the install_github method: 
 
 ```r
 library(devtools)
 install_github("osimloeff/PI-Web-API-Client-R")
 ```
 
-If the installation is successfull, the command below will load the package:
+If the installation is successful, the command below will load the package:
 
 ```r
 library(piwebapi)
 ```
 
+If you want to uninstall this package, use the command below:
+
+```r
+remove.packages("piwebapi")
+```
+
+
+
 ## Documentation
 
-All the methods and classes are described on the package documentation, which can be opened by typing:
+All the methods and classes from this R package are described on its documentation, which can be opened by typing on the R console:
 
 ```r
 help(package="piwebapi") 
@@ -38,24 +46,41 @@ help(package="piwebapi")
 
 Please refer to the following examples to understand how to use this library: 
 
+
 ### Create an intance of the piwebapi top level object.
 
 ```r
 piWebApiService <- piwebapi$new("https://webserver/piwebapi", useKerberos, username, password, validateSSL, debug)
 ```
-### Request 1 - Main PI Web API endpoint
+
+### Retrieve data from the main PI Web API endpoint
 
 ```r
 response1 = piWebApiService$home$get()
 ```
 
-### Request 2 - Get PI Data Archive
+### Retrieving PI data to an R data frame
+
 
 ```r
-response2 = piWebApiService$dataServer$getByPath("\\\\pifitness-srv2", "name")
+response15 <- piWebApiService$data$getRecordedValues(path = "pi:\\\\pifitness-srv2\\sinusoid", startTime = "y-2d", endTime = "t")
+response16 <- piWebApiService$data$getInterpolatedValues(path = "pi:\\\\pifitness-srv2\\sinusoid", startTime = "y-2d", endTime = "t", interval = "1h")
+response17 <- piWebApiService$data$getPlotValues(path = "pi:\\\\pifitness-srv2\\sinusoid", startTime = "y-2d", endTime = "t", intervals = 30)
+response18 <- piWebApiService$data$getMultipleRecordedValues(paths = c("pi:\\\\pifitness-srv2\\sinusoid", "pi:\\\\pifitness-srv2\\sinusoidu"), startTime = "y-2d", endTime = "t")
+response19 <- piWebApiService$data$getMultipleInterpolatedValues(paths = c("pi:\\\\pifitness-srv2\\sinusoid", "pi:\\\\pifitness-srv2\\sinusoidu"), startTime = "y-2d", endTime = "t", interval = "1h")
+response20 <- piWebApiService$data$getMultiplePlotValues(paths = c("pi:\\\\pifitness-srv2\\sinusoid", "pi:\\\\pifitness-srv2\\sinusoidu"), startTime = "y-2d", endTime = "t", intervals = 30)
 ```
 
-### Request 3 - Create a PI Point
+
+
+
+### Get the PI Data Archive WebId
+
+```r
+response2 = piWebApiService$dataServer$getByPath("\\\\piservername", "WebId")
+```
+
+### Create a PI Point
 
 ```r
 newPoint <- piPoint(NULL, NULL, "SINUSOIDR", NULL, "12 Hour Sine Wave", "classic", "Float32", NULL, NULL, NULL, NULL, NULL)
@@ -64,13 +89,13 @@ response3 = piWebApiService$dataServer$createPoint("s0TJVKOA0Ws0KihcA8rM1GogUElG
 
 
 
-### Request 4 - Get values in bulk
+### Get current values in bulk using the StreamSet/GetValuesAdHoc
 
 ```r
 response4 = piWebApiService$streamSet$getValuesAdHoc(webIds)
 ```
 
-### Request 5 - UpdateValues in bulk
+### Send values in bulk using the StreamSet/UpdateValuesAdHoc
 
 ```r
 timedValue1 <- piTimedValue(timestamp = "2017-04-26T17:40:54Z", value = 30)
@@ -85,21 +110,8 @@ values <- list(s1, s2)
 response5 <- piWebApiService$streamSet$updateValuesAdHoc(values, "BufferIfPossible", "Replace");
 ```
 
-### Request 6 - Get recorded values in bulk
 
-
-```r
-response6 <- piWebApiService$streamSet$getRecordedAdHoc(webId = webIds, startTime = "t-6h", endTime = "t")
-```
-
-
-### Request 7 - Get value from a stream
-
-```r
-response7 <- piWebApiService$stream$getValue(webIds[1])
-```
-
-### Request 8 - Update PI Point
+### Update the description from a PI Point
 
 
 ```r
@@ -110,22 +122,15 @@ response8 <- piWebApiService$point$update(createdPoint$WebId, updatePoint)
 ```
 
 
-### Request 9 - Delete PI Point
+### Delete a PI Point
 
 ```r
 response9 <- piWebApiService$point$delete(createdPoint$WebId)
 ```
 
 
-### Request 10 - StreamSet getInterpolatedAtTimesAdHoc
 
-
-```r
-time <- c("t", "t-1d", "t-2d", "t-3d")
-response10 <- piWebApiService$streamSet$getInterpolatedAtTimesAdHoc(webId = webIds, time = time)
-```
-
-### Request 11 -Batch
+### Using PI Batch to increase performance
 
 ```r
 getSinReq <- list(Method = "GET", Resource = "https://cross-platform-lab-uc2017.osisoft.com/piwebapi/points?path=\\\\pifitness-srv2\\sinusoid")
@@ -140,7 +145,7 @@ content(response11)
 
 
 
-### Request 12 - CreateSecurityEntry
+### Create a SecurityEntry on an element
 ```r
 allowRight <- array(1:2)
 allowRight[1] = "Read"
@@ -155,14 +160,14 @@ response12 <- piWebApiService$element$createSecurityEntry(elementWebId, security
 ```
 
 
-### Request 13- GetSecurityEntry
+### Get a SecurityEntry of an element
 
 ```r
 response13 <- piWebApiService$element$getSecurityEntries(elementWebId)
 ```
 
 
-### Request 14- UpdateSecurityEntry
+### Update a SecurityEntry of an element
 
 ```r
 allowRight <- array(1)
@@ -178,14 +183,6 @@ response14 <- piWebApiService$element$updateSecurityEntry("SwaggerIdentity", ele
 
 
 
-```r
-response15 <- piWebApiService$data$getRecordedValues(path = "pi:\\\\pifitness-srv2\\sinusoid", startTime = "y-2d", endTime = "t")
-response16 <- piWebApiService$data$getInterpolatedValues(path = "pi:\\\\pifitness-srv2\\sinusoid", startTime = "y-2d", endTime = "t", interval = "1h")
-response17 <- piWebApiService$data$getPlotValues(path = "pi:\\\\pifitness-srv2\\sinusoid", startTime = "y-2d", endTime = "t", intervals = 30)
-response18 <- piWebApiService$data$getMultipleRecordedValues(paths = c("pi:\\\\pifitness-srv2\\sinusoid", "pi:\\\\pifitness-srv2\\sinusoidu"), startTime = "y-2d", endTime = "t")
-response19 <- piWebApiService$data$getMultipleInterpolatedValues(paths = c("pi:\\\\pifitness-srv2\\sinusoid", "pi:\\\\pifitness-srv2\\sinusoidu"), startTime = "y-2d", endTime = "t", interval = "1h")
-response20 <- piWebApiService$data$getMultiplePlotValues(paths = c("pi:\\\\pifitness-srv2\\sinusoid", "pi:\\\\pifitness-srv2\\sinusoidu"), startTime = "y-2d", endTime = "t", intervals = 30)
-```
 
 
 
