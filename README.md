@@ -1,11 +1,11 @@
 PI Web API Swagger client R package
 =========
 
-##Introduction
+###Introduction
 
 This is an R package that integrates the PI System with R through PI Web API. This package was build with the Swagger definition of PI Web API available on version 2017. 
 
-##Installation
+###Installation
 
 This R package is not available on CRAN yet. Nevertheless, you can download it directly from this GitHub repository using the devtools R package. If you don't have it installed, please use the command below:
 
@@ -26,7 +26,7 @@ If the installation is successfull, the command below will load the package:
 library(piwebapi)
 ```
 
-##Documentation
+###Documentation
 
 All the methods and classes are described on the package documentation, which can be opened by typing:
 
@@ -34,7 +34,7 @@ All the methods and classes are described on the package documentation, which ca
 help(package="piwebapi") 
 ```
 
-##Examples
+###Examples
 
 Please refer to the following examples to understand how to use this library: 
 
