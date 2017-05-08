@@ -50,8 +50,17 @@ Please refer to the following examples to understand how to use this library:
 ### Create an intance of the piwebapi top level object.
 
 ```r
+useKerberos <- TRUE
+username <- "myusername"
+password <- "mypassword"
+validateSSL <- TRUE
+debug <- TRUE
 piWebApiService <- piwebapi$new("https://webserver/piwebapi", useKerberos, username, password, validateSSL, debug)
 ```
+
+If you want to use basic authentication instead of Kerberos, set useKerberos to FALSE.
+If you are having issues with your SSL certificate and you want to ignore this error, set validateSSL to FALSE.
+If you want to receive a log about each HTTP request, set debug to TRUE.
 
 ### Retrieve data from the main PI Web API endpoint
 
